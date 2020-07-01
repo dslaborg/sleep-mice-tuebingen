@@ -1,0 +1,73 @@
+general:
+  device: 'cuda'
+
+dirs:
+  cache: 'D:/Python/tuebingen/cache/dataset'  # directory for cached files like the tranformed data file (see experiment.data.file)
+  data: 'D:/Python/data_tuebingen/data/'  # directory containing data
+
+data:
+  sample_duration: 10  # seconds
+  sampling_rate: 64  # Hz
+  scoring_map:
+    Wake: [1, 17]
+    REM: [3, 19]
+    Non REM: [2, 18]
+    Pre REM: [4, 20]
+    Artifact: [8, 24, 255]
+  stage_map:
+    Wake: 'Wake'
+    REM: 'REM'
+    Non REM: 'Non REM'
+    Pre REM: 'Pre REM'
+    Artifact: 'Artifact'
+
+experiment:
+  data:
+    split:
+      train: ['M19', 'M20', 'M21', 'M22', 'M23', 'M24', 'M25', 'M26', 'M27', 'M28', 'M29', 'M31', 'M32', 'M33']
+      valid: ['M34', 'M35']
+      test: ['M36', 'M37']
+      # for local testing purposes
+#      train: ['M19']
+#      valid: ['M19']
+#      test: ['M19']
+    file: 'data_tuebingen.h5'  # stored in cache dir
+    stages: ['Wake', 'REM', 'Non REM', 'Pre REM', 'Artifact']
+    balancing_weights: [0.30, 0.18, 0.24, 0.14, 0.14]
+    channels: ['EEG_FR', 'EEG_PR', 'EEG_PL', 'EMG']
+    samples_left: 1
+    samples_right: 1
+
+  training:
+    log_interval: 10  # in percent
+    additional_model_safe: false
+    batch_size: 256
+    data_fraction: 1.0
+    epochs: 50
+    optimizer:
+      scheduler:
+        warmup_epochs: 12
+        mode: 'exp'
+        parameters: [0.06]
+      learning_rate: 256.e-6
+      class: 'RMSprop'
+      parameters: {}
+      l1_weight_decay: 0
+      l2_weight_decay: 0
+
+  evaluation:
+    batch_size: 512
+
+  model:
+    filters: 64
+    classifier_dropout: [0.0, 0.0]
+    feature_extr_dropout: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    name: 'model_8conv_2fc'
+
+  data_augmentation:
+    gain: 0.0
+    flip: 0.0
+    flip_all: 0.0
+    flip_hori: 0.0
+    window_warp_size: 0.0
+    time_shift: 0.0
