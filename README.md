@@ -5,7 +5,8 @@ from tuebingen.
 
 ## requirements 
 The experiments where run in an anaconda environment on python 3.7 that can be 
-recreated using requirements.txt.
+recreated using requirements_win.txt for windows or requirements_linux.txt for
+linux.
 
 
 ## scripts

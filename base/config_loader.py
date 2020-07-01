@@ -56,7 +56,7 @@ class ConfigLoader:
         """directory in `EXPERIMENT_DIR` for all generated plots"""
         makedirs(self.VISUALS_DIR, exist_ok=True)
 
-        self.DATA_DIR = config['dirs']['data']
+        self.DATA_DIR = realpath(config['dirs']['data'])
         makedirs(self.DATA_DIR, exist_ok=True)
         cache_dir = config['dirs']['cache']
         makedirs(cache_dir, exist_ok=True)
