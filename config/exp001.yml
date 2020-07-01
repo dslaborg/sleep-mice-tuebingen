@@ -3,7 +3,6 @@ experiment:
     channels: ['EEG_PR']
 
   training:
-    epochs: 3
     optimizer:
       class: 'Adam'
       l2_weight_decay: 1.e-4

@@ -86,7 +86,8 @@ def main():
     table_desc = create_table_description(config)
 
     if isfile(config.DATA_FILE):
-        if input('{:s} already exists, do you want to override? (y/n)'.format(config.DATA_FILE)).lower() != 'y':
+        if input('{:s} already exists, do you want to override? (y/n)'.format(
+                realpath(config.DATA_FILE))).lower() != 'y':
             exit()
 
     with tables.open_file(config.DATA_FILE, mode='w', title='data from Tuebingen') as f:

@@ -2,8 +2,8 @@ general:
   device: 'cuda'
 
 dirs:
-  cache: 'D:/Python/tuebingen/cache/dataset'  # directory for cached files like the tranformed data file (see experiment.data.file)
-  data: 'D:/Python/data_tuebingen/data/'  # directory containing data
+  cache: './cache/dataset'  # directory for cached files like the tranformed data file (see experiment.data.file)
+  data: '../data_tuebingen/data/'  # directory containing data
 
 data:
   sample_duration: 10  # seconds
