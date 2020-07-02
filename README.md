@@ -45,6 +45,16 @@ performs preprocessing steps like downsampling
 * -e, --experiment: name of experiment to transform data to, there must be a file
 *\<experiment\>.py* in the config folder
 
+### evaluate_experiment.py
+evaluates best model in given *experiment* on data from passed dataset; results are 
+loggedin a log file in `EXPERIMENT_DIR` and plots are created in `VISUALS_DIR`
+
+**Parameters:**
+* -e, --experiment: name of experiment to evaluate best model from, there must 
+be a file *\<experiment\>.py* in the config folder
+* -d, --dataset: dataset to load data from, there must exist a corresponding table
+in your transformed data 
+
 <br>
 
 ## configuration parameters
