@@ -40,8 +40,7 @@ def evaluation():
     if isfile(model_file):
         model.load_state_dict(torch.load(model_file)['state_dict'])
     else:
-        logger.fancy_log('{} does not exist'.format(model_file))
-        return
+        raise ValueError('model_file {} does not exist'.format(model_file))
     logger.logger.info('loaded model:\n' + str(model))
 
     # evaluate model
