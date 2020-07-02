@@ -3,7 +3,7 @@ general:
 
 dirs:
   cache: './cache/dataset'  # directory for cached files like the tranformed data file (see experiment.data.file)
-  data: '../data_tuebingen/data/'  # directory containing data
+  data: '../../data_tuebingen_h5/data/'  # directory containing data
 
 data:
   sample_duration: 10  # seconds
