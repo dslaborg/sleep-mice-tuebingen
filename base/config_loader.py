@@ -21,7 +21,7 @@ def update_dict(d_to_update: dict, update: dict):
 
 
 class ConfigLoader:
-    def __init__(self, experiment='standard_config'):
+    def __init__(self, experiment='standard_config', create_dirs=True):
         """general class to load config from yaml files into fields of an instance of this class
 
         first the config from standard_config.yml is loaded and then updated with the entries in the config file
@@ -32,6 +32,7 @@ class ConfigLoader:
         Args:
             experiment (str): name of the config file to load without the .yml file extension; file must be in folder
                 'config'
+            create_dirs (bool): if set to False EXPERIMENT_DIR, MODELS_DIR and VISUALS_DIR are not created
         """
         base_dir = realpath(join(dirname(__file__), '..'))
 
@@ -48,16 +49,16 @@ class ConfigLoader:
         # dirs
         self.EXPERIMENT_DIR = join(base_dir, 'results', self.experiment)
         """general directory with results from experiment"""
-        makedirs(self.EXPERIMENT_DIR, exist_ok=True)
         self.MODELS_DIR = join(self.EXPERIMENT_DIR, 'models')
         """directory in `EXPERIMENT_DIR` for `extra_safe` models"""
-        makedirs(self.MODELS_DIR, exist_ok=True)
         self.VISUALS_DIR = join(self.EXPERIMENT_DIR, 'visuals', self.RUN_NAME)
         """directory in `EXPERIMENT_DIR` for all generated plots"""
-        makedirs(self.VISUALS_DIR, exist_ok=True)
+        if create_dirs:
+            makedirs(self.EXPERIMENT_DIR, exist_ok=True)
+            makedirs(self.MODELS_DIR, exist_ok=True)
+            makedirs(self.VISUALS_DIR, exist_ok=True)
 
         self.DATA_DIR = realpath(config['dirs']['data'])
-        makedirs(self.DATA_DIR, exist_ok=True)
         cache_dir = config['dirs']['cache']
         makedirs(cache_dir, exist_ok=True)
 

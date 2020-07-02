@@ -21,7 +21,7 @@ class DataViewer:
         # see SAMPLES_LEFT and SAMPLES_RIGHT
         # therefore the standard_config is used for the viewer with no samples to the left and right
         # and the config from the selected experiment is used for the model
-        self.view_config = ConfigLoader()
+        self.view_config = ConfigLoader(create_dirs=False)
         self.view_config.SAMPLES_LEFT, self.view_config.SAMPLES_RIGHT = 0, 0
         self.model_config = config
         self.window_size = 1  # number of samples in window
@@ -172,5 +172,5 @@ def parse():
 
 if __name__ == '__main__':
     args = parse()
-    config = ConfigLoader(args.experiment)
+    config = ConfigLoader(args.experiment, create_dirs=False)
     DataViewer(config, args.dataset).run()

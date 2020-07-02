@@ -96,7 +96,7 @@ if __name__ == '__main__':
     from base.config_loader import ConfigLoader
     from base.models.model_8conv_2fc import Model
 
-    config = ConfigLoader()
+    config = ConfigLoader(create_dirs=False)
 
     epochs = 20
     steps_per_epoch = 1500

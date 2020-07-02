@@ -42,6 +42,6 @@ def main():
 
 if __name__ == '__main__':
     args = parse()
-    config = ConfigLoader(args.experiment)
+    config = ConfigLoader(args.experiment, create_dirs=False)
 
     main()
