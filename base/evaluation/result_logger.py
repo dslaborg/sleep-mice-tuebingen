@@ -31,7 +31,6 @@ class ResultLogger:
         t = np.arange(len(f1_scores['train']['avg']))
         for ds in f1_scores:
             plt.plot(t, f1_scores[ds]['avg'], label=ds)
-        plt.xticks(t)
         plt.xlabel('epochs')
         plt.ylabel('F1-score')
         plt.ylim((0.5, 1))
@@ -45,7 +44,6 @@ class ResultLogger:
         for stage in f1_scores['valid']:
             plt.plot(t, f1_scores['valid'][stage], label=stage)
         plt.legend()
-        plt.xticks(t)
         plt.xlabel('epochs')
         plt.ylabel('F1-score')
         plt.ylim((0.0, 1))
@@ -161,7 +159,6 @@ class ResultLogger:
         t = np.arange(len(metrics['loss']['train']))
         for ds in metrics['loss']:
             plt.plot(t, metrics['loss'][ds], label=ds)
-        plt.xticks(t)
         plt.xlabel('epochs')
         plt.ylabel('loss')
         plt.grid()
