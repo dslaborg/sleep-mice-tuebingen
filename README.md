@@ -1,58 +1,76 @@
 # Tuebingen
 
-Repo containing the code to reproduce sleep classification results on data 
+Repository containing the code to reproduce sleep classification results on data 
 from tuebingen.
+
+<br>
 
 ## requirements 
 The experiments where run in an anaconda environment on python 3.7 that can be 
-recreated using requirements_win.txt for windows or requirements_linux.txt for
-linux.
+recreated using *requirements_win.txt* for windows or *requirements_linux.txt*
+for linux.
 
+<br>
 
 ## scripts
-### utils
 #### data_viewer.py
-script to visualize the data after transformation and predictions of the best model
-in the selected experiment on this data  
+script to visualize the data in *dataset* after transformation and to show 
+predicted probabilities of the best model of the passed *experiment*
+
 **Parameters:** 
 * -e, --experiment: name of experiment to load config from, there must be a file
-\<experiment\>.py in the config folder
+*\<experiment\>.py* in the config folder
 * -d, --dataset: dataset to load data from
 
 #### group_samples_by_stage.py
-counts samples per stage and dataset in the transformed `DATA_FILE`  
+counts samples per stage and dataset in the transformed `DATA_FILE`
+
 **Parameters:**
 * -e, --experiment: name of experiment to load config from, there must be a file
-\<experiment\>.py in the config folder
+*\<experiment\>.py* in the config folder
 
-### general
 #### run_experiment.py
-trains the model specified in the experiment using the configured parameters and 
-evaluates it, only the model from the epoch with best validation f1-score is saved  
+trains the model specified in the *experiment* using the configured parameters and 
+evaluates it; only the model from the epoch with best validation f1-score is saved
+
 **Parameters:**
 * -e, --experiment: name of experiment to run, there must be a file
-\<experiment\>.py in the config folder
+*\<experiment\>.py* in the config folder
 
 #### transform_files_tuebingen.py
 script to transform data from the given h5 format into a pytables table, also 
-performs preprocessing steps like downsampling  
+performs preprocessing steps like downsampling
+
 **Parameters:**
 * -e, --experiment: name of experiment to transform data to, there must be a file
-\<experiment\>.py in the config folder
+*\<experiment\>.py* in the config folder
 
-
+<br>
 
 ## configuration parameters
-short description of the possible configuration parameters and their mapping to 
-fields in ConfigLoader  
+There are many parameters in the code that can be configured in an external yaml
+file. The configuration files must be in the folder **/config**.  
+Currently there already are two files in the directory, the *standard_config.yml*
+describing the standard configuration for the data, training, model, etc and an 
+example config file *exp001.py* describing the example leading to the best results 
+I found. As you can see the configuration done in *exp001* is very little compared
+to the *standard_config*. This is because all additional config files complement
+the *standard_config*, i.e. parameters missing in *exp001* are instead loaded
+from *standard_config*.
+
+The following list shows a short description of the possible configuration 
+parameters and their mapping to the fields in *ConfigLoader.py*. For examples 
+of the configurations see *standard_config.yml*.  
 format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
+
 * general
     * device (`DEVICE`): where net is trained and evaluated, can be either 'gpu' 
     or 'cpu'
 * dirs
-    * cache (`-`): directory used as a cache for various files, like the transformed 
-    data file
-    * data (`DATA_DIR`): directory on your pc containing original data files
+    * cache (`-`): path to a directory used as a cache for various files, like 
+    the transformed data file
+    * data (`DATA_DIR`): path to a directory on your pc containing the original
+    data files
 * data
     * sample_duration (`SAMPLE_DURATION`): duration of a sample in seconds
     * sampling_rate (`SAMPLING_RATE`): sampling rate of the signal in Hz
@@ -70,12 +88,12 @@ format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
         of mice; used during data transformation to map h5 files to the
         corresponding dataset in the pytables table; there must at least exist
         entries for datasets `train` and `valid`
-        * file (`DATA_FILE`): name of the file the transformed pytables table 
+        * file (`DATA_FILE`): name of the file the transformed data 
         is saved in; file is created in `dirs.cache`
         * stages (`STAGES`): list of stages you want to train your model on and
         predict
         * balancing_weights (`BALANCING_WEIGHTS`): list of weights used for 
-        rebalancing, see data_table.py for details
+        rebalancing, see *data_table.py* for details
         * channels (`CHANNELS`): list of channels in your data files, that are 
         used as features
         * samples_left (`SAMPLES_LEFT`): number of additional samples to the left
@@ -93,7 +111,7 @@ format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
         training, validation data remains the same
         * epochs (`EPOCHS`): number of epochs to train
         * optimizer
-            * scheduler: see scheduled_optim.py for details
+            * scheduler: see *scheduled_optim.py* for details
                 * warmup_epochs (`WARMUP_EPOCHS`): number of warmup epochs
                 * mode (`S_OPTIM_MODE`): mode used for learning rate decrease 
                 after warmup
@@ -121,7 +139,7 @@ format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
         'Model'
 
     * data_augmentation: for more details on the types of data augmentation see
-    data_augmentor.py
+    *data_augmentor.py*
         * gain (`GAIN`): parameter for signal amplitude amplification
         * flip (`FLIP`): probability for vertically flipping single datapoints 
         in the signal
