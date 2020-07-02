@@ -63,6 +63,9 @@ parameters and their mapping to the fields in *ConfigLoader.py*. For examples
 of the configurations see *standard_config.yml*.  
 format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
 
+**Info:** only the value `null` in a yaml file is converted to `None` in the code, 
+`None` gets converted to a string `'None'`
+
 * general
     * device (`DEVICE`): where net is trained and evaluated, can be either 'gpu' 
     or 'cpu'
@@ -109,6 +112,10 @@ format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
         * batch_size (`BATCH_SIZE`): batch size for the train dataloader
         * data_fraction (`DATA_FRACTION`): fraction of train data to use for 
         training, validation data remains the same
+        * data_fraction_strat (`DATA_FRACTION_STRAT`): strategy for data fractions,
+        currently supports only null (no strategy, take the same data fraction of
+        each stage) and 'uniform' (take the same number of samples from each stage
+        so the total number of samples corresponds to the data fraction)
         * epochs (`EPOCHS`): number of epochs to train
         * optimizer
             * scheduler: see *scheduled_optim.py* for details

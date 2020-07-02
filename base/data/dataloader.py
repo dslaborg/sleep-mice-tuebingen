@@ -151,8 +151,16 @@ class TuebingenDataloader(tud.Dataset):
         table = self.file.root[self.dataset]
 
         for stage in self.config.STAGES:
-            idxs = table.get_where_list('(label=="{}")'.format(stage))
-            np.random.shuffle(idxs)
-            stages.append(idxs[:int(self.data_fraction * len(idxs))])
+            stages.append(table.get_where_list('(label=="{}")'.format(stage)))
+
+        if self.config.DATA_FRACTION_STRAT is None or self.dataset != 'train':
+            for i, stage_data in enumerate(stages):
+                np.random.shuffle(stage_data)
+                stages[i] = stage_data[:int(self.data_fraction * len(stage_data))]
+        else:
+            if self.config.DATA_FRACTION_STRAT == 'uniform':
+                num_samples = int(self.data_fraction * sum([len(s) for s in stages]) / len(self.config.STAGES))
+                num_samples = min(num_samples, min([len(s) for s in stages]))
+                stages = [s[:num_samples] for s in stages]
 
         return stages

@@ -94,17 +94,19 @@ class ConfigLoader:
         self.EXTRA_SAFE_MODELS = training_config['additional_model_safe']
         self.BATCH_SIZE = training_config['batch_size']
         self.DATA_FRACTION = training_config['data_fraction']
+        self.DATA_FRACTION_STRAT = training_config['data_fraction_strat']
+        assert self.DATA_FRACTION_STRAT in ['uniform', None], \
+            'currently only "uniform" or None is supported as a data fraction strategy'
         self.EPOCHS = training_config['epochs']
         self.WARMUP_EPOCHS = training_config['optimizer']['scheduler']['warmup_epochs']
         self.S_OPTIM_MODE = training_config['optimizer']['scheduler']['mode']
-        assert self.S_OPTIM_MODE in ['step', 'exp', 'half', 'plat',
-                                     None], 'S_OPTIM_MODE is not one of ["step", "exp", "half", "plat", None]'
+        assert self.S_OPTIM_MODE in ['step', 'exp', 'half', 'plat', None], \
+            'S_OPTIM_MODE is not one of ["step", "exp", "half", "plat", None]'
         self.S_OPTIM_PARAS = training_config['optimizer']['scheduler']['parameters']
         assert type(self.S_OPTIM_PARAS) in [list, type(None)], 'S_OPTIM_PARAS must be a list or None'
         self.LEARNING_RATE = training_config['optimizer']['learning_rate']
         self.OPTIMIZER = getattr(optim, training_config['optimizer']['class'])
-        assert issubclass(self.OPTIMIZER,
-                          optim.Optimizer), 'OPTIMIZER must be a subtype of optim.optimizer.Optimizer'
+        assert issubclass(self.OPTIMIZER, optim.Optimizer), 'OPTIMIZER must be a subtype of optim.optimizer.Optimizer'
         self.OPTIM_PARAS = training_config['optimizer']['parameters']
         assert type(self.OPTIM_PARAS) == dict, 'OPTIM_PARAS must be a dict'
         self.L1_WEIGHT_DECAY = training_config['optimizer']['l1_weight_decay']
@@ -136,7 +138,7 @@ class ConfigLoader:
         assert 0 <= self.TIME_SHIFT <= 1, 'TIME_SHIFT must be in [0,1]'
 
     def load_config(self):
-        """loads config from standard_config.yml and updates it with `experiment`.yml"""
+        """loads config from standard_config.yml and updates it with <experiment>.yml"""
         base_dir = realpath(join(dirname(__file__), '..'))
         with open(join(base_dir, 'config', 'standard_config.yml'), 'r') as ymlfile:
             config = yaml.safe_load(ymlfile)
