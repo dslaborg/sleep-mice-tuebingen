@@ -30,7 +30,7 @@ class ScheduledOptim(object):
         self.current_lr = peak_lr / 10.
         self.start_lr = self.current_lr
         self.mode = mode
-        self.current_epochs = 0
+        self.current_epochs = 1
         self.warmup_epochs = warmup_epochs
         self.total_epochs = total_epochs
         self.hp = parameters
@@ -120,8 +120,6 @@ if __name__ == '__main__':
 
     y = [[] for o in optims]
     for ep in range(epochs):
-        for o in optims:
-            optims[o].inc_epoch()
         t_y = [[] for o in optims]
         for cs in range(steps_per_epoch):
             for i, o in enumerate(optims):
@@ -131,6 +129,8 @@ if __name__ == '__main__':
                 y[i].extend(t_y[i])
             else:
                 y[i].append(np.mean(t_y[i]))
+        for o in optims:
+            optims[o].inc_epoch()
 
     for i, o in enumerate(optims):
         plt.semilogy(np.arange(1, len(y[i]) + 1), y[i], label=o)
