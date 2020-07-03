@@ -173,6 +173,3 @@ class ConfigLoader:
         with open(join(base_dir, 'config', self.experiment + '.yml'), 'r') as ymlfile:
             config = update_dict(config, yaml.safe_load(ymlfile))
         return config
-
-if __name__ == '__main__':
-    ConfigLoader('exp001')
