@@ -19,6 +19,7 @@ from base.training.train_model import train, snapshot
 
 
 def parse():
+    """define and parse arguments for the script"""
     parser = argparse.ArgumentParser(description='training script')
     parser.add_argument('--experiment', '-e', required=True,
                         help='name of experiment to run')
@@ -27,54 +28,67 @@ def parse():
 
 
 def training():
-    result_logger = ResultLogger(config)
+    """train experiment as it is described in config"""
+    result_logger = ResultLogger(config)  # wrapper for various methods to log/plot results
 
     # train dataloader with configured data augmentation and rebalancing
     dl_train = TuebingenDataloader(config, 'train', config.BALANCED_TRAINING, augment_data=True,
                                    data_fraction=config.DATA_FRACTION)
+    # validation dataloader without modification of loaded data
     dl_valid = TuebingenDataloader(config, 'valid', False, augment_data=False)
+    # multithreaded pytorch dataloaders with 4 workers each, train data is shuffled
     trainloader = t_data.DataLoader(dl_train, batch_size=config.BATCH_SIZE, shuffle=True, num_workers=4)
     validationloader = t_data.DataLoader(dl_valid, batch_size=config.BATCH_SIZE_EVAL, shuffle=False, num_workers=4)
 
+    # create model from model_name given in config and load it onto configured DEVICE
     model = import_module('.' + config.MODEL_NAME, 'base.models').Model(config).to(config.DEVICE)
     logger.logger.info('classifier:\n' + str(model))
+    # scheduled optimizer containing the pytorch optimizer with parameters from config
     optimizer = ScheduledOptim(
         config.OPTIMIZER(filter(lambda p: p.requires_grad, model.parameters()),
                          weight_decay=config.L2_WEIGHT_DECAY, **config.OPTIM_PARAS),
         peak_lr=config.LEARNING_RATE, warmup_epochs=config.WARMUP_EPOCHS, total_epochs=config.EPOCHS,
         parameters=config.S_OPTIM_PARAS, mode=config.S_OPTIM_MODE)
 
+    # save best results for early stopping and snapshot creation of best model
     best_epoch = 0
     best_avg_f1_score = 0
+    # save metrics after each epoch for plots
     f1_scores = {'train': {'avg': []},
                  'valid': {stage: [] for stage in config.STAGES + ['avg']}}
     losses = {'train': [], 'valid': []}
 
+    # iterate over EPOCHS, start with epoch 1
     for epoch in range(1, config.EPOCHS + 1):
-        start = time.time()
+        start = time.time()  # measure time each epoch takes
         if epoch > 1:
-            dl_train.reset_indices()
-        optimizer.inc_epoch()
+            dl_train.reset_indices()  # rebalance samples for each epoch
 
+        # train epoch and save metrics
         labels_train, loss_train = train(config, epoch, model, optimizer, trainloader)
         f1_scores['train']['avg'].append(f1_score(labels_train['actual'], labels_train['predicted'], average='macro'))
         losses['train'].append(loss_train)
 
+        # evaluate epoch and save metrics
         labels_valid, loss_valid = evaluate(config, model, validationloader)
         losses['valid'].append(loss_valid)
 
+        # calculate f1-scores for given validation labels and log them
         logger.logger.info('')
         f1_scores_valid = result_logger.log_sleep_stage_f1_scores(labels_valid['actual'], labels_valid['predicted'],
                                                                   'valid')
         for stage in f1_scores_valid:
             f1_scores['valid'][stage].append(f1_scores_valid[stage])
 
+        # model from the current epoch better than best model?
         new_best_model = f1_scores_valid['avg'] > best_avg_f1_score
+        # log/plot confusion and transformation matrices
         result_logger.log_confusion_matrix(labels_valid['actual'], labels_valid['predicted'], 'valid',
                                            wo_plot=not new_best_model)
         result_logger.log_transformation_matrix(labels_valid['actual'], labels_valid['predicted'], 'valid',
                                                 wo_plot=not new_best_model)
 
+        # save model if it updates the best model
         if new_best_model:
             best_avg_f1_score = f1_scores_valid['avg']
             best_epoch = epoch
@@ -87,9 +101,11 @@ def training():
             }, config.EXTRA_SAFE_MODELS)
 
         end = time.time()
-        logger.logger.info('[epoch {:3d}] execution time: {:.2f}s\t avg f1-score: {:.4f}\n'.format(epoch, (end - start),
-                                                                                                   f1_scores_valid[
-                                                                                                       'avg']))
+        logger.logger.info('[epoch {:3d}] execution time: {:.2f}s\t avg f1-score: {:.4f}\n'.format(
+            epoch, (end - start), f1_scores_valid['avg']))
+
+        # increase epoch in scheduled optimizer to update the learning rate
+        optimizer.inc_epoch()
 
         # early stopping
         # stop training if the validation f1 score has not increased over the last 5 epochs
@@ -97,6 +113,7 @@ def training():
         if epoch >= config.WARMUP_EPOCHS and epoch - best_epoch > 4:
             break
 
+    # log/plot f1-score course and metrics over all epochs for both datasets
     result_logger.plot_f1_score_course(f1_scores)
     result_logger.log_metrics({'loss': losses})
     logger.fancy_log('finished training')
@@ -105,9 +122,10 @@ def training():
 
 if __name__ == '__main__':
     args = parse()
-    config = ConfigLoader(args.experiment)
+    config = ConfigLoader(args.experiment)  # load config from experiment
 
-    logger = Logger(config)
+    logger = Logger(config)  # create wrapper for logger
+    # create log_file and initialize it with the script arguments and the config
     logger.init_log_file(args, basename(__file__))
 
     logger.fancy_log('start training with model: {}'.format(config.MODEL_NAME))

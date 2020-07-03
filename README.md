@@ -130,7 +130,7 @@ format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
         so the total number of samples corresponds to the data fraction)
         * epochs (`EPOCHS`): number of epochs to train
         * optimizer
-            * scheduler: see *scheduled_optim.py* for details
+            * scheduler: for details and examples see *scheduled_optim.py*
                 * warmup_epochs (`WARMUP_EPOCHS`): number of warmup epochs
                 * mode (`S_OPTIM_MODE`): mode used for learning rate decrease 
                 after warmup
