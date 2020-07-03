@@ -29,7 +29,9 @@ def parse():
 def training():
     result_logger = ResultLogger(config)
 
-    dl_train = TuebingenDataloader(config, 'train', True, augment_data=True, data_fraction=config.DATA_FRACTION)
+    # train dataloader with configured data augmentation and rebalancing
+    dl_train = TuebingenDataloader(config, 'train', config.BALANCED_TRAINING, augment_data=True,
+                                   data_fraction=config.DATA_FRACTION)
     dl_valid = TuebingenDataloader(config, 'valid', False, augment_data=False)
     trainloader = t_data.DataLoader(dl_train, batch_size=config.BATCH_SIZE, shuffle=True, num_workers=4)
     validationloader = t_data.DataLoader(dl_valid, batch_size=config.BATCH_SIZE_EVAL, shuffle=False, num_workers=4)

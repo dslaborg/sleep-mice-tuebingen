@@ -105,6 +105,8 @@ format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>`)
         is saved in; file is created in `dirs.cache`
         * stages (`STAGES`): list of stages you want to train your model on and
         predict
+        * balanced_training (`BALANCED_TRAINING`): `bool` that decides if rebalancing 
+        is applied during training (`True`: rebalancing, `False`: no rebalancing)
         * balancing_weights (`BALANCING_WEIGHTS`): list of weights used for 
         rebalancing, see *data_table.py* for details
         * channels (`CHANNELS`): list of channels in your data files, that are 

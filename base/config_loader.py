@@ -83,6 +83,7 @@ class ConfigLoader:
             assert k in self.STAGES, msg.format(k)
         for s in self.STAGES:
             assert s in self.STAGE_MAP.values(), 'STAGE {} has no mapping in STAGE_MAP'.format(s)
+        self.BALANCED_TRAINING = data_config['balanced_training']
         self.BALANCING_WEIGHTS = data_config['balancing_weights']
         assert np.all([w >= 0 for w in self.BALANCING_WEIGHTS]), 'BALANCING_WEIGHTS must be non negative'
         self.CHANNELS = data_config['channels']

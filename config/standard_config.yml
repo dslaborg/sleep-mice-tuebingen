@@ -33,6 +33,7 @@ experiment:
 #      test: ['M19']
     file: 'data_tuebingen.h5'  # stored in cache dir
     stages: ['Wake', 'REM', 'Non REM', 'Pre REM', 'Artifact']
+    balanced_training: True
     balancing_weights: [0.30, 0.18, 0.24, 0.14, 0.14]
     channels: ['EEG_FR', 'EEG_PR', 'EEG_PL', 'EMG']
     samples_left: 1
