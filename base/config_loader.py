@@ -1,5 +1,6 @@
 import collections
 import time
+from importlib import import_module
 from os import makedirs
 from os.path import dirname, join, realpath
 
@@ -64,7 +65,9 @@ class ConfigLoader:
 
         # data
         self.SAMPLE_DURATION = config['data']['sample_duration']
+        assert type(self.SAMPLE_DURATION) in [int, float]
         self.SAMPLING_RATE = config['data']['sampling_rate']
+        assert type(self.SAMPLE_DURATION) is int
         self.SCORING_MAP = config['data']['scoring_map']
         self.STAGE_MAP = config['data']['stage_map']
 
@@ -73,6 +76,8 @@ class ConfigLoader:
         # data
         data_config = exp_config['data']
         self.DATA_SPLIT = data_config['split']
+        assert 'train' in self.DATA_SPLIT and 'valid' in self.DATA_SPLIT, \
+            'DATA_SPLIT must at least contain keys train and valid'
         self.DATA_FILE = join(cache_dir, data_config['file'])
         self.STAGES = data_config['stages']
         for k in self.STAGE_MAP:
@@ -84,45 +89,66 @@ class ConfigLoader:
         for s in self.STAGES:
             assert s in self.STAGE_MAP.values(), 'STAGE {} has no mapping in STAGE_MAP'.format(s)
         self.BALANCED_TRAINING = data_config['balanced_training']
+        assert type(self.BALANCED_TRAINING) is bool
         self.BALANCING_WEIGHTS = data_config['balancing_weights']
         assert np.all([w >= 0 for w in self.BALANCING_WEIGHTS]), 'BALANCING_WEIGHTS must be non negative'
         self.CHANNELS = data_config['channels']
         self.SAMPLES_LEFT = data_config['samples_left']
+        assert type(self.SAMPLES_LEFT) is int
         self.SAMPLES_RIGHT = data_config['samples_right']
+        assert type(self.SAMPLES_RIGHT) is int
 
         # training
         training_config = exp_config['training']
         self.LOG_INTERVAL = training_config['log_interval']
+        assert type(self.LOG_INTERVAL) is int
         self.EXTRA_SAFE_MODELS = training_config['additional_model_safe']
+        assert type(self.EXTRA_SAFE_MODELS) is bool
         self.BATCH_SIZE = training_config['batch_size']
+        assert type(self.BATCH_SIZE) is int
         self.DATA_FRACTION = training_config['data_fraction']
+        assert type(self.DATA_FRACTION) is float
         self.DATA_FRACTION_STRAT = training_config['data_fraction_strat']
         assert self.DATA_FRACTION_STRAT in ['uniform', None], \
             'currently only "uniform" or None is supported as a data fraction strategy'
         self.EPOCHS = training_config['epochs']
+        assert type(self.EPOCHS) is int
         self.WARMUP_EPOCHS = training_config['optimizer']['scheduler']['warmup_epochs']
+        assert type(self.WARMUP_EPOCHS) is int
         self.S_OPTIM_MODE = training_config['optimizer']['scheduler']['mode']
         assert self.S_OPTIM_MODE in ['step', 'exp', 'half', 'plat', None], \
             'S_OPTIM_MODE is not one of ["step", "exp", "half", "plat", None]'
         self.S_OPTIM_PARAS = training_config['optimizer']['scheduler']['parameters']
         assert type(self.S_OPTIM_PARAS) in [list, type(None)], 'S_OPTIM_PARAS must be a list or None'
         self.LEARNING_RATE = training_config['optimizer']['learning_rate']
+        assert type(self.LEARNING_RATE) is float
         self.OPTIMIZER = getattr(optim, training_config['optimizer']['class'])
         assert issubclass(self.OPTIMIZER, optim.Optimizer), 'OPTIMIZER must be a subtype of optim.optimizer.Optimizer'
         self.OPTIM_PARAS = training_config['optimizer']['parameters']
-        assert type(self.OPTIM_PARAS) == dict, 'OPTIM_PARAS must be a dict'
+        assert type(self.OPTIM_PARAS) is dict, 'OPTIM_PARAS must be a dict'
         self.L1_WEIGHT_DECAY = training_config['optimizer']['l1_weight_decay']
+        assert type(self.L1_WEIGHT_DECAY) in [float, int]
         self.L2_WEIGHT_DECAY = training_config['optimizer']['l2_weight_decay']
+        assert type(self.L2_WEIGHT_DECAY) in [float, int]
 
         # evaluation
         self.BATCH_SIZE_EVAL = config['experiment']['evaluation']['batch_size']
+        assert type(self.BATCH_SIZE_EVAL) is int
 
         # model
         model_config = exp_config['model']
         self.FILTERS = model_config['filters']
+        assert type(self.FILTERS) is int
         self.CLASSIFIER_DROPOUT = model_config['classifier_dropout']
+        assert type(self.CLASSIFIER_DROPOUT) is list and np.all([type(o) is float for o in self.CLASSIFIER_DROPOUT])
         self.FEATURE_EXTR_DROPOUT = model_config['feature_extr_dropout']
+        assert type(self.FEATURE_EXTR_DROPOUT) is list and np.all([type(o) is float for o in self.FEATURE_EXTR_DROPOUT])
         self.MODEL_NAME = model_config['name']
+        try:
+            module = import_module('.' + self.MODEL_NAME, 'base.models')
+            assert getattr(module, 'Model') is not None
+        except:
+            assert False
 
         # data augmentation
         data_aug_config = exp_config['data_augmentation']
@@ -147,3 +173,6 @@ class ConfigLoader:
         with open(join(base_dir, 'config', self.experiment + '.yml'), 'r') as ymlfile:
             config = update_dict(config, yaml.safe_load(ymlfile))
         return config
+
+if __name__ == '__main__':
+    ConfigLoader('exp001')
