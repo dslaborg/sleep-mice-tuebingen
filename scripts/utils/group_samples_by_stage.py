@@ -7,7 +7,7 @@ import tables
 sys.path.insert(0, realpath(join(dirname(__file__), '../..')))
 
 from base.config_loader import ConfigLoader
-from base.data.data_table import COLUMN_MOUSE_ID
+from base.data.data_table import COLUMN_MOUSE_ID, COLUMN_LABEL
 
 
 def parse():
@@ -43,7 +43,7 @@ def main():
             print('{:12s}{}\t{}'.format('stage', 'relative', 'total'))
             # count number of samples per stage
             for s, k in config.STAGE_MAP.items():
-                n = len([row[COLUMN_MOUSE_ID] for row in table.where('(label=="{}")'.format(k))])
+                n = len([row[COLUMN_MOUSE_ID] for row in table.where('({}=="{}")'.format(COLUMN_LABEL, k))])
                 print('{:12s}{:6.2%}\t{:6d}'.format(s, n / n_total, n))
             print()
 

@@ -151,7 +151,7 @@ class TuebingenDataloader(tud.Dataset):
         table = self.file.root[self.dataset]
 
         for stage in self.config.STAGES:
-            stages.append(table.get_where_list('(label=="{}")'.format(stage)))
+            stages.append(table.get_where_list('({}=="{}")'.format(COLUMN_LABEL, stage)))
 
         if self.config.DATA_FRACTION_STRAT is None or self.dataset != 'train':
             for i, stage_data in enumerate(stages):
