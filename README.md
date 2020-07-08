@@ -9,6 +9,9 @@ from tuebingen.
 The experiments where run in an anaconda environment on python 3.7 that can be 
 recreated using *requirements_win.txt* for windows or *requirements_linux.txt*
 for linux.
+Since it does not seem like conda can install pytorch from a requirements file
+it must be installed manually. See https://pytorch.org/get-started/locally/
+for detailed instructions. 
 
 <br>
 

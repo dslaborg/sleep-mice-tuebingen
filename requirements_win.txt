@@ -42,7 +42,7 @@ pyreadline=2.1=py37_1
 pytables=3.6.1=py37h1da0976_0
 python=3.7.7=h81c818b_4
 python-dateutil=2.8.1=py_0
-pytorch=1.5.1=py3.7_cuda102_cudnn7_0
+#pytorch=1.5.1=py3.7_cuda102_cudnn7_0
 pyyaml=5.3.1=py37he774522_1
 qt=5.9.7=vc14h73c81de_0
 scikit-learn=0.23.1=py37h25d0782_0
@@ -54,7 +54,7 @@ snappy=1.1.7=vc14h2dea872_1
 sqlite=3.32.3=h2a8f88b_0
 threadpoolctl=2.1.0=pyh5ca1d4c_0
 tk=8.6.10=he774522_0
-torchvision=0.6.1=py37_cu102
+#torchvision=0.6.1=py37_cu102
 tornado=6.0.4=py37he774522_1
 vc=14.1=h0510ff6_4
 vs2015_runtime=14.16.27012=hf0eaf9b_2

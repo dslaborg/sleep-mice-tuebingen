@@ -38,7 +38,7 @@ def read_h5(h5_f_name: str):
         if np.all(sampling_rates == sampling_rates[0]):
             sr = sampling_rates[0]
         else:
-            raise ValueError('sampling rates in original h5 files are not equal:', sampling_rates)
+            raise ValueError('sampling rates in original h5 file are not equal:', sampling_rates)
 
         # iterate over CHANNELS, load and downsample data
         for channel in config.CHANNELS:
