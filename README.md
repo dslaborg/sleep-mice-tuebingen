@@ -5,15 +5,34 @@ from tuebingen.
 
 <br>
 
-## requirements 
-The experiments where run in an anaconda environment on python 3.7 that can be 
-recreated using *requirements_win.txt* for windows or *requirements_linux.txt*
-for linux.
-Since it does not seem like conda can install pytorch from a requirements file
-it must be installed manually. See https://pytorch.org/get-started/locally/
-for detailed instructions. 
+## Install Requirements
 
-<br>
+The experiments where run in an anaconda environment on python 3.7 that can be
+recreated using *requirements_win.txt* for windows or *requirements_linux.txt*
+for linux.  Since it does not seem like conda can install pytorch from a
+requirements file it must be installed manually. See
+https://pytorch.org/get-started/locally/ for detailed instructions.
+
+### Linux
+
+Run:
+```bash
+conda create --name mice --file requirements_linux.txt
+conda activate mice
+pip install torch
+```
+
+## Prepare Dataset for ML
+
+###
+
+Raw electrophysiological signals from each epoch are stored in a pytables
+object.  For a mouse recording consisting of several consecutive scored epoch,
+we store in columns the mouse id, signal by channel, and the assigned stage
+label.  See [our Tuebingen-data script](scripts/transform_files_tuebingen.py)
+for an example.  The length of epoch segments, sampling rates, and labels have
+to be in line with the experiment configuration file such as [this default
+one](./config/standard_config.yml).
 
 ## scripts
 #### data_viewer.py

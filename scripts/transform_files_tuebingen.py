@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 import sys
 import time
@@ -17,7 +19,7 @@ from base.data.data_table import create_table_description, COLUMN_LABEL, COLUMN_
 
 def parse():
     parser = argparse.ArgumentParser(description='data transformation script')
-    parser.add_argument('--experiment', '-e', required=True,
+    parser.add_argument('--experiment', '-e', required=False, default='standard_config',
                         help='name of experiment to transform data to')
 
     return parser.parse_args()
@@ -32,7 +34,7 @@ def read_h5(h5_f_name: str):
     """
     features = {}  # save features per CHANNEL
     # open h5 file in DATA_DIR
-    with h5py.File(config.DATA_DIR + h5_f_name, 'r') as h5_f:
+    with h5py.File(join(config.DATA_DIR, h5_f_name), 'r') as h5_f:
         # check if the sampling rates for all CHANNELS are the same, if not, throw an exception
         sampling_rates = [h5_f[c].attrs['samprate'][0] for c in config.CHANNELS]
         if np.all(sampling_rates == sampling_rates[0]):
@@ -81,10 +83,11 @@ def write_data_to_table(table: tables.Table, features: dict, labels: list, start
             sample[COLUMN_LABEL] = config.STAGE_MAP[label]
             sample.append()
         except ValueError:
-            print('not enough datapoints in sample, data from {} to {}'.format(sample_start, sample_end))
-            print('total number of data points in file: {}'.format(len(list(features.values())[0])))
-            print('this sample is ignored')
-            print('')
+            print(f"""
+            While processing epoch [{sample_start}, {sample_end}] with label {label}:
+            not enough datapoints in file (n = {len(list(features.values())[0])})
+            This epoch is ignored.
+            """)
     # write data to table
     table.flush()
 
@@ -108,8 +111,9 @@ def transform():
 
     # if the transformed data file already exists, ask the user if he wants to overwrite it
     if isfile(config.DATA_FILE):
-        if input('{:s} already exists, do you want to override? (y/n)'.format(
-                realpath(config.DATA_FILE))).lower() != 'y':
+        question = f"{realpath(config.DATA_FILE)} already exists, do you want to override? (y/N): "
+        response = input(question)
+        if response.lower() != 'y':
             exit()
 
     # open pytables DATA_FILE
