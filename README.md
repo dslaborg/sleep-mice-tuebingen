@@ -77,6 +77,26 @@ be a file *\<experiment\>.py* in the config folder
 * -d, --dataset: dataset to load data from, there must exist a corresponding table
 in your transformed data 
 
+### Torch to tensorflow.js
+
+#### tfjs/torch\_to\_keras.py
+
+Transform torch model to keras model.
+
+**Parameters**
+
+* -e, --experiment: name of experiment to evaluate best model from, there must
+  be a file *\<experiment\>.py* in the config folder
+
+#### tfjs/torch\_vs\_keras.py
+
+Compare torch model with transformed keras model.
+
+**Parameters**
+
+* -e, --experiment: name of experiment to evaluate best model from, there must
+  be a file *\<experiment\>.py* in the config folder
+
 <br>
 
 ## configuration parameters
