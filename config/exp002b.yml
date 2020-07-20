@@ -8,6 +8,7 @@ data:
 
 experiment:
   data:
+    file: 'data_tuebingen_main_stages.h5'  # stored in cache dir
     stages: ['Wake', 'REM', 'Non REM']
     channels: ['EEG_PR']
     balancing_weights: [0.41, 0.25, 0.34]
