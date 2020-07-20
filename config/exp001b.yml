@@ -1,0 +1,11 @@
+experiment:
+  data:
+    channels: ['EEG_PR']
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 1.e-4
+
+  model:
+    name: 'model_3conv_pool'
