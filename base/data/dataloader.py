@@ -63,7 +63,7 @@ class TuebingenDataloader(tud.Dataset):
         if idx_to >= self.max_idx:
             idx_from = self.max_idx - left - right - 1
             idx_to = idx_from + left + right
-        index = (idx_from + idx_to) // 2
+        index = int((idx_from + idx_to) / 2)
 
         # if the samples in the block are not from the same mouse, the block has to be shifted
         if not np.all(self.data[index][COLUMN_MOUSE_ID] == self.data[idx_from:idx_to + 1][COLUMN_MOUSE_ID]):
