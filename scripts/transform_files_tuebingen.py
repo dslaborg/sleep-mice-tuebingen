@@ -80,6 +80,9 @@ def write_data_to_table(table: tables.Table, features: dict, labels: list, start
             for c in config.CHANNELS:
                 sample[c] = features[c][sample_start:sample_end]
             # map stage from h5 file to stage used for classification
+            # if the mapping in STAGE_MAP is None, the sample is ignored
+            if config.STAGE_MAP[label] is None:
+                continue
             sample[COLUMN_LABEL] = config.STAGE_MAP[label]
             sample.append()
         except ValueError:
@@ -115,6 +118,8 @@ def transform():
         response = input(question)
         if response.lower() != 'y':
             exit()
+
+    print(f'data is loaded from {realpath(config.DATA_DIR)}')
 
     # open pytables DATA_FILE
     with tables.open_file(config.DATA_FILE, mode='w', title='data from Tuebingen') as f:
