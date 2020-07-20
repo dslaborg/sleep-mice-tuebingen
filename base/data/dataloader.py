@@ -151,7 +151,15 @@ class TuebingenDataloader(tud.Dataset):
         table = self.file.root[self.dataset]
 
         for stage in self.config.STAGES:
-            stages.append(table.get_where_list('({}=="{}")'.format(COLUMN_LABEL, stage)))
+            stage_data = np.empty(0)
+            # get all stages that are mapped to 'stage' and combine their entries to receive all data of 'stage'
+            mapped_stages = []
+            for k, v in self.config.STAGE_MAP.items():
+                if v == stage:
+                    mapped_stages.append(k)
+            for mapped_stage in mapped_stages:
+                stage_data = np.r_[stage_data, table.get_where_list('({}=="{}")'.format(COLUMN_LABEL, mapped_stage))]
+            stages.append(stage_data)
 
         if self.config.DATA_FRACTION_STRAT is None or self.dataset != 'train':
             for i, stage_data in enumerate(stages):

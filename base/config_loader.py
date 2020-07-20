@@ -82,10 +82,9 @@ class ConfigLoader:
         self.STAGES = data_config['stages']
         for k in self.STAGE_MAP:
             msg = 'You are trying to map STAGE {} to STAGE {} that does not exist in experiment.data.stages'
-            assert self.STAGE_MAP[k] in self.STAGES, msg.format(k, self.STAGE_MAP[k])
-        for k in self.SCORING_MAP:
-            msg = 'You are trying to map scores to STAGE {} that does not exist in experiment.data.stages'
-            assert k in self.STAGES, msg.format(k)
+            assert self.STAGE_MAP[k] in self.STAGES + [None], msg.format(k, self.STAGE_MAP[k])
+        for s in self.STAGES:
+            assert s in self.SCORING_MAP, 'STAGE {} has no mapping in SCORING_MAP'.format(s)
         for s in self.STAGES:
             assert s in self.STAGE_MAP.values(), 'STAGE {} has no mapping in STAGE_MAP'.format(s)
         self.BALANCED_TRAINING = data_config['balanced_training']
