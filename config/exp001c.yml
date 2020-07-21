@@ -1,0 +1,14 @@
+experiment:
+  data:
+    channels: ['EEG_PR']
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 1.e-4
+
+  model:
+    name: 'model_8conv_2fc_bn_lrelu'
+    filters: 96
+    classifier_dropout: [0.2, 0.2]
+    feature_extr_dropout: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]
