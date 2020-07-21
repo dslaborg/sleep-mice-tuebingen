@@ -4,3 +4,4 @@ results/**/models/
 *.pyc
 **/.pylint*
 .idea/
+job.sh

@@ -1,0 +1,114 @@
+[2020-07-20 18:21:40,222] {logger:43} INFO - run_experiment.py, args: Namespace(experiment='exp002')
+================================================================================
+[2020-07-20 18:21:40,223] {logger:44} INFO - config:
+[2020-07-20 18:21:40,223] {logger:45} INFO - parameter name      | parameter value
+[2020-07-20 18:21:40,223] {logger:46} INFO - experiment          : exp002
+[2020-07-20 18:21:40,223] {logger:46} INFO - RUN_NAME            : exp002_2020-07-20_18-21-40
+[2020-07-20 18:21:40,223] {logger:46} INFO - DEVICE              : cuda
+[2020-07-20 18:21:40,223] {logger:46} INFO - EXPERIMENT_DIR      : /home/users/grieger/seminar/mice_tuebingen/results/exp002
+[2020-07-20 18:21:40,223] {logger:46} INFO - MODELS_DIR          : /home/users/grieger/seminar/mice_tuebingen/results/exp002/models
+[2020-07-20 18:21:40,223] {logger:46} INFO - VISUALS_DIR         : /home/users/grieger/seminar/mice_tuebingen/results/exp002/visuals/exp002_2020-07-20_18-21-40
+[2020-07-20 18:21:40,223] {logger:46} INFO - DATA_DIR            : /home/users/grieger/data_tuebingen_h5/data
+[2020-07-20 18:21:40,223] {logger:46} INFO - SAMPLE_DURATION     : 10
+[2020-07-20 18:21:40,223] {logger:46} INFO - SAMPLING_RATE       : 64
+[2020-07-20 18:21:40,223] {logger:46} INFO - SCORING_MAP         : {'Wake': [1, 17], 'REM': [3, 19], 'Non REM': [2, 18], 'Pre REM': [4, 20], 'Artifact': [8, 24, 255]}
+[2020-07-20 18:21:40,223] {logger:46} INFO - STAGE_MAP           : {'Wake': 'Wake', 'REM': 'REM', 'Non REM': 'Non REM', 'Pre REM': 'Non REM', 'Artifact': None}
+[2020-07-20 18:21:40,223] {logger:46} INFO - DATA_SPLIT          : {'train': ['M19', 'M20', 'M21', 'M22', 'M23', 'M24', 'M25', 'M26', 'M27', 'M28', 'M29', 'M31', 'M32', 'M33'], 'valid': ['M34', 'M35'], 'test': ['M36', 'M37']}
+[2020-07-20 18:21:40,223] {logger:46} INFO - DATA_FILE           : ./cache/dataset/data_tuebingen.h5
+[2020-07-20 18:21:40,223] {logger:46} INFO - STAGES              : ['Wake', 'REM', 'Non REM']
+[2020-07-20 18:21:40,223] {logger:46} INFO - BALANCED_TRAINING   : True
+[2020-07-20 18:21:40,223] {logger:46} INFO - BALANCING_WEIGHTS   : [0.41, 0.25, 0.34]
+[2020-07-20 18:21:40,223] {logger:46} INFO - CHANNELS            : ['EEG_PR']
+[2020-07-20 18:21:40,223] {logger:46} INFO - SAMPLES_LEFT        : 1
+[2020-07-20 18:21:40,223] {logger:46} INFO - SAMPLES_RIGHT       : 1
+[2020-07-20 18:21:40,223] {logger:46} INFO - LOG_INTERVAL        : 10
+[2020-07-20 18:21:40,223] {logger:46} INFO - EXTRA_SAFE_MODELS   : False
+[2020-07-20 18:21:40,223] {logger:46} INFO - BATCH_SIZE          : 256
+[2020-07-20 18:21:40,224] {logger:46} INFO - DATA_FRACTION       : 1.0
+[2020-07-20 18:21:40,224] {logger:46} INFO - DATA_FRACTION_STRAT : None
+[2020-07-20 18:21:40,224] {logger:46} INFO - EPOCHS              : 50
+[2020-07-20 18:21:40,224] {logger:46} INFO - WARMUP_EPOCHS       : 12
+[2020-07-20 18:21:40,224] {logger:46} INFO - S_OPTIM_MODE        : exp
+[2020-07-20 18:21:40,224] {logger:46} INFO - S_OPTIM_PARAS       : [0.06]
+[2020-07-20 18:21:40,224] {logger:46} INFO - LEARNING_RATE       : 0.000256
+[2020-07-20 18:21:40,224] {logger:46} INFO - OPTIMIZER           : <class 'torch.optim.adam.Adam'>
+[2020-07-20 18:21:40,224] {logger:46} INFO - OPTIM_PARAS         : {}
+[2020-07-20 18:21:40,224] {logger:46} INFO - L1_WEIGHT_DECAY     : 0
+[2020-07-20 18:21:40,224] {logger:46} INFO - L2_WEIGHT_DECAY     : 0.0001
+[2020-07-20 18:21:40,224] {logger:46} INFO - BATCH_SIZE_EVAL     : 512
+[2020-07-20 18:21:40,224] {logger:46} INFO - FILTERS             : 96
+[2020-07-20 18:21:40,224] {logger:46} INFO - CLASSIFIER_DROPOUT  : [0.2, 0.2]
+[2020-07-20 18:21:40,224] {logger:46} INFO - FEATURE_EXTR_DROPOUT: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]
+[2020-07-20 18:21:40,224] {logger:46} INFO - MODEL_NAME          : model_8conv_2fc
+[2020-07-20 18:21:40,224] {logger:46} INFO - GAIN                : 0.0
+[2020-07-20 18:21:40,224] {logger:46} INFO - FLIP                : 0.0
+[2020-07-20 18:21:40,224] {logger:46} INFO - FLIP_ALL            : 0.0
+[2020-07-20 18:21:40,224] {logger:46} INFO - WINDOW_WARP_SIZE    : 0.0
+[2020-07-20 18:21:40,224] {logger:46} INFO - FLIP_HORI           : 0.0
+[2020-07-20 18:21:40,224] {logger:46} INFO - TIME_SHIFT          : 0.0
+[2020-07-20 18:21:40,224] {logger:50} INFO - 
+[2020-07-20 18:21:40,224] {logger:51} INFO - ================================================================================
+[2020-07-20 18:21:40,224] {logger:52} INFO - start training with model: model_8conv_2fc
+[2020-07-20 18:21:40,224] {logger:53} INFO - ================================================================================
+[2020-07-20 18:21:40,225] {logger:54} INFO - 
+[2020-07-20 18:21:45,563] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 143767
+[2020-07-20 18:21:45,582] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 150110
+	REM                 : 91531
+	Non REM             : 124481
+[2020-07-20 18:21:46,312] {dataloader:107} INFO - data distribution in database for dataset valid:
+	Wake                : 28382
+	REM                 : 2544
+	Non REM             : 20704
+[2020-07-20 18:21:46,315] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 28382
+	REM                 : 2544
+	Non REM             : 20704
+[2020-07-20 18:21:48,263] {run_experiment:47} INFO - classifier:
+Model(
+  (feature_extractor): Sequential(
+    (0): BatchNorm1d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): Conv1d(1, 96, kernel_size=(5,), stride=(1,))
+    (2): ReLU(inplace=True)
+    (3): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): Dropout(p=0.0, inplace=False)
+    (5): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (6): ReLU(inplace=True)
+    (7): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): Dropout(p=0.2, inplace=False)
+    (9): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (10): ReLU(inplace=True)
+    (11): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Dropout(p=0.0, inplace=False)
+    (13): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (14): ReLU(inplace=True)
+    (15): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): Dropout(p=0.2, inplace=False)
+    (17): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (18): ReLU(inplace=True)
+    (19): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (20): Dropout(p=0.0, inplace=False)
+    (21): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (22): ReLU(inplace=True)
+    (23): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (24): Dropout(p=0.2, inplace=False)
+    (25): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (26): ReLU(inplace=True)
+    (27): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (28): Dropout(p=0.0, inplace=False)
+    (29): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (30): ReLU(inplace=True)
+    (31): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): Dropout(p=0.2, inplace=False)
+  )
+  (classifier): Sequential(
+    (0): Dropout(p=0.2, inplace=False)
+    (1): Linear(in_features=10848, out_features=80, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.2, inplace=False)
+    (4): Linear(in_features=80, out_features=3, bias=True)
+  )
+)

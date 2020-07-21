@@ -1,0 +1,53 @@
+[2020-07-21 00:16:08,164] {logger:43} INFO - run_experiment.py, args: Namespace(experiment='exp002')
+================================================================================
+[2020-07-21 00:16:08,164] {logger:44} INFO - config:
+[2020-07-21 00:16:08,164] {logger:45} INFO - parameter name      | parameter value
+[2020-07-21 00:16:08,164] {logger:46} INFO - experiment          : exp002
+[2020-07-21 00:16:08,164] {logger:46} INFO - RUN_NAME            : exp002_2020-07-21_00-16-08
+[2020-07-21 00:16:08,164] {logger:46} INFO - DEVICE              : cuda
+[2020-07-21 00:16:08,164] {logger:46} INFO - EXPERIMENT_DIR      : /home/users/grieger/seminar/mice_tuebingen/results/exp002
+[2020-07-21 00:16:08,164] {logger:46} INFO - MODELS_DIR          : /home/users/grieger/seminar/mice_tuebingen/results/exp002/models
+[2020-07-21 00:16:08,164] {logger:46} INFO - VISUALS_DIR         : /home/users/grieger/seminar/mice_tuebingen/results/exp002/visuals/exp002_2020-07-21_00-16-08
+[2020-07-21 00:16:08,164] {logger:46} INFO - DATA_DIR            : /home/users/grieger/data_tuebingen_h5/data
+[2020-07-21 00:16:08,164] {logger:46} INFO - SAMPLE_DURATION     : 10
+[2020-07-21 00:16:08,164] {logger:46} INFO - SAMPLING_RATE       : 64
+[2020-07-21 00:16:08,164] {logger:46} INFO - SCORING_MAP         : {'Wake': [1, 17], 'REM': [3, 19], 'Non REM': [2, 18], 'Pre REM': [4, 20], 'Artifact': [8, 24, 255]}
+[2020-07-21 00:16:08,164] {logger:46} INFO - STAGE_MAP           : {'Wake': 'Wake', 'REM': 'REM', 'Non REM': 'Non REM', 'Pre REM': 'Non REM', 'Artifact': None}
+[2020-07-21 00:16:08,164] {logger:46} INFO - DATA_SPLIT          : {'train': ['M19', 'M20', 'M21', 'M22', 'M23', 'M24', 'M25', 'M26', 'M27', 'M28', 'M29', 'M31', 'M32', 'M33'], 'valid': ['M34', 'M35'], 'test': ['M36', 'M37']}
+[2020-07-21 00:16:08,165] {logger:46} INFO - DATA_FILE           : ./cache/dataset/data_tuebingen_main_stages.h5
+[2020-07-21 00:16:08,165] {logger:46} INFO - STAGES              : ['Wake', 'REM', 'Non REM']
+[2020-07-21 00:16:08,165] {logger:46} INFO - BALANCED_TRAINING   : True
+[2020-07-21 00:16:08,165] {logger:46} INFO - BALANCING_WEIGHTS   : [0.41, 0.25, 0.34]
+[2020-07-21 00:16:08,165] {logger:46} INFO - CHANNELS            : ['EEG_PR']
+[2020-07-21 00:16:08,165] {logger:46} INFO - SAMPLES_LEFT        : 1
+[2020-07-21 00:16:08,165] {logger:46} INFO - SAMPLES_RIGHT       : 1
+[2020-07-21 00:16:08,165] {logger:46} INFO - LOG_INTERVAL        : 10
+[2020-07-21 00:16:08,165] {logger:46} INFO - EXTRA_SAFE_MODELS   : False
+[2020-07-21 00:16:08,165] {logger:46} INFO - BATCH_SIZE          : 256
+[2020-07-21 00:16:08,165] {logger:46} INFO - DATA_FRACTION       : 1.0
+[2020-07-21 00:16:08,165] {logger:46} INFO - DATA_FRACTION_STRAT : None
+[2020-07-21 00:16:08,165] {logger:46} INFO - EPOCHS              : 50
+[2020-07-21 00:16:08,165] {logger:46} INFO - WARMUP_EPOCHS       : 12
+[2020-07-21 00:16:08,165] {logger:46} INFO - S_OPTIM_MODE        : exp
+[2020-07-21 00:16:08,165] {logger:46} INFO - S_OPTIM_PARAS       : [0.06]
+[2020-07-21 00:16:08,165] {logger:46} INFO - LEARNING_RATE       : 0.000256
+[2020-07-21 00:16:08,165] {logger:46} INFO - OPTIMIZER           : <class 'torch.optim.adam.Adam'>
+[2020-07-21 00:16:08,165] {logger:46} INFO - OPTIM_PARAS         : {}
+[2020-07-21 00:16:08,165] {logger:46} INFO - L1_WEIGHT_DECAY     : 0
+[2020-07-21 00:16:08,165] {logger:46} INFO - L2_WEIGHT_DECAY     : 0.0001
+[2020-07-21 00:16:08,165] {logger:46} INFO - BATCH_SIZE_EVAL     : 512
+[2020-07-21 00:16:08,165] {logger:46} INFO - FILTERS             : 96
+[2020-07-21 00:16:08,165] {logger:46} INFO - CLASSIFIER_DROPOUT  : [0.2, 0.2]
+[2020-07-21 00:16:08,165] {logger:46} INFO - FEATURE_EXTR_DROPOUT: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]
+[2020-07-21 00:16:08,165] {logger:46} INFO - MODEL_NAME          : model_8conv_2fc
+[2020-07-21 00:16:08,165] {logger:46} INFO - GAIN                : 0.0
+[2020-07-21 00:16:08,165] {logger:46} INFO - FLIP                : 0.0
+[2020-07-21 00:16:08,165] {logger:46} INFO - FLIP_ALL            : 0.0
+[2020-07-21 00:16:08,165] {logger:46} INFO - WINDOW_WARP_SIZE    : 0.0
+[2020-07-21 00:16:08,165] {logger:46} INFO - FLIP_HORI           : 0.0
+[2020-07-21 00:16:08,166] {logger:46} INFO - TIME_SHIFT          : 0.0
+[2020-07-21 00:16:08,166] {logger:50} INFO - 
+[2020-07-21 00:16:08,166] {logger:51} INFO - ================================================================================
+[2020-07-21 00:16:08,166] {logger:52} INFO - start training with model: model_8conv_2fc
+[2020-07-21 00:16:08,166] {logger:53} INFO - ================================================================================
+[2020-07-21 00:16:08,166] {logger:54} INFO - 
