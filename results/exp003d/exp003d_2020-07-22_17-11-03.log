@@ -1,0 +1,2879 @@
+[2020-07-22 17:11:03,555] {logger:43} INFO - run_experiment.py, args: Namespace(experiment='exp003d')
+================================================================================
+[2020-07-22 17:11:03,556] {logger:44} INFO - config:
+[2020-07-22 17:11:03,556] {logger:45} INFO - parameter name      | parameter value
+[2020-07-22 17:11:03,556] {logger:46} INFO - experiment          : exp003d
+[2020-07-22 17:11:03,556] {logger:46} INFO - RUN_NAME            : exp003d_2020-07-22_17-11-03
+[2020-07-22 17:11:03,556] {logger:46} INFO - DEVICE              : cuda
+[2020-07-22 17:11:03,556] {logger:46} INFO - EXPERIMENT_DIR      : /home/users/grieger/seminar/mice_tuebingen/results/exp003d
+[2020-07-22 17:11:03,556] {logger:46} INFO - MODELS_DIR          : /home/users/grieger/seminar/mice_tuebingen/results/exp003d/models
+[2020-07-22 17:11:03,556] {logger:46} INFO - VISUALS_DIR         : /home/users/grieger/seminar/mice_tuebingen/results/exp003d/visuals/exp003d_2020-07-22_17-11-03
+[2020-07-22 17:11:03,556] {logger:46} INFO - DATA_DIR            : /home/users/grieger/data_tuebingen_h5/data
+[2020-07-22 17:11:03,556] {logger:46} INFO - SAMPLE_DURATION     : 10
+[2020-07-22 17:11:03,556] {logger:46} INFO - SAMPLING_RATE       : 64
+[2020-07-22 17:11:03,556] {logger:46} INFO - SCORING_MAP         : {'Wake': [1, 17], 'REM': [3, 19], 'Non REM': [2, 18], 'Pre REM': [4, 20], 'Artifact': [8, 24, 255]}
+[2020-07-22 17:11:03,556] {logger:46} INFO - STAGE_MAP           : {'Wake': 'Wake', 'REM': 'REM', 'Non REM': 'Non REM', 'Pre REM': 'Pre REM', 'Artifact': 'Artifact'}
+[2020-07-22 17:11:03,556] {logger:46} INFO - DATA_SPLIT          : {'train': ['M19', 'M20', 'M21', 'M22', 'M23', 'M24', 'M25', 'M26', 'M27', 'M28', 'M29', 'M31', 'M32', 'M33'], 'valid': ['M34', 'M35'], 'test': ['M36', 'M37']}
+[2020-07-22 17:11:03,557] {logger:46} INFO - DATA_FILE           : ./cache/dataset/data_tuebingen.h5
+[2020-07-22 17:11:03,557] {logger:46} INFO - STAGES              : ['Wake', 'REM', 'Non REM', 'Pre REM', 'Artifact']
+[2020-07-22 17:11:03,557] {logger:46} INFO - BALANCED_TRAINING   : True
+[2020-07-22 17:11:03,557] {logger:46} INFO - BALANCING_WEIGHTS   : [0.3, 0.18, 0.24, 0.14, 0.14]
+[2020-07-22 17:11:03,557] {logger:46} INFO - CHANNELS            : ['EEG_PR']
+[2020-07-22 17:11:03,557] {logger:46} INFO - SAMPLES_LEFT        : 1
+[2020-07-22 17:11:03,557] {logger:46} INFO - SAMPLES_RIGHT       : 1
+[2020-07-22 17:11:03,557] {logger:46} INFO - LOG_INTERVAL        : 10
+[2020-07-22 17:11:03,557] {logger:46} INFO - EXTRA_SAFE_MODELS   : False
+[2020-07-22 17:11:03,557] {logger:46} INFO - BATCH_SIZE          : 256
+[2020-07-22 17:11:03,557] {logger:46} INFO - DATA_FRACTION       : 1.0
+[2020-07-22 17:11:03,557] {logger:46} INFO - DATA_FRACTION_STRAT : None
+[2020-07-22 17:11:03,557] {logger:46} INFO - EPOCHS              : 50
+[2020-07-22 17:11:03,557] {logger:46} INFO - WARMUP_EPOCHS       : 12
+[2020-07-22 17:11:03,557] {logger:46} INFO - S_OPTIM_MODE        : exp
+[2020-07-22 17:11:03,557] {logger:46} INFO - S_OPTIM_PARAS       : [0.06]
+[2020-07-22 17:11:03,557] {logger:46} INFO - LEARNING_RATE       : 0.000256
+[2020-07-22 17:11:03,557] {logger:46} INFO - OPTIMIZER           : <class 'torch.optim.adam.Adam'>
+[2020-07-22 17:11:03,557] {logger:46} INFO - OPTIM_PARAS         : {}
+[2020-07-22 17:11:03,557] {logger:46} INFO - L1_WEIGHT_DECAY     : 0
+[2020-07-22 17:11:03,557] {logger:46} INFO - L2_WEIGHT_DECAY     : 0.0001
+[2020-07-22 17:11:03,557] {logger:46} INFO - BATCH_SIZE_EVAL     : 512
+[2020-07-22 17:11:03,557] {logger:46} INFO - FILTERS             : 96
+[2020-07-22 17:11:03,557] {logger:46} INFO - CLASSIFIER_DROPOUT  : [0.2, 0.2]
+[2020-07-22 17:11:03,557] {logger:46} INFO - FEATURE_EXTR_DROPOUT: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]
+[2020-07-22 17:11:03,558] {logger:46} INFO - MODEL_NAME          : model_8conv_2fc
+[2020-07-22 17:11:03,558] {logger:46} INFO - GAIN                : 0.0
+[2020-07-22 17:11:03,558] {logger:46} INFO - FLIP                : 0.0
+[2020-07-22 17:11:03,558] {logger:46} INFO - FLIP_ALL            : 0.0
+[2020-07-22 17:11:03,558] {logger:46} INFO - WINDOW_WARP_SIZE    : 0.0
+[2020-07-22 17:11:03,558] {logger:46} INFO - FLIP_HORI           : 0.0
+[2020-07-22 17:11:03,558] {logger:46} INFO - TIME_SHIFT          : 0.06
+[2020-07-22 17:11:03,558] {logger:50} INFO - 
+[2020-07-22 17:11:03,558] {logger:51} INFO - ================================================================================
+[2020-07-22 17:11:03,558] {logger:52} INFO - start training with model: model_8conv_2fc
+[2020-07-22 17:11:03,558] {logger:53} INFO - ================================================================================
+[2020-07-22 17:11:03,558] {logger:54} INFO - 
+[2020-07-22 17:11:09,364] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:11:09,383] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:11:10,141] {dataloader:107} INFO - data distribution in database for dataset valid:
+	Wake                : 28382
+	REM                 : 2544
+	Non REM             : 19952
+	Pre REM             : 752
+	Artifact            : 510
+[2020-07-22 17:11:10,146] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 28382
+	REM                 : 2544
+	Non REM             : 19952
+	Pre REM             : 752
+	Artifact            : 510
+[2020-07-22 17:11:11,841] {run_experiment:47} INFO - classifier:
+Model(
+  (feature_extractor): Sequential(
+    (0): BatchNorm1d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): Conv1d(1, 96, kernel_size=(5,), stride=(1,))
+    (2): ReLU(inplace=True)
+    (3): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): Dropout(p=0.0, inplace=False)
+    (5): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (6): ReLU(inplace=True)
+    (7): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): Dropout(p=0.2, inplace=False)
+    (9): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (10): ReLU(inplace=True)
+    (11): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Dropout(p=0.0, inplace=False)
+    (13): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (14): ReLU(inplace=True)
+    (15): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): Dropout(p=0.2, inplace=False)
+    (17): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (18): ReLU(inplace=True)
+    (19): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (20): Dropout(p=0.0, inplace=False)
+    (21): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (22): ReLU(inplace=True)
+    (23): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (24): Dropout(p=0.2, inplace=False)
+    (25): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (26): ReLU(inplace=True)
+    (27): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (28): Dropout(p=0.0, inplace=False)
+    (29): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (30): ReLU(inplace=True)
+    (31): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): Dropout(p=0.2, inplace=False)
+  )
+  (classifier): Sequential(
+    (0): Dropout(p=0.2, inplace=False)
+    (1): Linear(in_features=10848, out_features=80, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.2, inplace=False)
+    (4): Linear(in_features=80, out_features=5, bias=True)
+  )
+)
+[2020-07-22 17:11:48,033] {train_model:70} INFO - Train Epoch: 1 [36352/366720 (10%)]	lr:2.56e-05	Loss: 78.520607
+[2020-07-22 17:12:28,651] {train_model:70} INFO - Train Epoch: 1 [72960/366720 (20%)]	lr:2.56e-05	Loss: 66.173019
+[2020-07-22 17:13:04,771] {train_model:70} INFO - Train Epoch: 1 [109568/366720 (30%)]	lr:2.56e-05	Loss: 37.963425
+[2020-07-22 17:13:40,476] {train_model:70} INFO - Train Epoch: 1 [146176/366720 (40%)]	lr:2.56e-05	Loss: 25.995750
+[2020-07-22 17:14:16,210] {train_model:70} INFO - Train Epoch: 1 [182784/366720 (50%)]	lr:2.56e-05	Loss: 15.911988
+[2020-07-22 17:14:51,947] {train_model:70} INFO - Train Epoch: 1 [219392/366720 (60%)]	lr:2.56e-05	Loss: 12.649963
+[2020-07-22 17:15:27,707] {train_model:70} INFO - Train Epoch: 1 [256000/366720 (70%)]	lr:2.56e-05	Loss: 6.245896
+[2020-07-22 17:16:03,493] {train_model:70} INFO - Train Epoch: 1 [292608/366720 (80%)]	lr:2.56e-05	Loss: 6.529782
+[2020-07-22 17:16:39,330] {train_model:70} INFO - Train Epoch: 1 [329216/366720 (90%)]	lr:2.56e-05	Loss: 7.051044
+[2020-07-22 17:17:15,168] {train_model:70} INFO - Train Epoch: 1 [365824/366720 (100%)]	lr:2.56e-05	Loss: 2.640941
+[2020-07-22 17:17:24,409] {run_experiment:79} INFO - 
+[2020-07-22 17:17:24,410] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 17:17:24,503] {result_logger:103} INFO - precision on Wake: 0.653
+[2020-07-22 17:17:24,554] {result_logger:104} INFO - recall on Wake: 0.696
+[2020-07-22 17:17:24,605] {result_logger:107} INFO - F1-score on Wake: 0.674
+[2020-07-22 17:17:24,605] {result_logger:108} INFO - 
+[2020-07-22 17:17:24,679] {result_logger:103} INFO - precision on REM: 0.243
+[2020-07-22 17:17:24,729] {result_logger:104} INFO - recall on REM: 0.602
+[2020-07-22 17:17:24,777] {result_logger:107} INFO - F1-score on REM: 0.346
+[2020-07-22 17:17:24,777] {result_logger:108} INFO - 
+[2020-07-22 17:17:24,852] {result_logger:103} INFO - precision on Non REM: 0.738
+[2020-07-22 17:17:24,902] {result_logger:104} INFO - recall on Non REM: 0.419
+[2020-07-22 17:17:24,952] {result_logger:107} INFO - F1-score on Non REM: 0.535
+[2020-07-22 17:17:24,952] {result_logger:108} INFO - 
+[2020-07-22 17:17:25,024] {result_logger:103} INFO - precision on Pre REM: 0.051
+[2020-07-22 17:17:25,070] {result_logger:104} INFO - recall on Pre REM: 0.048
+[2020-07-22 17:17:25,116] {result_logger:107} INFO - F1-score on Pre REM: 0.050
+[2020-07-22 17:17:25,117] {result_logger:108} INFO - 
+[2020-07-22 17:17:25,188] {result_logger:103} INFO - precision on Artifact: 0.141
+[2020-07-22 17:17:25,234] {result_logger:104} INFO - recall on Artifact: 0.976
+[2020-07-22 17:17:25,281] {result_logger:107} INFO - F1-score on Artifact: 0.247
+[2020-07-22 17:17:25,281] {result_logger:108} INFO - 
+[2020-07-22 17:17:25,293] {result_logger:111} INFO - average precision on sleep stages: 0.365
+[2020-07-22 17:17:25,304] {result_logger:113} INFO - average recall on sleep stages: 0.548
+[2020-07-22 17:17:25,316] {result_logger:115} INFO - average F1-score on sleep stages: 0.370
+[2020-07-22 17:17:25,316] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 17:17:25,350] {result_logger:134} INFO - 
+[[19765  3803  2735    80  1999]
+ [  741  1532   121    20   131]
+ [ 9426   734  8366   565   860]
+ [  348   231   103    36    34]
+ [    4     2     6     0   498]]
+[2020-07-22 17:17:25,503] {result_logger:141} INFO - 
+[[ 69.64%  13.40%   9.64%   0.28%   7.04%]
+ [ 29.12%  60.20%   4.75%   0.79%   5.15%]
+ [ 47.25%   3.68%  41.93%   2.83%   4.31%]
+ [ 46.28%  30.72%  13.70%   4.79%   4.52%]
+ [  0.78%   0.39%   1.18%   0.00%  97.65%]]
+[2020-07-22 17:17:25,634] {result_logger:145} INFO - 
+[[ 65.27%  60.35%  24.14%  11.41%  56.76%]
+ [  2.45%  24.31%   1.07%   2.85%   3.72%]
+ [ 31.13%  11.65%  73.83%  80.60%  24.42%]
+ [  1.15%   3.67%   0.91%   5.14%   0.97%]
+ [  0.01%   0.03%   0.05%   0.00%  14.14%]]
+[2020-07-22 17:17:25,907] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 17:17:25,907] {result_logger:77} INFO - actual:
+[2020-07-22 17:17:25,908] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 17:17:25,908] {result_logger:79} INFO - predicted:
+[2020-07-22 17:17:25,908] {result_logger:80} INFO - 
+[[68.69% 10.72% 18.20%  0.72%  1.67%]
+ [52.52% 33.80%  8.36%  0.94%  4.38%]
+ [48.32%  4.70% 41.47%  2.87%  2.65%]
+ [32.95% 10.84% 45.22%  4.56%  6.42%]
+ [13.26%  9.03%  7.84%  1.87% 68.00%]]
+[2020-07-22 17:17:25,922] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 17:17:25,922] {run_experiment:107} INFO - [epoch   1] execution time: 374.08s	 avg f1-score: 0.3703
+
+[2020-07-22 17:17:25,922] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:17:25,939] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:18:05,595] {train_model:70} INFO - Train Epoch: 2 [36352/366720 (10%)]	lr:4.65e-05	Loss: 9.926752
+[2020-07-22 17:18:41,297] {train_model:70} INFO - Train Epoch: 2 [72960/366720 (20%)]	lr:4.65e-05	Loss: 1.870808
+[2020-07-22 17:19:17,034] {train_model:70} INFO - Train Epoch: 2 [109568/366720 (30%)]	lr:4.65e-05	Loss: 5.829642
+[2020-07-22 17:19:52,765] {train_model:70} INFO - Train Epoch: 2 [146176/366720 (40%)]	lr:4.65e-05	Loss: 5.126448
+[2020-07-22 17:20:28,544] {train_model:70} INFO - Train Epoch: 2 [182784/366720 (50%)]	lr:4.65e-05	Loss: 2.947793
+[2020-07-22 17:21:04,333] {train_model:70} INFO - Train Epoch: 2 [219392/366720 (60%)]	lr:4.65e-05	Loss: 1.649309
+[2020-07-22 17:21:40,137] {train_model:70} INFO - Train Epoch: 2 [256000/366720 (70%)]	lr:4.65e-05	Loss: 3.437786
+[2020-07-22 17:22:15,984] {train_model:70} INFO - Train Epoch: 2 [292608/366720 (80%)]	lr:4.65e-05	Loss: 6.440993
+[2020-07-22 17:22:54,394] {train_model:70} INFO - Train Epoch: 2 [329216/366720 (90%)]	lr:4.65e-05	Loss: 1.486905
+[2020-07-22 17:23:32,616] {train_model:70} INFO - Train Epoch: 2 [365824/366720 (100%)]	lr:4.65e-05	Loss: 12.101150
+[2020-07-22 17:23:42,307] {run_experiment:79} INFO - 
+[2020-07-22 17:23:42,308] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 17:23:42,398] {result_logger:103} INFO - precision on Wake: 0.572
+[2020-07-22 17:23:42,446] {result_logger:104} INFO - recall on Wake: 0.931
+[2020-07-22 17:23:42,496] {result_logger:107} INFO - F1-score on Wake: 0.708
+[2020-07-22 17:23:42,496] {result_logger:108} INFO - 
+[2020-07-22 17:23:42,566] {result_logger:103} INFO - precision on REM: 0.752
+[2020-07-22 17:23:42,613] {result_logger:104} INFO - recall on REM: 0.354
+[2020-07-22 17:23:42,661] {result_logger:107} INFO - F1-score on REM: 0.481
+[2020-07-22 17:23:42,661] {result_logger:108} INFO - 
+[2020-07-22 17:23:42,733] {result_logger:103} INFO - precision on Non REM: 0.986
+[2020-07-22 17:23:42,782] {result_logger:104} INFO - recall on Non REM: 0.087
+[2020-07-22 17:23:42,828] {result_logger:107} INFO - F1-score on Non REM: 0.161
+[2020-07-22 17:23:42,828] {result_logger:108} INFO - 
+[2020-07-22 17:23:42,904] {result_logger:103} INFO - precision on Pre REM: 0.103
+[2020-07-22 17:23:42,951] {result_logger:104} INFO - recall on Pre REM: 0.012
+[2020-07-22 17:23:42,999] {result_logger:107} INFO - F1-score on Pre REM: 0.021
+[2020-07-22 17:23:42,999] {result_logger:108} INFO - 
+[2020-07-22 17:23:43,070] {result_logger:103} INFO - precision on Artifact: 0.169
+[2020-07-22 17:23:43,119] {result_logger:104} INFO - recall on Artifact: 0.961
+[2020-07-22 17:23:43,166] {result_logger:107} INFO - F1-score on Artifact: 0.288
+[2020-07-22 17:23:43,166] {result_logger:108} INFO - 
+[2020-07-22 17:23:43,176] {result_logger:111} INFO - average precision on sleep stages: 0.517
+[2020-07-22 17:23:43,186] {result_logger:113} INFO - average recall on sleep stages: 0.469
+[2020-07-22 17:23:43,196] {result_logger:115} INFO - average F1-score on sleep stages: 0.332
+[2020-07-22 17:23:43,196] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 17:23:43,232] {result_logger:134} INFO - 
+[[26412   200    16    24  1730]
+ [ 1539   900     0     5   101]
+ [17557    55  1744    45   550]
+ [  676    40     4     9    23]
+ [   10     2     4     4   490]]
+[2020-07-22 17:23:43,264] {result_logger:141} INFO - 
+[[ 93.06%   0.70%   0.06%   0.08%   6.10%]
+ [ 60.47%  35.36%   0.00%   0.20%   3.97%]
+ [ 88.00%   0.28%   8.74%   0.23%   2.76%]
+ [ 89.89%   5.32%   0.53%   1.20%   3.06%]
+ [  1.96%   0.39%   0.78%   0.78%  96.08%]]
+[2020-07-22 17:23:43,297] {result_logger:145} INFO - 
+[[ 57.18%  16.71%   0.90%  27.59%  59.78%]
+ [  3.33%  75.19%   0.00%   5.75%   3.49%]
+ [ 38.01%   4.59%  98.64%  51.72%  19.00%]
+ [  1.46%   3.34%   0.23%  10.34%   0.79%]
+ [  0.02%   0.17%   0.23%   4.60%  16.93%]]
+[2020-07-22 17:23:43,373] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 17:23:43,373] {result_logger:77} INFO - actual:
+[2020-07-22 17:23:43,373] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 17:23:43,373] {result_logger:79} INFO - predicted:
+[2020-07-22 17:23:43,373] {result_logger:80} INFO - 
+[[95.30%  1.03%  2.25%  0.09%  1.34%]
+ [41.77% 50.54%  0.42%  0.58%  6.68%]
+ [58.20%  0.17% 38.52%  0.40%  2.71%]
+ [70.11%  5.75%  9.20%  4.60% 10.34%]
+ [20.18%  3.77%  1.24%  0.93% 73.88%]]
+[2020-07-22 17:23:43,373] {run_experiment:107} INFO - [epoch   2] execution time: 377.45s	 avg f1-score: 0.3319
+
+[2020-07-22 17:23:43,373] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:23:43,392] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:24:26,700] {train_model:70} INFO - Train Epoch: 3 [36352/366720 (10%)]	lr:6.75e-05	Loss: 3.390579
+[2020-07-22 17:25:08,279] {train_model:70} INFO - Train Epoch: 3 [72960/366720 (20%)]	lr:6.75e-05	Loss: 1.915397
+[2020-07-22 17:25:47,782] {train_model:70} INFO - Train Epoch: 3 [109568/366720 (30%)]	lr:6.75e-05	Loss: 5.083635
+[2020-07-22 17:26:24,308] {train_model:70} INFO - Train Epoch: 3 [146176/366720 (40%)]	lr:6.75e-05	Loss: 2.922709
+[2020-07-22 17:27:00,832] {train_model:70} INFO - Train Epoch: 3 [182784/366720 (50%)]	lr:6.75e-05	Loss: 3.501737
+[2020-07-22 17:27:37,394] {train_model:70} INFO - Train Epoch: 3 [219392/366720 (60%)]	lr:6.75e-05	Loss: 3.967196
+[2020-07-22 17:28:13,911] {train_model:70} INFO - Train Epoch: 3 [256000/366720 (70%)]	lr:6.75e-05	Loss: 2.558808
+[2020-07-22 17:28:50,453] {train_model:70} INFO - Train Epoch: 3 [292608/366720 (80%)]	lr:6.75e-05	Loss: 1.285795
+[2020-07-22 17:29:27,106] {train_model:70} INFO - Train Epoch: 3 [329216/366720 (90%)]	lr:6.75e-05	Loss: 2.095105
+[2020-07-22 17:30:03,712] {train_model:70} INFO - Train Epoch: 3 [365824/366720 (100%)]	lr:6.75e-05	Loss: 3.820125
+[2020-07-22 17:30:12,029] {run_experiment:79} INFO - 
+[2020-07-22 17:30:12,030] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 17:30:12,109] {result_logger:103} INFO - precision on Wake: 0.557
+[2020-07-22 17:30:12,156] {result_logger:104} INFO - recall on Wake: 0.945
+[2020-07-22 17:30:12,204] {result_logger:107} INFO - F1-score on Wake: 0.701
+[2020-07-22 17:30:12,204] {result_logger:108} INFO - 
+[2020-07-22 17:30:12,275] {result_logger:103} INFO - precision on REM: 0.881
+[2020-07-22 17:30:12,322] {result_logger:104} INFO - recall on REM: 0.166
+[2020-07-22 17:30:12,368] {result_logger:107} INFO - F1-score on REM: 0.279
+[2020-07-22 17:30:12,368] {result_logger:108} INFO - 
+[2020-07-22 17:30:12,440] {result_logger:103} INFO - precision on Non REM: 0.973
+[2020-07-22 17:30:12,487] {result_logger:104} INFO - recall on Non REM: 0.049
+[2020-07-22 17:30:12,535] {result_logger:107} INFO - F1-score on Non REM: 0.094
+[2020-07-22 17:30:12,535] {result_logger:108} INFO - 
+[2020-07-22 17:30:12,606] {result_logger:103} INFO - precision on Pre REM: 0.083
+[2020-07-22 17:30:12,652] {result_logger:104} INFO - recall on Pre REM: 0.001
+[2020-07-22 17:30:12,698] {result_logger:107} INFO - F1-score on Pre REM: 0.003
+[2020-07-22 17:30:12,698] {result_logger:108} INFO - 
+[2020-07-22 17:30:12,769] {result_logger:103} INFO - precision on Artifact: 0.191
+[2020-07-22 17:30:12,816] {result_logger:104} INFO - recall on Artifact: 0.922
+[2020-07-22 17:30:12,863] {result_logger:107} INFO - F1-score on Artifact: 0.317
+[2020-07-22 17:30:12,863] {result_logger:108} INFO - 
+[2020-07-22 17:30:12,872] {result_logger:111} INFO - average precision on sleep stages: 0.537
+[2020-07-22 17:30:12,882] {result_logger:113} INFO - average recall on sleep stages: 0.417
+[2020-07-22 17:30:12,892] {result_logger:115} INFO - average F1-score on sleep stages: 0.279
+[2020-07-22 17:30:12,892] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 17:30:12,924] {result_logger:134} INFO - 
+[[26829    35     8     0  1510]
+ [ 2038   422     0     1    84]
+ [18568    12   985     8   378]
+ [  725    10     1     1    15]
+ [   20     0    18     2   470]]
+[2020-07-22 17:30:12,957] {result_logger:141} INFO - 
+[[ 94.53%   0.12%   0.03%   0.00%   5.32%]
+ [ 80.08%  16.58%   0.00%   0.04%   3.30%]
+ [ 93.07%   0.06%   4.94%   0.04%   1.89%]
+ [ 96.41%   1.33%   0.13%   0.13%   1.99%]
+ [  3.92%   0.00%   3.53%   0.39%  92.16%]]
+[2020-07-22 17:30:12,988] {result_logger:145} INFO - 
+[[ 55.68%   7.31%   0.79%   0.00%  61.46%]
+ [  4.23%  88.10%   0.00%   8.33%   3.42%]
+ [ 38.54%   2.51%  97.33%  66.67%  15.38%]
+ [  1.50%   2.09%   0.10%   8.33%   0.61%]
+ [  0.04%   0.00%   1.78%  16.67%  19.13%]]
+[2020-07-22 17:30:13,063] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 17:30:13,063] {result_logger:77} INFO - actual:
+[2020-07-22 17:30:13,063] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 17:30:13,063] {result_logger:79} INFO - predicted:
+[2020-07-22 17:30:13,063] {result_logger:80} INFO - 
+[[97.11%  0.45%  1.17%  0.01%  1.26%]
+ [39.04% 50.94%  0.21%  0.00%  9.81%]
+ [55.93%  0.10% 42.19%  0.20%  1.58%]
+ [83.33%  0.00% 16.67%  0.00%  0.00%]
+ [25.60%  0.65%  0.81%  0.16% 72.77%]]
+[2020-07-22 17:30:13,063] {run_experiment:107} INFO - [epoch   3] execution time: 389.69s	 avg f1-score: 0.2787
+
+[2020-07-22 17:30:13,063] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:30:13,083] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:30:55,636] {train_model:70} INFO - Train Epoch: 4 [36352/366720 (10%)]	lr:8.84e-05	Loss: 1.893472
+[2020-07-22 17:31:32,116] {train_model:70} INFO - Train Epoch: 4 [72960/366720 (20%)]	lr:8.84e-05	Loss: 1.771993
+[2020-07-22 17:32:08,641] {train_model:70} INFO - Train Epoch: 4 [109568/366720 (30%)]	lr:8.84e-05	Loss: 3.840650
+[2020-07-22 17:32:45,138] {train_model:70} INFO - Train Epoch: 4 [146176/366720 (40%)]	lr:8.84e-05	Loss: 0.954680
+[2020-07-22 17:33:21,611] {train_model:70} INFO - Train Epoch: 4 [182784/366720 (50%)]	lr:8.84e-05	Loss: 0.920562
+[2020-07-22 17:33:58,051] {train_model:70} INFO - Train Epoch: 4 [219392/366720 (60%)]	lr:8.84e-05	Loss: 2.132177
+[2020-07-22 17:34:35,106] {train_model:70} INFO - Train Epoch: 4 [256000/366720 (70%)]	lr:8.84e-05	Loss: 1.875876
+[2020-07-22 17:35:11,637] {train_model:70} INFO - Train Epoch: 4 [292608/366720 (80%)]	lr:8.84e-05	Loss: 1.438518
+[2020-07-22 17:35:50,473] {train_model:70} INFO - Train Epoch: 4 [329216/366720 (90%)]	lr:8.84e-05	Loss: 2.056569
+[2020-07-22 17:36:29,719] {train_model:70} INFO - Train Epoch: 4 [365824/366720 (100%)]	lr:8.84e-05	Loss: 2.195186
+[2020-07-22 17:36:38,068] {run_experiment:79} INFO - 
+[2020-07-22 17:36:38,069] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 17:36:38,156] {result_logger:103} INFO - precision on Wake: 0.579
+[2020-07-22 17:36:38,204] {result_logger:104} INFO - recall on Wake: 0.942
+[2020-07-22 17:36:38,252] {result_logger:107} INFO - F1-score on Wake: 0.717
+[2020-07-22 17:36:38,252] {result_logger:108} INFO - 
+[2020-07-22 17:36:38,327] {result_logger:103} INFO - precision on REM: 0.838
+[2020-07-22 17:36:38,373] {result_logger:104} INFO - recall on REM: 0.063
+[2020-07-22 17:36:38,422] {result_logger:107} INFO - F1-score on REM: 0.117
+[2020-07-22 17:36:38,422] {result_logger:108} INFO - 
+[2020-07-22 17:36:38,496] {result_logger:103} INFO - precision on Non REM: 0.981
+[2020-07-22 17:36:38,546] {result_logger:104} INFO - recall on Non REM: 0.151
+[2020-07-22 17:36:38,593] {result_logger:107} INFO - F1-score on Non REM: 0.262
+[2020-07-22 17:36:38,593] {result_logger:108} INFO - 
+[2020-07-22 17:36:38,663] {result_logger:103} INFO - precision on Pre REM: 0.261
+[2020-07-22 17:36:38,708] {result_logger:104} INFO - recall on Pre REM: 0.056
+[2020-07-22 17:36:38,756] {result_logger:107} INFO - F1-score on Pre REM: 0.092
+[2020-07-22 17:36:38,756] {result_logger:108} INFO - 
+[2020-07-22 17:36:38,830] {result_logger:103} INFO - precision on Artifact: 0.183
+[2020-07-22 17:36:38,876] {result_logger:104} INFO - recall on Artifact: 0.916
+[2020-07-22 17:36:38,923] {result_logger:107} INFO - F1-score on Artifact: 0.305
+[2020-07-22 17:36:38,923] {result_logger:108} INFO - 
+[2020-07-22 17:36:38,933] {result_logger:111} INFO - average precision on sleep stages: 0.568
+[2020-07-22 17:36:38,943] {result_logger:113} INFO - average recall on sleep stages: 0.426
+[2020-07-22 17:36:38,955] {result_logger:115} INFO - average F1-score on sleep stages: 0.299
+[2020-07-22 17:36:38,955] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 17:36:38,987] {result_logger:134} INFO - 
+[[26744    16    21    28  1573]
+ [ 2273   160     0    23    89]
+ [16464     3  3011    65   408]
+ [  674    12     8    42    16]
+ [   12     0    28     3   467]]
+[2020-07-22 17:36:39,019] {result_logger:141} INFO - 
+[[ 94.23%   0.06%   0.07%   0.10%   5.54%]
+ [ 89.31%   6.29%   0.00%   0.90%   3.50%]
+ [ 82.52%   0.02%  15.09%   0.33%   2.05%]
+ [ 89.63%   1.60%   1.06%   5.59%   2.13%]
+ [  2.35%   0.00%   5.49%   0.59%  91.57%]]
+[2020-07-22 17:36:39,050] {result_logger:145} INFO - 
+[[ 57.93%   8.38%   0.68%  17.39%  61.61%]
+ [  4.92%  83.77%   0.00%  14.29%   3.49%]
+ [ 35.66%   1.57%  98.14%  40.37%  15.98%]
+ [  1.46%   6.28%   0.26%  26.09%   0.63%]
+ [  0.03%   0.00%   0.91%   1.86%  18.29%]]
+[2020-07-22 17:36:39,125] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 17:36:39,125] {result_logger:77} INFO - actual:
+[2020-07-22 17:36:39,125] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 17:36:39,125] {result_logger:79} INFO - predicted:
+[2020-07-22 17:36:39,125] {result_logger:80} INFO - 
+[[96.03%  0.16%  2.48%  0.09%  1.24%]
+ [48.17% 41.88%  0.00%  0.00%  9.95%]
+ [35.27%  0.03% 60.43%  1.66%  2.61%]
+ [64.60%  9.32%  4.35% 18.63%  3.11%]
+ [21.78%  0.74%  2.43%  1.57% 73.48%]]
+[2020-07-22 17:36:39,125] {run_experiment:107} INFO - [epoch   4] execution time: 386.06s	 avg f1-score: 0.2986
+
+[2020-07-22 17:36:39,125] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:36:39,145] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:37:15,875] {train_model:70} INFO - Train Epoch: 5 [36352/366720 (10%)]	lr:1.09e-04	Loss: 1.552858
+[2020-07-22 17:37:52,346] {train_model:70} INFO - Train Epoch: 5 [72960/366720 (20%)]	lr:1.09e-04	Loss: 2.377792
+[2020-07-22 17:38:28,848] {train_model:70} INFO - Train Epoch: 5 [109568/366720 (30%)]	lr:1.09e-04	Loss: 1.380769
+[2020-07-22 17:39:05,340] {train_model:70} INFO - Train Epoch: 5 [146176/366720 (40%)]	lr:1.09e-04	Loss: 0.826857
+[2020-07-22 17:39:41,924] {train_model:70} INFO - Train Epoch: 5 [182784/366720 (50%)]	lr:1.09e-04	Loss: 0.691623
+[2020-07-22 17:40:18,407] {train_model:70} INFO - Train Epoch: 5 [219392/366720 (60%)]	lr:1.09e-04	Loss: 1.086309
+[2020-07-22 17:40:55,040] {train_model:70} INFO - Train Epoch: 5 [256000/366720 (70%)]	lr:1.09e-04	Loss: 0.709203
+[2020-07-22 17:41:36,829] {train_model:70} INFO - Train Epoch: 5 [292608/366720 (80%)]	lr:1.09e-04	Loss: 1.233943
+[2020-07-22 17:42:13,120] {train_model:70} INFO - Train Epoch: 5 [329216/366720 (90%)]	lr:1.09e-04	Loss: 0.833096
+[2020-07-22 17:42:49,693] {train_model:70} INFO - Train Epoch: 5 [365824/366720 (100%)]	lr:1.09e-04	Loss: 0.693265
+[2020-07-22 17:42:58,045] {run_experiment:79} INFO - 
+[2020-07-22 17:42:58,046] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 17:42:58,135] {result_logger:103} INFO - precision on Wake: 0.737
+[2020-07-22 17:42:58,186] {result_logger:104} INFO - recall on Wake: 0.968
+[2020-07-22 17:42:58,234] {result_logger:107} INFO - F1-score on Wake: 0.837
+[2020-07-22 17:42:58,234] {result_logger:108} INFO - 
+[2020-07-22 17:42:58,308] {result_logger:103} INFO - precision on REM: 0.859
+[2020-07-22 17:42:58,354] {result_logger:104} INFO - recall on REM: 0.660
+[2020-07-22 17:42:58,400] {result_logger:107} INFO - F1-score on REM: 0.747
+[2020-07-22 17:42:58,400] {result_logger:108} INFO - 
+[2020-07-22 17:42:58,473] {result_logger:103} INFO - precision on Non REM: 0.984
+[2020-07-22 17:42:58,523] {result_logger:104} INFO - recall on Non REM: 0.517
+[2020-07-22 17:42:58,571] {result_logger:107} INFO - F1-score on Non REM: 0.677
+[2020-07-22 17:42:58,571] {result_logger:108} INFO - 
+[2020-07-22 17:42:58,642] {result_logger:103} INFO - precision on Pre REM: 0.361
+[2020-07-22 17:42:58,691] {result_logger:104} INFO - recall on Pre REM: 0.469
+[2020-07-22 17:42:58,738] {result_logger:107} INFO - F1-score on Pre REM: 0.408
+[2020-07-22 17:42:58,738] {result_logger:108} INFO - 
+[2020-07-22 17:42:58,811] {result_logger:103} INFO - precision on Artifact: 0.292
+[2020-07-22 17:42:58,858] {result_logger:104} INFO - recall on Artifact: 0.851
+[2020-07-22 17:42:58,906] {result_logger:107} INFO - F1-score on Artifact: 0.435
+[2020-07-22 17:42:58,907] {result_logger:108} INFO - 
+[2020-07-22 17:42:58,917] {result_logger:111} INFO - average precision on sleep stages: 0.647
+[2020-07-22 17:42:58,928] {result_logger:113} INFO - average recall on sleep stages: 0.693
+[2020-07-22 17:42:58,938] {result_logger:115} INFO - average F1-score on sleep stages: 0.621
+[2020-07-22 17:42:58,939] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 17:42:58,972] {result_logger:134} INFO - 
+[[27462    29    61    25   805]
+ [  737  1680     6    67    55]
+ [ 8864    72 10307   523   185]
+ [  159   171    62   353     7]
+ [   20     4    41    11   434]]
+[2020-07-22 17:42:59,106] {result_logger:141} INFO - 
+[[ 96.76%   0.10%   0.21%   0.09%   2.84%]
+ [ 28.96%  66.01%   0.24%   2.63%   2.16%]
+ [ 44.43%   0.36%  51.66%   2.62%   0.93%]
+ [ 21.14%  22.74%   8.24%  46.94%   0.93%]
+ [  3.92%   0.78%   8.04%   2.16%  85.10%]]
+[2020-07-22 17:42:59,233] {result_logger:145} INFO - 
+[[ 73.74%   1.48%   0.58%   2.55%  54.17%]
+ [  1.98%  85.89%   0.06%   6.84%   3.70%]
+ [ 23.80%   3.68%  98.38%  53.42%  12.45%]
+ [  0.43%   8.74%   0.59%  36.06%   0.47%]
+ [  0.05%   0.20%   0.39%   1.12%  29.21%]]
+[2020-07-22 17:42:59,561] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 17:42:59,561] {result_logger:77} INFO - actual:
+[2020-07-22 17:42:59,561] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 17:42:59,561] {result_logger:79} INFO - predicted:
+[2020-07-22 17:42:59,562] {result_logger:80} INFO - 
+[[92.92%  0.40%  5.40%  0.34%  0.93%]
+ [26.94% 70.19%  0.36%  1.02%  1.48%]
+ [14.82%  0.06% 79.15%  4.63%  1.34%]
+ [20.02% 39.02%  6.23% 32.89%  1.84%]
+ [24.29%  3.03%  7.07%  1.62% 64.00%]]
+[2020-07-22 17:42:59,576] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 17:42:59,577] {run_experiment:107} INFO - [epoch   5] execution time: 380.45s	 avg f1-score: 0.6207
+
+[2020-07-22 17:42:59,577] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:42:59,599] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:43:36,379] {train_model:70} INFO - Train Epoch: 6 [36352/366720 (10%)]	lr:1.30e-04	Loss: 0.643486
+[2020-07-22 17:44:12,867] {train_model:70} INFO - Train Epoch: 6 [72960/366720 (20%)]	lr:1.30e-04	Loss: 4.733128
+[2020-07-22 17:44:49,385] {train_model:70} INFO - Train Epoch: 6 [109568/366720 (30%)]	lr:1.30e-04	Loss: 3.159593
+[2020-07-22 17:45:26,040] {train_model:70} INFO - Train Epoch: 6 [146176/366720 (40%)]	lr:1.30e-04	Loss: 0.646203
+[2020-07-22 17:46:02,526] {train_model:70} INFO - Train Epoch: 6 [182784/366720 (50%)]	lr:1.30e-04	Loss: 2.842988
+[2020-07-22 17:46:41,687] {train_model:70} INFO - Train Epoch: 6 [219392/366720 (60%)]	lr:1.30e-04	Loss: 0.697007
+[2020-07-22 17:47:21,318] {train_model:70} INFO - Train Epoch: 6 [256000/366720 (70%)]	lr:1.30e-04	Loss: 1.530035
+[2020-07-22 17:47:57,897] {train_model:70} INFO - Train Epoch: 6 [292608/366720 (80%)]	lr:1.30e-04	Loss: 0.591202
+[2020-07-22 17:48:34,472] {train_model:70} INFO - Train Epoch: 6 [329216/366720 (90%)]	lr:1.30e-04	Loss: 0.573815
+[2020-07-22 17:49:11,049] {train_model:70} INFO - Train Epoch: 6 [365824/366720 (100%)]	lr:1.30e-04	Loss: 0.677777
+[2020-07-22 17:49:19,434] {run_experiment:79} INFO - 
+[2020-07-22 17:49:19,435] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 17:49:19,526] {result_logger:103} INFO - precision on Wake: 0.804
+[2020-07-22 17:49:19,573] {result_logger:104} INFO - recall on Wake: 0.955
+[2020-07-22 17:49:19,621] {result_logger:107} INFO - F1-score on Wake: 0.873
+[2020-07-22 17:49:19,621] {result_logger:108} INFO - 
+[2020-07-22 17:49:19,691] {result_logger:103} INFO - precision on REM: 0.862
+[2020-07-22 17:49:19,735] {result_logger:104} INFO - recall on REM: 0.597
+[2020-07-22 17:49:19,783] {result_logger:107} INFO - F1-score on REM: 0.706
+[2020-07-22 17:49:19,783] {result_logger:108} INFO - 
+[2020-07-22 17:49:19,857] {result_logger:103} INFO - precision on Non REM: 0.987
+[2020-07-22 17:49:19,903] {result_logger:104} INFO - recall on Non REM: 0.671
+[2020-07-22 17:49:19,949] {result_logger:107} INFO - F1-score on Non REM: 0.799
+[2020-07-22 17:49:19,949] {result_logger:108} INFO - 
+[2020-07-22 17:49:20,023] {result_logger:103} INFO - precision on Pre REM: 0.404
+[2020-07-22 17:49:20,067] {result_logger:104} INFO - recall on Pre REM: 0.468
+[2020-07-22 17:49:20,114] {result_logger:107} INFO - F1-score on Pre REM: 0.434
+[2020-07-22 17:49:20,114] {result_logger:108} INFO - 
+[2020-07-22 17:49:20,185] {result_logger:103} INFO - precision on Artifact: 0.220
+[2020-07-22 17:49:20,232] {result_logger:104} INFO - recall on Artifact: 0.963
+[2020-07-22 17:49:20,277] {result_logger:107} INFO - F1-score on Artifact: 0.359
+[2020-07-22 17:49:20,277] {result_logger:108} INFO - 
+[2020-07-22 17:49:20,287] {result_logger:111} INFO - average precision on sleep stages: 0.655
+[2020-07-22 17:49:20,297] {result_logger:113} INFO - average recall on sleep stages: 0.731
+[2020-07-22 17:49:20,308] {result_logger:115} INFO - average F1-score on sleep stages: 0.634
+[2020-07-22 17:49:20,308] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 17:49:20,340] {result_logger:134} INFO - 
+[[27108    10    59     7  1198]
+ [  842  1520    14    78    91]
+ [ 5639    63 13383   434   432]
+ [  114   170    99   352    17]
+ [   11     1     7     0   491]]
+[2020-07-22 17:49:20,471] {result_logger:141} INFO - 
+[[ 95.51%   0.04%   0.21%   0.02%   4.22%]
+ [ 33.08%  59.72%   0.55%   3.06%   3.58%]
+ [ 28.26%   0.32%  67.08%   2.18%   2.17%]
+ [ 15.16%  22.61%  13.16%  46.81%   2.26%]
+ [  2.16%   0.20%   1.37%   0.00%  96.27%]]
+[2020-07-22 17:49:20,596] {result_logger:145} INFO - 
+[[ 80.41%   0.57%   0.44%   0.80%  53.75%]
+ [  2.50%  86.17%   0.10%   8.96%   4.08%]
+ [ 16.73%   3.57%  98.68%  49.83%  19.38%]
+ [  0.34%   9.64%   0.73%  40.41%   0.76%]
+ [  0.03%   0.06%   0.05%   0.00%  22.03%]]
+[2020-07-22 17:49:20,885] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 17:49:20,885] {result_logger:77} INFO - actual:
+[2020-07-22 17:49:20,886] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 17:49:20,886] {result_logger:79} INFO - predicted:
+[2020-07-22 17:49:20,886] {result_logger:80} INFO - 
+[[92.59%  0.56%  5.40%  0.14%  1.31%]
+ [31.07% 65.93%  0.34%  0.51%  2.15%]
+ [ 9.97%  0.14% 84.44%  3.69%  1.75%]
+ [14.35% 41.56%  7.23% 34.79%  2.07%]
+ [21.27%  1.39%  9.87%  0.45% 67.03%]]
+[2020-07-22 17:49:20,914] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 17:49:20,914] {run_experiment:107} INFO - [epoch   6] execution time: 381.34s	 avg f1-score: 0.6339
+
+[2020-07-22 17:49:20,914] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:49:20,935] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:49:57,472] {train_model:70} INFO - Train Epoch: 7 [36352/366720 (10%)]	lr:1.51e-04	Loss: 1.840943
+[2020-07-22 17:50:33,976] {train_model:70} INFO - Train Epoch: 7 [72960/366720 (20%)]	lr:1.51e-04	Loss: 0.830006
+[2020-07-22 17:51:10,520] {train_model:70} INFO - Train Epoch: 7 [109568/366720 (30%)]	lr:1.51e-04	Loss: 2.929402
+[2020-07-22 17:51:47,054] {train_model:70} INFO - Train Epoch: 7 [146176/366720 (40%)]	lr:1.51e-04	Loss: 0.651038
+[2020-07-22 17:52:29,040] {train_model:70} INFO - Train Epoch: 7 [182784/366720 (50%)]	lr:1.51e-04	Loss: 0.722170
+[2020-07-22 17:53:05,665] {train_model:70} INFO - Train Epoch: 7 [219392/366720 (60%)]	lr:1.51e-04	Loss: 0.550953
+[2020-07-22 17:53:42,246] {train_model:70} INFO - Train Epoch: 7 [256000/366720 (70%)]	lr:1.51e-04	Loss: 0.633354
+[2020-07-22 17:54:18,811] {train_model:70} INFO - Train Epoch: 7 [292608/366720 (80%)]	lr:1.51e-04	Loss: 0.414484
+[2020-07-22 17:54:55,400] {train_model:70} INFO - Train Epoch: 7 [329216/366720 (90%)]	lr:1.51e-04	Loss: 0.633975
+[2020-07-22 17:55:32,012] {train_model:70} INFO - Train Epoch: 7 [365824/366720 (100%)]	lr:1.51e-04	Loss: 0.557945
+[2020-07-22 17:55:40,307] {run_experiment:79} INFO - 
+[2020-07-22 17:55:40,308] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 17:55:40,400] {result_logger:103} INFO - precision on Wake: 0.931
+[2020-07-22 17:55:40,448] {result_logger:104} INFO - recall on Wake: 0.951
+[2020-07-22 17:55:40,496] {result_logger:107} INFO - F1-score on Wake: 0.941
+[2020-07-22 17:55:40,496] {result_logger:108} INFO - 
+[2020-07-22 17:55:40,571] {result_logger:103} INFO - precision on REM: 0.873
+[2020-07-22 17:55:40,620] {result_logger:104} INFO - recall on REM: 0.784
+[2020-07-22 17:55:40,667] {result_logger:107} INFO - F1-score on REM: 0.826
+[2020-07-22 17:55:40,667] {result_logger:108} INFO - 
+[2020-07-22 17:55:40,747] {result_logger:103} INFO - precision on Non REM: 0.973
+[2020-07-22 17:55:40,795] {result_logger:104} INFO - recall on Non REM: 0.869
+[2020-07-22 17:55:40,843] {result_logger:107} INFO - F1-score on Non REM: 0.918
+[2020-07-22 17:55:40,843] {result_logger:108} INFO - 
+[2020-07-22 17:55:40,922] {result_logger:103} INFO - precision on Pre REM: 0.398
+[2020-07-22 17:55:40,968] {result_logger:104} INFO - recall on Pre REM: 0.572
+[2020-07-22 17:55:41,022] {result_logger:107} INFO - F1-score on Pre REM: 0.469
+[2020-07-22 17:55:41,022] {result_logger:108} INFO - 
+[2020-07-22 17:55:41,096] {result_logger:103} INFO - precision on Artifact: 0.253
+[2020-07-22 17:55:41,145] {result_logger:104} INFO - recall on Artifact: 0.975
+[2020-07-22 17:55:41,192] {result_logger:107} INFO - F1-score on Artifact: 0.402
+[2020-07-22 17:55:41,192] {result_logger:108} INFO - 
+[2020-07-22 17:55:41,203] {result_logger:111} INFO - average precision on sleep stages: 0.686
+[2020-07-22 17:55:41,213] {result_logger:113} INFO - average recall on sleep stages: 0.830
+[2020-07-22 17:55:41,224] {result_logger:115} INFO - average F1-score on sleep stages: 0.711
+[2020-07-22 17:55:41,224] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 17:55:41,258] {result_logger:134} INFO - 
+[[27000    67   327     0   988]
+ [  320  1996    23   107    99]
+ [ 1651    64 17329   543   364]
+ [   29   160   116   430    17]
+ [    6     0     7     0   497]]
+[2020-07-22 17:55:41,402] {result_logger:141} INFO - 
+[[ 95.13%   0.24%   1.15%   0.00%   3.48%]
+ [ 12.57%  78.43%   0.90%   4.20%   3.89%]
+ [  8.28%   0.32%  86.86%   2.72%   1.82%]
+ [  3.86%  21.28%  15.43%  57.18%   2.26%]
+ [  1.18%   0.00%   1.37%   0.00%  97.45%]]
+[2020-07-22 17:55:41,539] {result_logger:145} INFO - 
+[[ 93.08%   2.93%   1.84%   0.00%  50.28%]
+ [  1.10%  87.28%   0.13%   9.91%   5.04%]
+ [  5.69%   2.80%  97.34%  50.28%  18.52%]
+ [  0.10%   7.00%   0.65%  39.81%   0.87%]
+ [  0.02%   0.00%   0.04%   0.00%  25.29%]]
+[2020-07-22 17:55:41,820] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 17:55:41,821] {result_logger:77} INFO - actual:
+[2020-07-22 17:55:41,821] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 17:55:41,821] {result_logger:79} INFO - predicted:
+[2020-07-22 17:55:41,821] {result_logger:80} INFO - 
+[[94.28%  0.32%  4.08%  0.02%  1.29%]
+ [23.57% 70.88%  2.32%  0.35%  2.89%]
+ [ 4.02%  0.06% 91.11%  3.41%  1.39%]
+ [ 4.26% 42.04% 10.37% 41.20%  2.13%]
+ [18.17%  5.50% 11.86%  0.71% 63.77%]]
+[2020-07-22 17:55:41,836] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 17:55:41,836] {run_experiment:107} INFO - [epoch   7] execution time: 380.92s	 avg f1-score: 0.7112
+
+[2020-07-22 17:55:41,836] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 17:55:41,857] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 17:56:18,630] {train_model:70} INFO - Train Epoch: 8 [36352/366720 (10%)]	lr:1.72e-04	Loss: 0.558007
+[2020-07-22 17:56:55,222] {train_model:70} INFO - Train Epoch: 8 [72960/366720 (20%)]	lr:1.72e-04	Loss: 0.620146
+[2020-07-22 17:57:37,032] {train_model:70} INFO - Train Epoch: 8 [109568/366720 (30%)]	lr:1.72e-04	Loss: 0.516046
+[2020-07-22 17:58:13,327] {train_model:70} INFO - Train Epoch: 8 [146176/366720 (40%)]	lr:1.72e-04	Loss: 0.616572
+[2020-07-22 17:58:49,836] {train_model:70} INFO - Train Epoch: 8 [182784/366720 (50%)]	lr:1.72e-04	Loss: 0.499052
+[2020-07-22 17:59:26,348] {train_model:70} INFO - Train Epoch: 8 [219392/366720 (60%)]	lr:1.72e-04	Loss: 0.421616
+[2020-07-22 18:00:02,894] {train_model:70} INFO - Train Epoch: 8 [256000/366720 (70%)]	lr:1.72e-04	Loss: 0.497957
+[2020-07-22 18:00:39,459] {train_model:70} INFO - Train Epoch: 8 [292608/366720 (80%)]	lr:1.72e-04	Loss: 0.438110
+[2020-07-22 18:01:16,140] {train_model:70} INFO - Train Epoch: 8 [329216/366720 (90%)]	lr:1.72e-04	Loss: 0.591909
+[2020-07-22 18:01:53,077] {train_model:70} INFO - Train Epoch: 8 [365824/366720 (100%)]	lr:1.72e-04	Loss: 0.380713
+[2020-07-22 18:02:01,324] {run_experiment:79} INFO - 
+[2020-07-22 18:02:01,325] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:02:01,415] {result_logger:103} INFO - precision on Wake: 0.956
+[2020-07-22 18:02:01,462] {result_logger:104} INFO - recall on Wake: 0.927
+[2020-07-22 18:02:01,512] {result_logger:107} INFO - F1-score on Wake: 0.941
+[2020-07-22 18:02:01,512] {result_logger:108} INFO - 
+[2020-07-22 18:02:01,583] {result_logger:103} INFO - precision on REM: 0.878
+[2020-07-22 18:02:01,629] {result_logger:104} INFO - recall on REM: 0.876
+[2020-07-22 18:02:01,676] {result_logger:107} INFO - F1-score on REM: 0.877
+[2020-07-22 18:02:01,676] {result_logger:108} INFO - 
+[2020-07-22 18:02:01,751] {result_logger:103} INFO - precision on Non REM: 0.972
+[2020-07-22 18:02:01,799] {result_logger:104} INFO - recall on Non REM: 0.856
+[2020-07-22 18:02:01,849] {result_logger:107} INFO - F1-score on Non REM: 0.910
+[2020-07-22 18:02:01,849] {result_logger:108} INFO - 
+[2020-07-22 18:02:01,920] {result_logger:103} INFO - precision on Pre REM: 0.309
+[2020-07-22 18:02:01,967] {result_logger:104} INFO - recall on Pre REM: 0.697
+[2020-07-22 18:02:02,017] {result_logger:107} INFO - F1-score on Pre REM: 0.428
+[2020-07-22 18:02:02,017] {result_logger:108} INFO - 
+[2020-07-22 18:02:02,088] {result_logger:103} INFO - precision on Artifact: 0.177
+[2020-07-22 18:02:02,135] {result_logger:104} INFO - recall on Artifact: 0.980
+[2020-07-22 18:02:02,181] {result_logger:107} INFO - F1-score on Artifact: 0.300
+[2020-07-22 18:02:02,181] {result_logger:108} INFO - 
+[2020-07-22 18:02:02,192] {result_logger:111} INFO - average precision on sleep stages: 0.658
+[2020-07-22 18:02:02,202] {result_logger:113} INFO - average recall on sleep stages: 0.867
+[2020-07-22 18:02:02,214] {result_logger:115} INFO - average F1-score on sleep stages: 0.691
+[2020-07-22 18:02:02,214] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:02:02,248] {result_logger:134} INFO - 
+[[26300    93   383     4  1602]
+ [   40  2229    16   161    99]
+ [ 1156   105 17080  1008   602]
+ [    5   112    88   524    23]
+ [    9     1     0     0   500]]
+[2020-07-22 18:02:02,280] {result_logger:141} INFO - 
+[[ 92.66%   0.33%   1.35%   0.01%   5.64%]
+ [  1.57%  87.58%   0.63%   6.33%   3.89%]
+ [  5.79%   0.53%  85.61%   5.05%   3.02%]
+ [  0.66%  14.89%  11.70%  69.68%   3.06%]
+ [  1.76%   0.20%   0.00%   0.00%  98.04%]]
+[2020-07-22 18:02:02,313] {result_logger:145} INFO - 
+[[ 95.60%   3.66%   2.18%   0.24%  56.69%]
+ [  0.15%  87.76%   0.09%   9.49%   3.50%]
+ [  4.20%   4.13%  97.23%  59.40%  21.30%]
+ [  0.02%   4.41%   0.50%  30.88%   0.81%]
+ [  0.03%   0.04%   0.00%   0.00%  17.69%]]
+[2020-07-22 18:02:02,393] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:02:02,393] {result_logger:77} INFO - actual:
+[2020-07-22 18:02:02,393] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:02:02,393] {result_logger:79} INFO - predicted:
+[2020-07-22 18:02:02,393] {result_logger:80} INFO - 
+[[94.15%  0.07%  4.17%  0.03%  1.58%]
+ [16.85% 76.30%  4.76%  0.55%  1.54%]
+ [ 3.98%  0.08% 89.55%  4.76%  1.63%]
+ [ 3.06% 30.76% 15.79% 48.08%  2.30%]
+ [15.22%  1.63% 10.58%  0.85% 71.73%]]
+[2020-07-22 18:02:02,393] {run_experiment:107} INFO - [epoch   8] execution time: 380.56s	 avg f1-score: 0.6912
+
+[2020-07-22 18:02:02,393] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:02:02,415] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:02:41,583] {train_model:70} INFO - Train Epoch: 9 [36352/366720 (10%)]	lr:1.93e-04	Loss: 0.441548
+[2020-07-22 18:03:21,271] {train_model:70} INFO - Train Epoch: 9 [72960/366720 (20%)]	lr:1.93e-04	Loss: 3.902844
+[2020-07-22 18:03:57,778] {train_model:70} INFO - Train Epoch: 9 [109568/366720 (30%)]	lr:1.93e-04	Loss: 0.381772
+[2020-07-22 18:04:34,321] {train_model:70} INFO - Train Epoch: 9 [146176/366720 (40%)]	lr:1.93e-04	Loss: 0.360921
+[2020-07-22 18:05:10,833] {train_model:70} INFO - Train Epoch: 9 [182784/366720 (50%)]	lr:1.93e-04	Loss: 0.306285
+[2020-07-22 18:05:47,351] {train_model:70} INFO - Train Epoch: 9 [219392/366720 (60%)]	lr:1.93e-04	Loss: 0.438587
+[2020-07-22 18:06:24,003] {train_model:70} INFO - Train Epoch: 9 [256000/366720 (70%)]	lr:1.93e-04	Loss: 2.257300
+[2020-07-22 18:07:00,548] {train_model:70} INFO - Train Epoch: 9 [292608/366720 (80%)]	lr:1.93e-04	Loss: 0.380140
+[2020-07-22 18:07:37,573] {train_model:70} INFO - Train Epoch: 9 [329216/366720 (90%)]	lr:1.93e-04	Loss: 0.399337
+[2020-07-22 18:08:19,291] {train_model:70} INFO - Train Epoch: 9 [365824/366720 (100%)]	lr:1.93e-04	Loss: 0.363888
+[2020-07-22 18:08:28,507] {run_experiment:79} INFO - 
+[2020-07-22 18:08:28,508] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:08:28,599] {result_logger:103} INFO - precision on Wake: 0.959
+[2020-07-22 18:08:28,646] {result_logger:104} INFO - recall on Wake: 0.950
+[2020-07-22 18:08:28,696] {result_logger:107} INFO - F1-score on Wake: 0.955
+[2020-07-22 18:08:28,696] {result_logger:108} INFO - 
+[2020-07-22 18:08:28,769] {result_logger:103} INFO - precision on REM: 0.860
+[2020-07-22 18:08:28,817] {result_logger:104} INFO - recall on REM: 0.902
+[2020-07-22 18:08:28,865] {result_logger:107} INFO - F1-score on REM: 0.880
+[2020-07-22 18:08:28,865] {result_logger:108} INFO - 
+[2020-07-22 18:08:28,940] {result_logger:103} INFO - precision on Non REM: 0.972
+[2020-07-22 18:08:28,988] {result_logger:104} INFO - recall on Non REM: 0.888
+[2020-07-22 18:08:29,035] {result_logger:107} INFO - F1-score on Non REM: 0.928
+[2020-07-22 18:08:29,036] {result_logger:108} INFO - 
+[2020-07-22 18:08:29,109] {result_logger:103} INFO - precision on Pre REM: 0.408
+[2020-07-22 18:08:29,156] {result_logger:104} INFO - recall on Pre REM: 0.668
+[2020-07-22 18:08:29,202] {result_logger:107} INFO - F1-score on Pre REM: 0.507
+[2020-07-22 18:08:29,202] {result_logger:108} INFO - 
+[2020-07-22 18:08:29,274] {result_logger:103} INFO - precision on Artifact: 0.266
+[2020-07-22 18:08:29,321] {result_logger:104} INFO - recall on Artifact: 0.978
+[2020-07-22 18:08:29,367] {result_logger:107} INFO - F1-score on Artifact: 0.419
+[2020-07-22 18:08:29,367] {result_logger:108} INFO - 
+[2020-07-22 18:08:29,378] {result_logger:111} INFO - average precision on sleep stages: 0.693
+[2020-07-22 18:08:29,388] {result_logger:113} INFO - average recall on sleep stages: 0.877
+[2020-07-22 18:08:29,398] {result_logger:115} INFO - average F1-score on sleep stages: 0.738
+[2020-07-22 18:08:29,398] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:08:29,434] {result_logger:134} INFO - 
+[[26972   154   381     8   867]
+ [   23  2295    24   160    43]
+ [ 1118    98 17726   559   450]
+ [    5   118   113   502    14]
+ [    8     3     0     0   499]]
+[2020-07-22 18:08:29,563] {result_logger:141} INFO - 
+[[ 95.03%   0.54%   1.34%   0.03%   3.05%]
+ [  0.90%  90.18%   0.94%   6.29%   1.69%]
+ [  5.60%   0.49%  88.85%   2.80%   2.26%]
+ [  0.66%  15.69%  15.03%  66.76%   1.86%]
+ [  1.57%   0.59%   0.00%   0.00%  97.84%]]
+[2020-07-22 18:08:29,689] {result_logger:145} INFO - 
+[[ 95.90%   5.77%   2.09%   0.65%  46.29%]
+ [  0.08%  86.02%   0.13%  13.02%   2.30%]
+ [  3.97%   3.67%  97.16%  45.48%  24.03%]
+ [  0.02%   4.42%   0.62%  40.85%   0.75%]
+ [  0.03%   0.11%   0.00%   0.00%  26.64%]]
+[2020-07-22 18:08:30,011] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:08:30,011] {result_logger:77} INFO - actual:
+[2020-07-22 18:08:30,012] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:08:30,012] {result_logger:79} INFO - predicted:
+[2020-07-22 18:08:30,012] {result_logger:80} INFO - 
+[[94.58%  0.15%  4.02%  0.01%  1.23%]
+ [17.09% 77.02%  3.90%  0.41%  1.57%]
+ [ 3.84%  0.12% 90.91%  3.60%  1.52%]
+ [ 2.85% 39.87% 10.50% 44.10%  2.69%]
+ [17.67%  3.10% 15.70%  0.91% 62.63%]]
+[2020-07-22 18:08:30,028] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 18:08:30,028] {run_experiment:107} INFO - [epoch   9] execution time: 387.63s	 avg f1-score: 0.7378
+
+[2020-07-22 18:08:30,028] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:08:30,050] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:09:06,571] {train_model:70} INFO - Train Epoch: 10 [36352/366720 (10%)]	lr:2.14e-04	Loss: 0.408436
+[2020-07-22 18:09:43,076] {train_model:70} INFO - Train Epoch: 10 [72960/366720 (20%)]	lr:2.14e-04	Loss: 0.300522
+[2020-07-22 18:10:19,591] {train_model:70} INFO - Train Epoch: 10 [109568/366720 (30%)]	lr:2.14e-04	Loss: 0.371986
+[2020-07-22 18:10:56,078] {train_model:70} INFO - Train Epoch: 10 [146176/366720 (40%)]	lr:2.14e-04	Loss: 0.368650
+[2020-07-22 18:11:32,610] {train_model:70} INFO - Train Epoch: 10 [182784/366720 (50%)]	lr:2.14e-04	Loss: 0.418461
+[2020-07-22 18:12:09,130] {train_model:70} INFO - Train Epoch: 10 [219392/366720 (60%)]	lr:2.14e-04	Loss: 0.328668
+[2020-07-22 18:12:45,666] {train_model:70} INFO - Train Epoch: 10 [256000/366720 (70%)]	lr:2.14e-04	Loss: 0.294593
+[2020-07-22 18:13:22,218] {train_model:70} INFO - Train Epoch: 10 [292608/366720 (80%)]	lr:2.14e-04	Loss: 0.377875
+[2020-07-22 18:14:04,062] {train_model:70} INFO - Train Epoch: 10 [329216/366720 (90%)]	lr:2.14e-04	Loss: 0.322050
+[2020-07-22 18:14:40,611] {train_model:70} INFO - Train Epoch: 10 [365824/366720 (100%)]	lr:2.14e-04	Loss: 0.317285
+[2020-07-22 18:14:48,928] {run_experiment:79} INFO - 
+[2020-07-22 18:14:48,929] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:14:49,016] {result_logger:103} INFO - precision on Wake: 0.959
+[2020-07-22 18:14:49,062] {result_logger:104} INFO - recall on Wake: 0.950
+[2020-07-22 18:14:49,107] {result_logger:107} INFO - F1-score on Wake: 0.954
+[2020-07-22 18:14:49,107] {result_logger:108} INFO - 
+[2020-07-22 18:14:49,173] {result_logger:103} INFO - precision on REM: 0.851
+[2020-07-22 18:14:49,218] {result_logger:104} INFO - recall on REM: 0.906
+[2020-07-22 18:14:49,261] {result_logger:107} INFO - F1-score on REM: 0.877
+[2020-07-22 18:14:49,262] {result_logger:108} INFO - 
+[2020-07-22 18:14:49,332] {result_logger:103} INFO - precision on Non REM: 0.979
+[2020-07-22 18:14:49,376] {result_logger:104} INFO - recall on Non REM: 0.858
+[2020-07-22 18:14:49,423] {result_logger:107} INFO - F1-score on Non REM: 0.915
+[2020-07-22 18:14:49,424] {result_logger:108} INFO - 
+[2020-07-22 18:14:49,492] {result_logger:103} INFO - precision on Pre REM: 0.297
+[2020-07-22 18:14:49,538] {result_logger:104} INFO - recall on Pre REM: 0.698
+[2020-07-22 18:14:49,585] {result_logger:107} INFO - F1-score on Pre REM: 0.416
+[2020-07-22 18:14:49,585] {result_logger:108} INFO - 
+[2020-07-22 18:14:49,654] {result_logger:103} INFO - precision on Artifact: 0.243
+[2020-07-22 18:14:49,699] {result_logger:104} INFO - recall on Artifact: 0.982
+[2020-07-22 18:14:49,742] {result_logger:107} INFO - F1-score on Artifact: 0.390
+[2020-07-22 18:14:49,742] {result_logger:108} INFO - 
+[2020-07-22 18:14:49,752] {result_logger:111} INFO - average precision on sleep stages: 0.666
+[2020-07-22 18:14:49,762] {result_logger:113} INFO - average recall on sleep stages: 0.879
+[2020-07-22 18:14:49,772] {result_logger:115} INFO - average F1-score on sleep stages: 0.711
+[2020-07-22 18:14:49,772] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:14:49,804] {result_logger:134} INFO - 
+[[26954   133   269     6  1020]
+ [   15  2306    14   159    51]
+ [ 1133   143 17120  1080   475]
+ [    4   127    84   525    12]
+ [    6     2     1     0   501]]
+[2020-07-22 18:14:49,834] {result_logger:141} INFO - 
+[[ 94.97%   0.47%   0.95%   0.02%   3.59%]
+ [  0.59%  90.61%   0.55%   6.25%   2.00%]
+ [  5.68%   0.72%  85.81%   5.41%   2.38%]
+ [  0.53%  16.89%  11.17%  69.81%   1.60%]
+ [  1.18%   0.39%   0.20%   0.00%  98.24%]]
+[2020-07-22 18:14:49,864] {result_logger:145} INFO - 
+[[ 95.88%   4.91%   1.54%   0.34%  49.54%]
+ [  0.05%  85.06%   0.08%   8.98%   2.48%]
+ [  4.03%   5.27%  97.90%  61.02%  23.07%]
+ [  0.01%   4.68%   0.48%  29.66%   0.58%]
+ [  0.02%   0.07%   0.01%   0.00%  24.33%]]
+[2020-07-22 18:14:49,933] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:14:49,933] {result_logger:77} INFO - actual:
+[2020-07-22 18:14:49,933] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:14:49,933] {result_logger:79} INFO - predicted:
+[2020-07-22 18:14:49,933] {result_logger:80} INFO - 
+[[93.92%  0.11%  4.59%  0.02%  1.36%]
+ [19.00% 74.29%  3.73%  0.63%  2.36%]
+ [ 4.52%  0.18% 88.60%  4.96%  1.73%]
+ [ 2.03% 31.41% 15.54% 47.80%  3.22%]
+ [17.82%  3.74% 15.93%  1.55% 60.95%]]
+[2020-07-22 18:14:49,933] {run_experiment:107} INFO - [epoch  10] execution time: 379.91s	 avg f1-score: 0.7105
+
+[2020-07-22 18:14:49,933] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:14:49,951] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:15:26,670] {train_model:70} INFO - Train Epoch: 11 [36352/366720 (10%)]	lr:2.35e-04	Loss: 0.285971
+[2020-07-22 18:16:03,050] {train_model:70} INFO - Train Epoch: 11 [72960/366720 (20%)]	lr:2.35e-04	Loss: 0.414031
+[2020-07-22 18:16:39,373] {train_model:70} INFO - Train Epoch: 11 [109568/366720 (30%)]	lr:2.35e-04	Loss: 0.315442
+[2020-07-22 18:17:15,700] {train_model:70} INFO - Train Epoch: 11 [146176/366720 (40%)]	lr:2.35e-04	Loss: 0.239761
+[2020-07-22 18:17:52,256] {train_model:70} INFO - Train Epoch: 11 [182784/366720 (50%)]	lr:2.35e-04	Loss: 0.293073
+[2020-07-22 18:18:28,773] {train_model:70} INFO - Train Epoch: 11 [219392/366720 (60%)]	lr:2.35e-04	Loss: 0.337945
+[2020-07-22 18:19:08,093] {train_model:70} INFO - Train Epoch: 11 [256000/366720 (70%)]	lr:2.35e-04	Loss: 0.205861
+[2020-07-22 18:19:46,932] {train_model:70} INFO - Train Epoch: 11 [292608/366720 (80%)]	lr:2.35e-04	Loss: 0.313909
+[2020-07-22 18:20:23,515] {train_model:70} INFO - Train Epoch: 11 [329216/366720 (90%)]	lr:2.35e-04	Loss: 0.251862
+[2020-07-22 18:21:00,093] {train_model:70} INFO - Train Epoch: 11 [365824/366720 (100%)]	lr:2.35e-04	Loss: 0.326864
+[2020-07-22 18:21:08,462] {run_experiment:79} INFO - 
+[2020-07-22 18:21:08,463] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:21:08,548] {result_logger:103} INFO - precision on Wake: 0.979
+[2020-07-22 18:21:08,595] {result_logger:104} INFO - recall on Wake: 0.946
+[2020-07-22 18:21:08,641] {result_logger:107} INFO - F1-score on Wake: 0.962
+[2020-07-22 18:21:08,642] {result_logger:108} INFO - 
+[2020-07-22 18:21:08,715] {result_logger:103} INFO - precision on REM: 0.859
+[2020-07-22 18:21:08,761] {result_logger:104} INFO - recall on REM: 0.874
+[2020-07-22 18:21:08,805] {result_logger:107} INFO - F1-score on REM: 0.867
+[2020-07-22 18:21:08,805] {result_logger:108} INFO - 
+[2020-07-22 18:21:08,875] {result_logger:103} INFO - precision on Non REM: 0.967
+[2020-07-22 18:21:08,921] {result_logger:104} INFO - recall on Non REM: 0.903
+[2020-07-22 18:21:08,967] {result_logger:107} INFO - F1-score on Non REM: 0.934
+[2020-07-22 18:21:08,967] {result_logger:108} INFO - 
+[2020-07-22 18:21:09,035] {result_logger:103} INFO - precision on Pre REM: 0.338
+[2020-07-22 18:21:09,079] {result_logger:104} INFO - recall on Pre REM: 0.731
+[2020-07-22 18:21:09,124] {result_logger:107} INFO - F1-score on Pre REM: 0.462
+[2020-07-22 18:21:09,124] {result_logger:108} INFO - 
+[2020-07-22 18:21:09,195] {result_logger:103} INFO - precision on Artifact: 0.270
+[2020-07-22 18:21:09,240] {result_logger:104} INFO - recall on Artifact: 0.984
+[2020-07-22 18:21:09,285] {result_logger:107} INFO - F1-score on Artifact: 0.424
+[2020-07-22 18:21:09,285] {result_logger:108} INFO - 
+[2020-07-22 18:21:09,295] {result_logger:111} INFO - average precision on sleep stages: 0.683
+[2020-07-22 18:21:09,305] {result_logger:113} INFO - average recall on sleep stages: 0.888
+[2020-07-22 18:21:09,314] {result_logger:115} INFO - average F1-score on sleep stages: 0.730
+[2020-07-22 18:21:09,315] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:21:09,346] {result_logger:134} INFO - 
+[[26855   165   503    10   849]
+ [   21  2225    22   222    55]
+ [  537   112 18023   845   434]
+ [    4    86    94   550    18]
+ [    6     1     1     0   502]]
+[2020-07-22 18:21:09,377] {result_logger:141} INFO - 
+[[ 94.62%   0.58%   1.77%   0.04%   2.99%]
+ [  0.83%  87.43%   0.86%   8.72%   2.16%]
+ [  2.69%   0.56%  90.34%   4.24%   2.18%]
+ [  0.53%  11.44%  12.50%  73.14%   2.39%]
+ [  1.18%   0.20%   0.20%   0.00%  98.43%]]
+[2020-07-22 18:21:09,408] {result_logger:145} INFO - 
+[[ 97.93%   6.37%   2.70%   0.61%  45.69%]
+ [  0.08%  85.94%   0.12%  13.64%   2.96%]
+ [  1.96%   4.33%  96.67%  51.94%  23.36%]
+ [  0.01%   3.32%   0.50%  33.80%   0.97%]
+ [  0.02%   0.04%   0.01%   0.00%  27.02%]]
+[2020-07-22 18:21:09,477] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:21:09,477] {result_logger:77} INFO - actual:
+[2020-07-22 18:21:09,477] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:21:09,477] {result_logger:79} INFO - predicted:
+[2020-07-22 18:21:09,477] {result_logger:80} INFO - 
+[[94.39%  0.18%  4.18%  0.02%  1.24%]
+ [17.07% 75.01%  5.33%  0.77%  1.82%]
+ [ 3.84%  0.16% 90.30%  4.09%  1.62%]
+ [ 1.97% 32.15% 13.28% 50.28%  2.34%]
+ [18.84%  2.53% 16.63%  1.13% 60.87%]]
+[2020-07-22 18:21:09,477] {run_experiment:107} INFO - [epoch  11] execution time: 379.54s	 avg f1-score: 0.7299
+
+[2020-07-22 18:21:09,477] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:21:09,501] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:21:46,272] {train_model:70} INFO - Train Epoch: 12 [36352/366720 (10%)]	lr:2.56e-04	Loss: 0.304329
+[2020-07-22 18:22:22,678] {train_model:70} INFO - Train Epoch: 12 [72960/366720 (20%)]	lr:2.56e-04	Loss: 0.334567
+[2020-07-22 18:22:59,142] {train_model:70} INFO - Train Epoch: 12 [109568/366720 (30%)]	lr:2.56e-04	Loss: 0.202596
+[2020-07-22 18:23:35,667] {train_model:70} INFO - Train Epoch: 12 [146176/366720 (40%)]	lr:2.56e-04	Loss: 0.247560
+[2020-07-22 18:24:12,209] {train_model:70} INFO - Train Epoch: 12 [182784/366720 (50%)]	lr:2.56e-04	Loss: 0.279078
+[2020-07-22 18:24:54,493] {train_model:70} INFO - Train Epoch: 12 [219392/366720 (60%)]	lr:2.56e-04	Loss: 0.271742
+[2020-07-22 18:25:33,345] {train_model:70} INFO - Train Epoch: 12 [256000/366720 (70%)]	lr:2.56e-04	Loss: 0.248963
+[2020-07-22 18:26:15,836] {train_model:70} INFO - Train Epoch: 12 [292608/366720 (80%)]	lr:2.56e-04	Loss: 0.348239
+[2020-07-22 18:26:58,701] {train_model:70} INFO - Train Epoch: 12 [329216/366720 (90%)]	lr:2.56e-04	Loss: 0.244746
+[2020-07-22 18:27:41,092] {train_model:70} INFO - Train Epoch: 12 [365824/366720 (100%)]	lr:2.56e-04	Loss: 0.318382
+[2020-07-22 18:27:50,736] {run_experiment:79} INFO - 
+[2020-07-22 18:27:50,736] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:27:50,833] {result_logger:103} INFO - precision on Wake: 0.975
+[2020-07-22 18:27:50,881] {result_logger:104} INFO - recall on Wake: 0.947
+[2020-07-22 18:27:50,928] {result_logger:107} INFO - F1-score on Wake: 0.960
+[2020-07-22 18:27:50,929] {result_logger:108} INFO - 
+[2020-07-22 18:27:51,001] {result_logger:103} INFO - precision on REM: 0.857
+[2020-07-22 18:27:51,051] {result_logger:104} INFO - recall on REM: 0.887
+[2020-07-22 18:27:51,098] {result_logger:107} INFO - F1-score on REM: 0.872
+[2020-07-22 18:27:51,098] {result_logger:108} INFO - 
+[2020-07-22 18:27:51,171] {result_logger:103} INFO - precision on Non REM: 0.973
+[2020-07-22 18:27:51,220] {result_logger:104} INFO - recall on Non REM: 0.891
+[2020-07-22 18:27:51,268] {result_logger:107} INFO - F1-score on Non REM: 0.931
+[2020-07-22 18:27:51,268] {result_logger:108} INFO - 
+[2020-07-22 18:27:51,340] {result_logger:103} INFO - precision on Pre REM: 0.357
+[2020-07-22 18:27:51,387] {result_logger:104} INFO - recall on Pre REM: 0.738
+[2020-07-22 18:27:51,434] {result_logger:107} INFO - F1-score on Pre REM: 0.482
+[2020-07-22 18:27:51,434] {result_logger:108} INFO - 
+[2020-07-22 18:27:51,506] {result_logger:103} INFO - precision on Artifact: 0.238
+[2020-07-22 18:27:51,555] {result_logger:104} INFO - recall on Artifact: 0.984
+[2020-07-22 18:27:51,602] {result_logger:107} INFO - F1-score on Artifact: 0.383
+[2020-07-22 18:27:51,602] {result_logger:108} INFO - 
+[2020-07-22 18:27:51,612] {result_logger:111} INFO - average precision on sleep stages: 0.680
+[2020-07-22 18:27:51,623] {result_logger:113} INFO - average recall on sleep stages: 0.890
+[2020-07-22 18:27:51,633] {result_logger:115} INFO - average F1-score on sleep stages: 0.725
+[2020-07-22 18:27:51,634] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:27:51,667] {result_logger:134} INFO - 
+[[26871   178   375     6   952]
+ [    7  2258    21   200    59]
+ [  684   112 17782   792   581]
+ [    3    86    91   555    17]
+ [    6     2     0     0   502]]
+[2020-07-22 18:27:51,703] {result_logger:141} INFO - 
+[[ 94.68%   0.63%   1.32%   0.02%   3.35%]
+ [  0.28%  88.72%   0.83%   7.86%   2.32%]
+ [  3.43%   0.56%  89.13%   3.97%   2.91%]
+ [  0.40%  11.44%  12.10%  73.80%   2.26%]
+ [  1.18%   0.39%   0.00%   0.00%  98.43%]]
+[2020-07-22 18:27:51,737] {result_logger:145} INFO - 
+[[ 97.46%   6.75%   2.05%   0.39%  45.10%]
+ [  0.03%  85.66%   0.11%  12.88%   2.79%]
+ [  2.48%   4.25%  97.33%  51.00%  27.52%]
+ [  0.01%   3.26%   0.50%  35.74%   0.81%]
+ [  0.02%   0.08%   0.00%   0.00%  23.78%]]
+[2020-07-22 18:27:51,808] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:27:51,809] {result_logger:77} INFO - actual:
+[2020-07-22 18:27:51,809] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:27:51,809] {result_logger:79} INFO - predicted:
+[2020-07-22 18:27:51,809] {result_logger:80} INFO - 
+[[94.28%  0.20%  4.18%  0.01%  1.33%]
+ [18.25% 73.94%  4.70%  0.64%  2.47%]
+ [ 3.90%  0.15% 89.96%  4.05%  1.95%]
+ [ 2.12% 34.58% 11.85% 49.84%  1.61%]
+ [16.63%  3.22% 17.67%  0.95% 61.53%]]
+[2020-07-22 18:27:51,809] {run_experiment:107} INFO - [epoch  12] execution time: 402.33s	 avg f1-score: 0.7255
+
+[2020-07-22 18:27:51,809] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:27:51,829] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:28:34,265] {train_model:70} INFO - Train Epoch: 13 [36352/366720 (10%)]	lr:2.41e-04	Loss: 0.246829
+[2020-07-22 18:29:16,396] {train_model:70} INFO - Train Epoch: 13 [72960/366720 (20%)]	lr:2.41e-04	Loss: 0.367457
+[2020-07-22 18:29:49,613] {train_model:70} INFO - Train Epoch: 13 [109568/366720 (30%)]	lr:2.41e-04	Loss: 0.278789
+[2020-07-22 18:30:31,583] {train_model:70} INFO - Train Epoch: 13 [146176/366720 (40%)]	lr:2.41e-04	Loss: 0.192371
+[2020-07-22 18:31:11,040] {train_model:70} INFO - Train Epoch: 13 [182784/366720 (50%)]	lr:2.41e-04	Loss: 0.282806
+[2020-07-22 18:31:50,568] {train_model:70} INFO - Train Epoch: 13 [219392/366720 (60%)]	lr:2.41e-04	Loss: 0.299165
+[2020-07-22 18:32:30,199] {train_model:70} INFO - Train Epoch: 13 [256000/366720 (70%)]	lr:2.41e-04	Loss: 0.234259
+[2020-07-22 18:33:09,661] {train_model:70} INFO - Train Epoch: 13 [292608/366720 (80%)]	lr:2.41e-04	Loss: 0.247503
+[2020-07-22 18:33:49,162] {train_model:70} INFO - Train Epoch: 13 [329216/366720 (90%)]	lr:2.41e-04	Loss: 0.236113
+[2020-07-22 18:34:28,664] {train_model:70} INFO - Train Epoch: 13 [365824/366720 (100%)]	lr:2.41e-04	Loss: 0.230796
+[2020-07-22 18:34:38,036] {run_experiment:79} INFO - 
+[2020-07-22 18:34:38,037] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:34:38,124] {result_logger:103} INFO - precision on Wake: 0.981
+[2020-07-22 18:34:38,172] {result_logger:104} INFO - recall on Wake: 0.961
+[2020-07-22 18:34:38,220] {result_logger:107} INFO - F1-score on Wake: 0.971
+[2020-07-22 18:34:38,220] {result_logger:108} INFO - 
+[2020-07-22 18:34:38,296] {result_logger:103} INFO - precision on REM: 0.871
+[2020-07-22 18:34:38,343] {result_logger:104} INFO - recall on REM: 0.897
+[2020-07-22 18:34:38,390] {result_logger:107} INFO - F1-score on REM: 0.884
+[2020-07-22 18:34:38,390] {result_logger:108} INFO - 
+[2020-07-22 18:34:38,466] {result_logger:103} INFO - precision on Non REM: 0.969
+[2020-07-22 18:34:38,515] {result_logger:104} INFO - recall on Non REM: 0.902
+[2020-07-22 18:34:38,565] {result_logger:107} INFO - F1-score on Non REM: 0.935
+[2020-07-22 18:34:38,565] {result_logger:108} INFO - 
+[2020-07-22 18:34:38,640] {result_logger:103} INFO - precision on Pre REM: 0.305
+[2020-07-22 18:34:38,690] {result_logger:104} INFO - recall on Pre REM: 0.757
+[2020-07-22 18:34:38,737] {result_logger:107} INFO - F1-score on Pre REM: 0.435
+[2020-07-22 18:34:38,737] {result_logger:108} INFO - 
+[2020-07-22 18:34:38,813] {result_logger:103} INFO - precision on Artifact: 0.383
+[2020-07-22 18:34:38,860] {result_logger:104} INFO - recall on Artifact: 0.965
+[2020-07-22 18:34:38,909] {result_logger:107} INFO - F1-score on Artifact: 0.548
+[2020-07-22 18:34:38,909] {result_logger:108} INFO - 
+[2020-07-22 18:34:38,919] {result_logger:111} INFO - average precision on sleep stages: 0.702
+[2020-07-22 18:34:38,930] {result_logger:113} INFO - average recall on sleep stages: 0.896
+[2020-07-22 18:34:38,940] {result_logger:115} INFO - average F1-score on sleep stages: 0.754
+[2020-07-22 18:34:38,941] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:34:38,975] {result_logger:134} INFO - 
+[[27272   156   457    12   485]
+ [   11  2284    23   202    25]
+ [  499    89 18005  1082   276]
+ [    2    90    83   569     8]
+ [   10     4     4     0   492]]
+[2020-07-22 18:34:39,128] {result_logger:141} INFO - 
+[[ 96.09%   0.55%   1.61%   0.04%   1.71%]
+ [  0.43%  89.74%   0.90%   7.94%   0.98%]
+ [  2.50%   0.45%  90.25%   5.42%   1.38%]
+ [  0.27%  11.97%  11.04%  75.66%   1.06%]
+ [  1.96%   0.78%   0.78%   0.00%  96.47%]]
+[2020-07-22 18:34:39,260] {result_logger:145} INFO - 
+[[ 98.12%   5.95%   2.46%   0.64%  37.71%]
+ [  0.04%  87.08%   0.12%  10.83%   1.94%]
+ [  1.80%   3.39%  96.95%  58.02%  21.46%]
+ [  0.01%   3.43%   0.45%  30.51%   0.62%]
+ [  0.04%   0.15%   0.02%   0.00%  38.26%]]
+[2020-07-22 18:34:39,532] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:34:39,532] {result_logger:77} INFO - actual:
+[2020-07-22 18:34:39,532] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:34:39,532] {result_logger:79} INFO - predicted:
+[2020-07-22 18:34:39,532] {result_logger:80} INFO - 
+[[95.10%  0.20%  3.93%  0.03%  0.75%]
+ [16.70% 75.75%  5.72%  0.69%  1.14%]
+ [ 3.60%  0.08% 90.07%  4.94%  1.31%]
+ [ 2.41% 28.15% 17.48% 48.79%  3.16%]
+ [16.41%  3.11% 21.62%  1.01% 57.85%]]
+[2020-07-22 18:34:39,549] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 18:34:39,549] {run_experiment:107} INFO - [epoch  13] execution time: 407.74s	 avg f1-score: 0.7545
+
+[2020-07-22 18:34:39,549] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:34:39,570] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:35:19,318] {train_model:70} INFO - Train Epoch: 14 [36352/366720 (10%)]	lr:2.27e-04	Loss: 0.259222
+[2020-07-22 18:35:58,804] {train_model:70} INFO - Train Epoch: 14 [72960/366720 (20%)]	lr:2.27e-04	Loss: 0.373854
+[2020-07-22 18:36:38,312] {train_model:70} INFO - Train Epoch: 14 [109568/366720 (30%)]	lr:2.27e-04	Loss: 0.316429
+[2020-07-22 18:37:17,885] {train_model:70} INFO - Train Epoch: 14 [146176/366720 (40%)]	lr:2.27e-04	Loss: 0.243190
+[2020-07-22 18:37:59,688] {train_model:70} INFO - Train Epoch: 14 [182784/366720 (50%)]	lr:2.27e-04	Loss: 0.269843
+[2020-07-22 18:38:39,145] {train_model:70} INFO - Train Epoch: 14 [219392/366720 (60%)]	lr:2.27e-04	Loss: 0.230185
+[2020-07-22 18:39:18,718] {train_model:70} INFO - Train Epoch: 14 [256000/366720 (70%)]	lr:2.27e-04	Loss: 0.217303
+[2020-07-22 18:39:58,378] {train_model:70} INFO - Train Epoch: 14 [292608/366720 (80%)]	lr:2.27e-04	Loss: 0.198028
+[2020-07-22 18:40:38,172] {train_model:70} INFO - Train Epoch: 14 [329216/366720 (90%)]	lr:2.27e-04	Loss: 0.288988
+[2020-07-22 18:41:17,873] {train_model:70} INFO - Train Epoch: 14 [365824/366720 (100%)]	lr:2.27e-04	Loss: 0.220061
+[2020-07-22 18:41:27,257] {run_experiment:79} INFO - 
+[2020-07-22 18:41:27,258] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:41:27,349] {result_logger:103} INFO - precision on Wake: 0.975
+[2020-07-22 18:41:27,397] {result_logger:104} INFO - recall on Wake: 0.962
+[2020-07-22 18:41:27,445] {result_logger:107} INFO - F1-score on Wake: 0.969
+[2020-07-22 18:41:27,445] {result_logger:108} INFO - 
+[2020-07-22 18:41:27,523] {result_logger:103} INFO - precision on REM: 0.887
+[2020-07-22 18:41:27,570] {result_logger:104} INFO - recall on REM: 0.906
+[2020-07-22 18:41:27,617] {result_logger:107} INFO - F1-score on REM: 0.897
+[2020-07-22 18:41:27,617] {result_logger:108} INFO - 
+[2020-07-22 18:41:27,694] {result_logger:103} INFO - precision on Non REM: 0.973
+[2020-07-22 18:41:27,742] {result_logger:104} INFO - recall on Non REM: 0.899
+[2020-07-22 18:41:27,791] {result_logger:107} INFO - F1-score on Non REM: 0.934
+[2020-07-22 18:41:27,791] {result_logger:108} INFO - 
+[2020-07-22 18:41:27,867] {result_logger:103} INFO - precision on Pre REM: 0.328
+[2020-07-22 18:41:27,914] {result_logger:104} INFO - recall on Pre REM: 0.698
+[2020-07-22 18:41:27,961] {result_logger:107} INFO - F1-score on Pre REM: 0.446
+[2020-07-22 18:41:27,961] {result_logger:108} INFO - 
+[2020-07-22 18:41:28,036] {result_logger:103} INFO - precision on Artifact: 0.333
+[2020-07-22 18:41:28,085] {result_logger:104} INFO - recall on Artifact: 0.982
+[2020-07-22 18:41:28,132] {result_logger:107} INFO - F1-score on Artifact: 0.497
+[2020-07-22 18:41:28,132] {result_logger:108} INFO - 
+[2020-07-22 18:41:28,142] {result_logger:111} INFO - average precision on sleep stages: 0.699
+[2020-07-22 18:41:28,153] {result_logger:113} INFO - average recall on sleep stages: 0.890
+[2020-07-22 18:41:28,163] {result_logger:115} INFO - average F1-score on sleep stages: 0.749
+[2020-07-22 18:41:28,164] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:41:28,197] {result_logger:134} INFO - 
+[[27317    77   380     5   603]
+ [   20  2306    17   161    41]
+ [  658    99 17932   912   350]
+ [    3   115    98   525    11]
+ [    6     2     1     0   501]]
+[2020-07-22 18:41:28,229] {result_logger:141} INFO - 
+[[ 96.25%   0.27%   1.34%   0.02%   2.12%]
+ [  0.79%  90.61%   0.67%   6.33%   1.61%]
+ [  3.30%   0.50%  89.88%   4.57%   1.75%]
+ [  0.40%  15.29%  13.03%  69.81%   1.46%]
+ [  1.18%   0.39%   0.20%   0.00%  98.24%]]
+[2020-07-22 18:41:28,262] {result_logger:145} INFO - 
+[[ 97.55%   2.96%   2.06%   0.31%  40.04%]
+ [  0.07%  88.73%   0.09%  10.04%   2.72%]
+ [  2.35%   3.81%  97.31%  56.89%  23.24%]
+ [  0.01%   4.42%   0.53%  32.75%   0.73%]
+ [  0.02%   0.08%   0.01%   0.00%  33.27%]]
+[2020-07-22 18:41:28,339] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:41:28,339] {result_logger:77} INFO - actual:
+[2020-07-22 18:41:28,339] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:41:28,339] {result_logger:79} INFO - predicted:
+[2020-07-22 18:41:28,340] {result_logger:80} INFO - 
+[[94.20%  0.07%  4.67%  0.04%  1.03%]
+ [17.70% 75.30%  4.42%  0.69%  1.89%]
+ [ 4.54%  0.11% 89.28%  4.46%  1.62%]
+ [ 2.74% 34.56% 14.85% 46.23%  1.62%]
+ [18.92%  3.19% 20.98%  0.80% 56.11%]]
+[2020-07-22 18:41:28,340] {run_experiment:107} INFO - [epoch  14] execution time: 408.79s	 avg f1-score: 0.7486
+
+[2020-07-22 18:41:28,340] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:41:28,359] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:42:08,106] {train_model:70} INFO - Train Epoch: 15 [36352/366720 (10%)]	lr:2.14e-04	Loss: 0.226223
+[2020-07-22 18:42:47,569] {train_model:70} INFO - Train Epoch: 15 [72960/366720 (20%)]	lr:2.14e-04	Loss: 0.254087
+[2020-07-22 18:43:27,007] {train_model:70} INFO - Train Epoch: 15 [109568/366720 (30%)]	lr:2.14e-04	Loss: 0.168891
+[2020-07-22 18:44:06,537] {train_model:70} INFO - Train Epoch: 15 [146176/366720 (40%)]	lr:2.14e-04	Loss: 0.265150
+[2020-07-22 18:44:46,105] {train_model:70} INFO - Train Epoch: 15 [182784/366720 (50%)]	lr:2.14e-04	Loss: 0.209131
+[2020-07-22 18:45:28,151] {train_model:70} INFO - Train Epoch: 15 [219392/366720 (60%)]	lr:2.14e-04	Loss: 0.271303
+[2020-07-22 18:46:07,915] {train_model:70} INFO - Train Epoch: 15 [256000/366720 (70%)]	lr:2.14e-04	Loss: 0.247566
+[2020-07-22 18:46:47,699] {train_model:70} INFO - Train Epoch: 15 [292608/366720 (80%)]	lr:2.14e-04	Loss: 0.352669
+[2020-07-22 18:47:27,903] {train_model:70} INFO - Train Epoch: 15 [329216/366720 (90%)]	lr:2.14e-04	Loss: 0.203956
+[2020-07-22 18:48:07,526] {train_model:70} INFO - Train Epoch: 15 [365824/366720 (100%)]	lr:2.14e-04	Loss: 0.259621
+[2020-07-22 18:48:16,877] {run_experiment:79} INFO - 
+[2020-07-22 18:48:16,878] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:48:16,995] {result_logger:103} INFO - precision on Wake: 0.982
+[2020-07-22 18:48:17,065] {result_logger:104} INFO - recall on Wake: 0.958
+[2020-07-22 18:48:17,141] {result_logger:107} INFO - F1-score on Wake: 0.970
+[2020-07-22 18:48:17,141] {result_logger:108} INFO - 
+[2020-07-22 18:48:17,254] {result_logger:103} INFO - precision on REM: 0.859
+[2020-07-22 18:48:17,302] {result_logger:104} INFO - recall on REM: 0.919
+[2020-07-22 18:48:17,349] {result_logger:107} INFO - F1-score on REM: 0.888
+[2020-07-22 18:48:17,349] {result_logger:108} INFO - 
+[2020-07-22 18:48:17,429] {result_logger:103} INFO - precision on Non REM: 0.970
+[2020-07-22 18:48:17,478] {result_logger:104} INFO - recall on Non REM: 0.895
+[2020-07-22 18:48:17,527] {result_logger:107} INFO - F1-score on Non REM: 0.931
+[2020-07-22 18:48:17,527] {result_logger:108} INFO - 
+[2020-07-22 18:48:17,599] {result_logger:103} INFO - precision on Pre REM: 0.290
+[2020-07-22 18:48:17,647] {result_logger:104} INFO - recall on Pre REM: 0.658
+[2020-07-22 18:48:17,695] {result_logger:107} INFO - F1-score on Pre REM: 0.403
+[2020-07-22 18:48:17,695] {result_logger:108} INFO - 
+[2020-07-22 18:48:17,771] {result_logger:103} INFO - precision on Artifact: 0.309
+[2020-07-22 18:48:17,817] {result_logger:104} INFO - recall on Artifact: 0.980
+[2020-07-22 18:48:17,864] {result_logger:107} INFO - F1-score on Artifact: 0.470
+[2020-07-22 18:48:17,864] {result_logger:108} INFO - 
+[2020-07-22 18:48:17,875] {result_logger:111} INFO - average precision on sleep stages: 0.682
+[2020-07-22 18:48:17,885] {result_logger:113} INFO - average recall on sleep stages: 0.882
+[2020-07-22 18:48:17,895] {result_logger:115} INFO - average F1-score on sleep stages: 0.733
+[2020-07-22 18:48:17,895] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:48:17,929] {result_logger:134} INFO - 
+[[27195   100   447     7   633]
+ [   18  2340    18   139    30]
+ [  467   116 17863  1065   440]
+ [    2   163    78   495    14]
+ [    6     4     0     0   500]]
+[2020-07-22 18:48:17,963] {result_logger:141} INFO - 
+[[ 95.82%   0.35%   1.57%   0.02%   2.23%]
+ [  0.71%  91.94%   0.71%   5.46%   1.18%]
+ [  2.34%   0.58%  89.53%   5.34%   2.21%]
+ [  0.27%  21.68%  10.37%  65.82%   1.86%]
+ [  1.18%   0.78%   0.00%   0.00%  98.04%]]
+[2020-07-22 18:48:17,996] {result_logger:145} INFO - 
+[[ 98.22%   3.67%   2.43%   0.41%  39.15%]
+ [  0.07%  85.93%   0.10%   8.15%   1.86%]
+ [  1.69%   4.26%  97.05%  62.43%  27.21%]
+ [  0.01%   5.99%   0.42%  29.02%   0.87%]
+ [  0.02%   0.15%   0.00%   0.00%  30.92%]]
+[2020-07-22 18:48:18,074] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:48:18,074] {result_logger:77} INFO - actual:
+[2020-07-22 18:48:18,074] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:48:18,074] {result_logger:79} INFO - predicted:
+[2020-07-22 18:48:18,074] {result_logger:80} INFO - 
+[[94.68%  0.09%  4.21%  0.03%  0.99%]
+ [16.60% 76.02%  5.29%  0.73%  1.36%]
+ [ 3.92%  0.07% 89.57%  4.77%  1.68%]
+ [ 2.05% 33.70% 16.47% 45.72%  2.05%]
+ [16.45%  2.47% 20.35%  1.30% 59.43%]]
+[2020-07-22 18:48:18,074] {run_experiment:107} INFO - [epoch  15] execution time: 409.73s	 avg f1-score: 0.7325
+
+[2020-07-22 18:48:18,074] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:48:18,094] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:48:57,806] {train_model:70} INFO - Train Epoch: 16 [36352/366720 (10%)]	lr:2.01e-04	Loss: 0.342133
+[2020-07-22 18:49:37,282] {train_model:70} INFO - Train Epoch: 16 [72960/366720 (20%)]	lr:2.01e-04	Loss: 0.291456
+[2020-07-22 18:50:16,872] {train_model:70} INFO - Train Epoch: 16 [109568/366720 (30%)]	lr:2.01e-04	Loss: 0.308338
+[2020-07-22 18:50:56,435] {train_model:70} INFO - Train Epoch: 16 [146176/366720 (40%)]	lr:2.01e-04	Loss: 0.188499
+[2020-07-22 18:51:36,015] {train_model:70} INFO - Train Epoch: 16 [182784/366720 (50%)]	lr:2.01e-04	Loss: 0.320632
+[2020-07-22 18:52:16,119] {train_model:70} INFO - Train Epoch: 16 [219392/366720 (60%)]	lr:2.01e-04	Loss: 0.163624
+[2020-07-22 18:52:55,952] {train_model:70} INFO - Train Epoch: 16 [256000/366720 (70%)]	lr:2.01e-04	Loss: 0.203717
+[2020-07-22 18:53:35,462] {train_model:70} INFO - Train Epoch: 16 [292608/366720 (80%)]	lr:2.01e-04	Loss: 0.258903
+[2020-07-22 18:54:15,648] {train_model:70} INFO - Train Epoch: 16 [329216/366720 (90%)]	lr:2.01e-04	Loss: 0.274539
+[2020-07-22 18:54:56,047] {train_model:70} INFO - Train Epoch: 16 [365824/366720 (100%)]	lr:2.01e-04	Loss: 0.222377
+[2020-07-22 18:55:05,497] {run_experiment:79} INFO - 
+[2020-07-22 18:55:05,497] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 18:55:05,608] {result_logger:103} INFO - precision on Wake: 0.987
+[2020-07-22 18:55:05,678] {result_logger:104} INFO - recall on Wake: 0.947
+[2020-07-22 18:55:05,747] {result_logger:107} INFO - F1-score on Wake: 0.967
+[2020-07-22 18:55:05,747] {result_logger:108} INFO - 
+[2020-07-22 18:55:05,860] {result_logger:103} INFO - precision on REM: 0.884
+[2020-07-22 18:55:05,929] {result_logger:104} INFO - recall on REM: 0.902
+[2020-07-22 18:55:05,999] {result_logger:107} INFO - F1-score on REM: 0.893
+[2020-07-22 18:55:05,999] {result_logger:108} INFO - 
+[2020-07-22 18:55:06,110] {result_logger:103} INFO - precision on Non REM: 0.960
+[2020-07-22 18:55:06,182] {result_logger:104} INFO - recall on Non REM: 0.921
+[2020-07-22 18:55:06,265] {result_logger:107} INFO - F1-score on Non REM: 0.940
+[2020-07-22 18:55:06,265] {result_logger:108} INFO - 
+[2020-07-22 18:55:06,349] {result_logger:103} INFO - precision on Pre REM: 0.347
+[2020-07-22 18:55:06,396] {result_logger:104} INFO - recall on Pre REM: 0.718
+[2020-07-22 18:55:06,443] {result_logger:107} INFO - F1-score on Pre REM: 0.468
+[2020-07-22 18:55:06,443] {result_logger:108} INFO - 
+[2020-07-22 18:55:06,517] {result_logger:103} INFO - precision on Artifact: 0.313
+[2020-07-22 18:55:06,564] {result_logger:104} INFO - recall on Artifact: 0.976
+[2020-07-22 18:55:06,611] {result_logger:107} INFO - F1-score on Artifact: 0.474
+[2020-07-22 18:55:06,611] {result_logger:108} INFO - 
+[2020-07-22 18:55:06,621] {result_logger:111} INFO - average precision on sleep stages: 0.698
+[2020-07-22 18:55:06,631] {result_logger:113} INFO - average recall on sleep stages: 0.893
+[2020-07-22 18:55:06,642] {result_logger:115} INFO - average F1-score on sleep stages: 0.748
+[2020-07-22 18:55:06,642] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 18:55:06,675] {result_logger:134} INFO - 
+[[26889   122   649     7   715]
+ [    7  2296    26   181    35]
+ [  335    74 18380   827   335]
+ [    2   103    97   540    10]
+ [    6     3     3     0   498]]
+[2020-07-22 18:55:06,711] {result_logger:141} INFO - 
+[[ 94.74%   0.43%   2.29%   0.02%   2.52%]
+ [  0.28%  90.22%   1.02%   7.11%   1.38%]
+ [  1.68%   0.37%  92.13%   4.15%   1.68%]
+ [  0.27%  13.70%  12.90%  71.81%   1.33%]
+ [  1.18%   0.59%   0.59%   0.00%  97.65%]]
+[2020-07-22 18:55:06,743] {result_logger:145} INFO - 
+[[ 98.72%   4.70%   3.39%   0.45%  44.88%]
+ [  0.03%  88.38%   0.14%  11.64%   2.20%]
+ [  1.23%   2.85%  95.95%  53.18%  21.03%]
+ [  0.01%   3.96%   0.51%  34.73%   0.63%]
+ [  0.02%   0.12%   0.02%   0.00%  31.26%]]
+[2020-07-22 18:55:06,821] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 18:55:06,821] {result_logger:77} INFO - actual:
+[2020-07-22 18:55:06,821] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 18:55:06,821] {result_logger:79} INFO - predicted:
+[2020-07-22 18:55:06,821] {result_logger:80} INFO - 
+[[94.81%  0.12%  3.95%  0.02%  1.10%]
+ [14.90% 75.98%  6.81%  0.69%  1.62%]
+ [ 3.76%  0.07% 90.63%  3.99%  1.54%]
+ [ 1.35% 33.63% 14.79% 48.17%  2.06%]
+ [17.89%  3.33% 19.59%  1.13% 58.07%]]
+[2020-07-22 18:55:06,822] {run_experiment:107} INFO - [epoch  16] execution time: 408.75s	 avg f1-score: 0.7483
+
+[2020-07-22 18:55:06,822] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 18:55:06,840] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 18:55:46,749] {train_model:70} INFO - Train Epoch: 17 [36352/366720 (10%)]	lr:1.90e-04	Loss: 0.262404
+[2020-07-22 18:56:26,408] {train_model:70} INFO - Train Epoch: 17 [72960/366720 (20%)]	lr:1.90e-04	Loss: 0.257422
+[2020-07-22 18:57:06,129] {train_model:70} INFO - Train Epoch: 17 [109568/366720 (30%)]	lr:1.90e-04	Loss: 0.260224
+[2020-07-22 18:57:46,217] {train_model:70} INFO - Train Epoch: 17 [146176/366720 (40%)]	lr:1.90e-04	Loss: 0.204935
+[2020-07-22 18:58:26,277] {train_model:70} INFO - Train Epoch: 17 [182784/366720 (50%)]	lr:1.90e-04	Loss: 0.262802
+[2020-07-22 18:59:05,855] {train_model:70} INFO - Train Epoch: 17 [219392/366720 (60%)]	lr:1.90e-04	Loss: 0.234847
+[2020-07-22 18:59:46,661] {train_model:70} INFO - Train Epoch: 17 [256000/366720 (70%)]	lr:1.90e-04	Loss: 0.170403
+[2020-07-22 19:00:26,935] {train_model:70} INFO - Train Epoch: 17 [292608/366720 (80%)]	lr:1.90e-04	Loss: 0.229770
+[2020-07-22 19:01:06,399] {train_model:70} INFO - Train Epoch: 17 [329216/366720 (90%)]	lr:1.90e-04	Loss: 0.195582
+[2020-07-22 19:01:46,117] {train_model:70} INFO - Train Epoch: 17 [365824/366720 (100%)]	lr:1.90e-04	Loss: 0.197424
+[2020-07-22 19:01:55,488] {run_experiment:79} INFO - 
+[2020-07-22 19:01:55,489] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:01:55,607] {result_logger:103} INFO - precision on Wake: 0.980
+[2020-07-22 19:01:55,666] {result_logger:104} INFO - recall on Wake: 0.967
+[2020-07-22 19:01:55,713] {result_logger:107} INFO - F1-score on Wake: 0.973
+[2020-07-22 19:01:55,713] {result_logger:108} INFO - 
+[2020-07-22 19:01:55,790] {result_logger:103} INFO - precision on REM: 0.904
+[2020-07-22 19:01:55,837] {result_logger:104} INFO - recall on REM: 0.870
+[2020-07-22 19:01:55,884] {result_logger:107} INFO - F1-score on REM: 0.887
+[2020-07-22 19:01:55,884] {result_logger:108} INFO - 
+[2020-07-22 19:01:55,961] {result_logger:103} INFO - precision on Non REM: 0.968
+[2020-07-22 19:01:56,011] {result_logger:104} INFO - recall on Non REM: 0.924
+[2020-07-22 19:01:56,059] {result_logger:107} INFO - F1-score on Non REM: 0.946
+[2020-07-22 19:01:56,060] {result_logger:108} INFO - 
+[2020-07-22 19:01:56,136] {result_logger:103} INFO - precision on Pre REM: 0.376
+[2020-07-22 19:01:56,182] {result_logger:104} INFO - recall on Pre REM: 0.723
+[2020-07-22 19:01:56,229] {result_logger:107} INFO - F1-score on Pre REM: 0.495
+[2020-07-22 19:01:56,229] {result_logger:108} INFO - 
+[2020-07-22 19:01:56,308] {result_logger:103} INFO - precision on Artifact: 0.404
+[2020-07-22 19:01:56,354] {result_logger:104} INFO - recall on Artifact: 0.967
+[2020-07-22 19:01:56,401] {result_logger:107} INFO - F1-score on Artifact: 0.570
+[2020-07-22 19:01:56,401] {result_logger:108} INFO - 
+[2020-07-22 19:01:56,412] {result_logger:111} INFO - average precision on sleep stages: 0.727
+[2020-07-22 19:01:56,422] {result_logger:113} INFO - average recall on sleep stages: 0.890
+[2020-07-22 19:01:56,432] {result_logger:115} INFO - average F1-score on sleep stages: 0.774
+[2020-07-22 19:01:56,433] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:01:56,467] {result_logger:134} INFO - 
+[[27437    76   464     3   402]
+ [   82  2215    26   202    20]
+ [  455    66 18437   696   297]
+ [    6    88   105   544     9]
+ [    7     5     5     0   493]]
+[2020-07-22 19:01:56,607] {result_logger:141} INFO - 
+[[ 96.67%   0.27%   1.63%   0.01%   1.42%]
+ [  3.22%  87.03%   1.02%   7.94%   0.79%]
+ [  2.28%   0.33%  92.41%   3.49%   1.49%]
+ [  0.80%  11.70%  13.96%  72.34%   1.20%]
+ [  1.37%   0.98%   0.98%   0.00%  96.67%]]
+[2020-07-22 19:01:56,739] {result_logger:145} INFO - 
+[[ 98.03%   3.10%   2.44%   0.21%  32.92%]
+ [  0.29%  90.41%   0.14%  13.98%   1.64%]
+ [  1.63%   2.69%  96.85%  48.17%  24.32%]
+ [  0.02%   3.59%   0.55%  37.65%   0.74%]
+ [  0.03%   0.20%   0.03%   0.00%  40.38%]]
+[2020-07-22 19:01:57,034] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:01:57,034] {result_logger:77} INFO - actual:
+[2020-07-22 19:01:57,035] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:01:57,035] {result_logger:79} INFO - predicted:
+[2020-07-22 19:01:57,035] {result_logger:80} INFO - 
+[[94.97%  0.17%  4.16%  0.03%  0.68%]
+ [18.45% 74.69%  4.61%  0.53%  1.71%]
+ [ 3.93%  0.06% 90.82%  3.76%  1.43%]
+ [ 1.80% 35.29% 13.01% 48.24%  1.66%]
+ [14.99%  4.26% 23.01%  0.98% 56.76%]]
+[2020-07-22 19:01:57,049] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 19:01:57,050] {run_experiment:107} INFO - [epoch  17] execution time: 410.23s	 avg f1-score: 0.7742
+
+[2020-07-22 19:01:57,050] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:01:57,067] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:02:37,045] {train_model:70} INFO - Train Epoch: 18 [36352/366720 (10%)]	lr:1.79e-04	Loss: 0.213774
+[2020-07-22 19:03:16,678] {train_model:70} INFO - Train Epoch: 18 [72960/366720 (20%)]	lr:1.79e-04	Loss: 0.246933
+[2020-07-22 19:03:56,199] {train_model:70} INFO - Train Epoch: 18 [109568/366720 (30%)]	lr:1.79e-04	Loss: 0.148211
+[2020-07-22 19:04:35,771] {train_model:70} INFO - Train Epoch: 18 [146176/366720 (40%)]	lr:1.79e-04	Loss: 0.229637
+[2020-07-22 19:05:15,266] {train_model:70} INFO - Train Epoch: 18 [182784/366720 (50%)]	lr:1.79e-04	Loss: 0.190884
+[2020-07-22 19:05:54,862] {train_model:70} INFO - Train Epoch: 18 [219392/366720 (60%)]	lr:1.79e-04	Loss: 0.174264
+[2020-07-22 19:06:34,462] {train_model:70} INFO - Train Epoch: 18 [256000/366720 (70%)]	lr:1.79e-04	Loss: 0.172850
+[2020-07-22 19:07:14,679] {train_model:70} INFO - Train Epoch: 18 [292608/366720 (80%)]	lr:1.79e-04	Loss: 0.175432
+[2020-07-22 19:07:55,318] {train_model:70} INFO - Train Epoch: 18 [329216/366720 (90%)]	lr:1.79e-04	Loss: 0.249830
+[2020-07-22 19:08:34,788] {train_model:70} INFO - Train Epoch: 18 [365824/366720 (100%)]	lr:1.79e-04	Loss: 0.200506
+[2020-07-22 19:08:44,207] {run_experiment:79} INFO - 
+[2020-07-22 19:08:44,208] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:08:44,288] {result_logger:103} INFO - precision on Wake: 0.987
+[2020-07-22 19:08:44,338] {result_logger:104} INFO - recall on Wake: 0.959
+[2020-07-22 19:08:44,386] {result_logger:107} INFO - F1-score on Wake: 0.973
+[2020-07-22 19:08:44,386] {result_logger:108} INFO - 
+[2020-07-22 19:08:44,463] {result_logger:103} INFO - precision on REM: 0.875
+[2020-07-22 19:08:44,510] {result_logger:104} INFO - recall on REM: 0.895
+[2020-07-22 19:08:44,557] {result_logger:107} INFO - F1-score on REM: 0.885
+[2020-07-22 19:08:44,557] {result_logger:108} INFO - 
+[2020-07-22 19:08:44,634] {result_logger:103} INFO - precision on Non REM: 0.960
+[2020-07-22 19:08:44,683] {result_logger:104} INFO - recall on Non REM: 0.921
+[2020-07-22 19:08:44,732] {result_logger:107} INFO - F1-score on Non REM: 0.940
+[2020-07-22 19:08:44,732] {result_logger:108} INFO - 
+[2020-07-22 19:08:44,809] {result_logger:103} INFO - precision on Pre REM: 0.316
+[2020-07-22 19:08:44,856] {result_logger:104} INFO - recall on Pre REM: 0.723
+[2020-07-22 19:08:44,903] {result_logger:107} INFO - F1-score on Pre REM: 0.440
+[2020-07-22 19:08:44,903] {result_logger:108} INFO - 
+[2020-07-22 19:08:44,981] {result_logger:103} INFO - precision on Artifact: 0.443
+[2020-07-22 19:08:45,028] {result_logger:104} INFO - recall on Artifact: 0.957
+[2020-07-22 19:08:45,075] {result_logger:107} INFO - F1-score on Artifact: 0.605
+[2020-07-22 19:08:45,075] {result_logger:108} INFO - 
+[2020-07-22 19:08:45,085] {result_logger:111} INFO - average precision on sleep stages: 0.716
+[2020-07-22 19:08:45,095] {result_logger:113} INFO - average recall on sleep stages: 0.891
+[2020-07-22 19:08:45,106] {result_logger:115} INFO - average F1-score on sleep stages: 0.769
+[2020-07-22 19:08:45,106] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:08:45,138] {result_logger:134} INFO - 
+[[27212   146   623    14   387]
+ [    9  2279    26   200    31]
+ [  342    78 18378   965   188]
+ [    4    96   100   544     8]
+ [    8     5     9     0   488]]
+[2020-07-22 19:08:45,173] {result_logger:141} INFO - 
+[[ 95.88%   0.51%   2.20%   0.05%   1.36%]
+ [  0.35%  89.55%   1.02%   7.86%   1.22%]
+ [  1.71%   0.39%  92.12%   4.84%   0.94%]
+ [  0.53%  12.77%  13.30%  72.34%   1.06%]
+ [  1.57%   0.98%   1.76%   0.00%  95.69%]]
+[2020-07-22 19:08:45,205] {result_logger:145} INFO - 
+[[ 98.68%   5.61%   3.26%   0.81%  35.12%]
+ [  0.03%  87.52%   0.14%  11.61%   2.81%]
+ [  1.24%   3.00%  96.04%  56.01%  17.06%]
+ [  0.01%   3.69%   0.52%  31.57%   0.73%]
+ [  0.03%   0.19%   0.05%   0.00%  44.28%]]
+[2020-07-22 19:08:45,285] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:08:45,285] {result_logger:77} INFO - actual:
+[2020-07-22 19:08:45,285] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:08:45,285] {result_logger:79} INFO - predicted:
+[2020-07-22 19:08:45,285] {result_logger:80} INFO - 
+[[94.97%  0.16%  4.20%  0.04%  0.62%]
+ [15.44% 75.42%  6.53%  0.77%  1.84%]
+ [ 4.05%  0.07% 90.14%  4.38%  1.35%]
+ [ 2.38% 30.64% 16.31% 48.87%  1.80%]
+ [15.25%  4.99% 25.05%  1.00% 53.72%]]
+[2020-07-22 19:08:45,285] {run_experiment:107} INFO - [epoch  18] execution time: 408.24s	 avg f1-score: 0.7686
+
+[2020-07-22 19:08:45,285] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:08:45,307] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:09:25,022] {train_model:70} INFO - Train Epoch: 19 [36352/366720 (10%)]	lr:1.68e-04	Loss: 0.273877
+[2020-07-22 19:10:04,575] {train_model:70} INFO - Train Epoch: 19 [72960/366720 (20%)]	lr:1.68e-04	Loss: 0.168260
+[2020-07-22 19:10:44,091] {train_model:70} INFO - Train Epoch: 19 [109568/366720 (30%)]	lr:1.68e-04	Loss: 0.181968
+[2020-07-22 19:11:23,808] {train_model:70} INFO - Train Epoch: 19 [146176/366720 (40%)]	lr:1.68e-04	Loss: 0.181514
+[2020-07-22 19:12:04,375] {train_model:70} INFO - Train Epoch: 19 [182784/366720 (50%)]	lr:1.68e-04	Loss: 0.167058
+[2020-07-22 19:12:44,356] {train_model:70} INFO - Train Epoch: 19 [219392/366720 (60%)]	lr:1.68e-04	Loss: 0.167978
+[2020-07-22 19:13:24,038] {train_model:70} INFO - Train Epoch: 19 [256000/366720 (70%)]	lr:1.68e-04	Loss: 0.201397
+[2020-07-22 19:14:03,803] {train_model:70} INFO - Train Epoch: 19 [292608/366720 (80%)]	lr:1.68e-04	Loss: 0.219837
+[2020-07-22 19:14:45,610] {train_model:70} INFO - Train Epoch: 19 [329216/366720 (90%)]	lr:1.68e-04	Loss: 0.173811
+[2020-07-22 19:15:25,168] {train_model:70} INFO - Train Epoch: 19 [365824/366720 (100%)]	lr:1.68e-04	Loss: 0.232354
+[2020-07-22 19:15:34,528] {run_experiment:79} INFO - 
+[2020-07-22 19:15:34,529] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:15:34,620] {result_logger:103} INFO - precision on Wake: 0.979
+[2020-07-22 19:15:34,666] {result_logger:104} INFO - recall on Wake: 0.966
+[2020-07-22 19:15:34,713] {result_logger:107} INFO - F1-score on Wake: 0.972
+[2020-07-22 19:15:34,713] {result_logger:108} INFO - 
+[2020-07-22 19:15:34,789] {result_logger:103} INFO - precision on REM: 0.809
+[2020-07-22 19:15:34,834] {result_logger:104} INFO - recall on REM: 0.918
+[2020-07-22 19:15:34,882] {result_logger:107} INFO - F1-score on REM: 0.860
+[2020-07-22 19:15:34,882] {result_logger:108} INFO - 
+[2020-07-22 19:15:34,957] {result_logger:103} INFO - precision on Non REM: 0.972
+[2020-07-22 19:15:35,005] {result_logger:104} INFO - recall on Non REM: 0.912
+[2020-07-22 19:15:35,052] {result_logger:107} INFO - F1-score on Non REM: 0.941
+[2020-07-22 19:15:35,052] {result_logger:108} INFO - 
+[2020-07-22 19:15:35,124] {result_logger:103} INFO - precision on Pre REM: 0.330
+[2020-07-22 19:15:35,170] {result_logger:104} INFO - recall on Pre REM: 0.715
+[2020-07-22 19:15:35,216] {result_logger:107} INFO - F1-score on Pre REM: 0.452
+[2020-07-22 19:15:35,216] {result_logger:108} INFO - 
+[2020-07-22 19:15:35,288] {result_logger:103} INFO - precision on Artifact: 0.523
+[2020-07-22 19:15:35,333] {result_logger:104} INFO - recall on Artifact: 0.927
+[2020-07-22 19:15:35,378] {result_logger:107} INFO - F1-score on Artifact: 0.669
+[2020-07-22 19:15:35,378] {result_logger:108} INFO - 
+[2020-07-22 19:15:35,388] {result_logger:111} INFO - average precision on sleep stages: 0.723
+[2020-07-22 19:15:35,399] {result_logger:113} INFO - average recall on sleep stages: 0.888
+[2020-07-22 19:15:35,409] {result_logger:115} INFO - average F1-score on sleep stages: 0.779
+[2020-07-22 19:15:35,409] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:15:35,442] {result_logger:134} INFO - 
+[[27404   290   403    13   272]
+ [    4  2336    19   180     6]
+ [  586   132 18188   897   148]
+ [    2   113    94   538     5]
+ [    8    18    11     0   473]]
+[2020-07-22 19:15:35,579] {result_logger:141} INFO - 
+[[ 96.55%   1.02%   1.42%   0.05%   0.96%]
+ [  0.16%  91.79%   0.75%   7.07%   0.24%]
+ [  2.94%   0.66%  91.16%   4.50%   0.74%]
+ [  0.27%  15.03%  12.50%  71.54%   0.66%]
+ [  1.57%   3.53%   2.16%   0.00%  92.75%]]
+[2020-07-22 19:15:35,779] {result_logger:145} INFO - 
+[[ 97.86%  10.04%   2.15%   0.80%  30.09%]
+ [  0.01%  80.86%   0.10%  11.06%   0.66%]
+ [  2.09%   4.57%  97.18%  55.10%  16.37%]
+ [  0.01%   3.91%   0.50%  33.05%   0.55%]
+ [  0.03%   0.62%   0.06%   0.00%  52.32%]]
+[2020-07-22 19:15:36,050] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:15:36,050] {result_logger:77} INFO - actual:
+[2020-07-22 19:15:36,051] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:15:36,051] {result_logger:79} INFO - predicted:
+[2020-07-22 19:15:36,051] {result_logger:80} INFO - 
+[[94.81%  0.39%  4.27%  0.02%  0.51%]
+ [17.13% 74.00%  7.55%  0.45%  0.87%]
+ [ 4.23%  0.15% 89.92%  4.45%  1.25%]
+ [ 2.52% 34.95% 13.45% 47.11%  1.97%]
+ [13.83%  4.98% 28.21%  1.00% 51.99%]]
+[2020-07-22 19:15:36,067] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 19:15:36,067] {run_experiment:107} INFO - [epoch  19] execution time: 410.78s	 avg f1-score: 0.7787
+
+[2020-07-22 19:15:36,067] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:15:36,087] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:16:16,104] {train_model:70} INFO - Train Epoch: 20 [36352/366720 (10%)]	lr:1.58e-04	Loss: 0.174251
+[2020-07-22 19:16:55,651] {train_model:70} INFO - Train Epoch: 20 [72960/366720 (20%)]	lr:1.58e-04	Loss: 0.212194
+[2020-07-22 19:17:35,355] {train_model:70} INFO - Train Epoch: 20 [109568/366720 (30%)]	lr:1.58e-04	Loss: 0.226782
+[2020-07-22 19:18:15,953] {train_model:70} INFO - Train Epoch: 20 [146176/366720 (40%)]	lr:1.58e-04	Loss: 0.224736
+[2020-07-22 19:18:56,580] {train_model:70} INFO - Train Epoch: 20 [182784/366720 (50%)]	lr:1.58e-04	Loss: 0.182916
+[2020-07-22 19:19:36,655] {train_model:70} INFO - Train Epoch: 20 [219392/366720 (60%)]	lr:1.58e-04	Loss: 0.209527
+[2020-07-22 19:20:16,659] {train_model:70} INFO - Train Epoch: 20 [256000/366720 (70%)]	lr:1.58e-04	Loss: 0.282273
+[2020-07-22 19:20:56,487] {train_model:70} INFO - Train Epoch: 20 [292608/366720 (80%)]	lr:1.58e-04	Loss: 0.329959
+[2020-07-22 19:21:36,390] {train_model:70} INFO - Train Epoch: 20 [329216/366720 (90%)]	lr:1.58e-04	Loss: 0.193429
+[2020-07-22 19:22:18,422] {train_model:70} INFO - Train Epoch: 20 [365824/366720 (100%)]	lr:1.58e-04	Loss: 0.176222
+[2020-07-22 19:22:27,062] {run_experiment:79} INFO - 
+[2020-07-22 19:22:27,063] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:22:27,154] {result_logger:103} INFO - precision on Wake: 0.979
+[2020-07-22 19:22:27,202] {result_logger:104} INFO - recall on Wake: 0.968
+[2020-07-22 19:22:27,249] {result_logger:107} INFO - F1-score on Wake: 0.973
+[2020-07-22 19:22:27,249] {result_logger:108} INFO - 
+[2020-07-22 19:22:27,321] {result_logger:103} INFO - precision on REM: 0.882
+[2020-07-22 19:22:27,367] {result_logger:104} INFO - recall on REM: 0.907
+[2020-07-22 19:22:27,414] {result_logger:107} INFO - F1-score on REM: 0.894
+[2020-07-22 19:22:27,414] {result_logger:108} INFO - 
+[2020-07-22 19:22:27,489] {result_logger:103} INFO - precision on Non REM: 0.971
+[2020-07-22 19:22:27,537] {result_logger:104} INFO - recall on Non REM: 0.904
+[2020-07-22 19:22:27,587] {result_logger:107} INFO - F1-score on Non REM: 0.936
+[2020-07-22 19:22:27,588] {result_logger:108} INFO - 
+[2020-07-22 19:22:27,659] {result_logger:103} INFO - precision on Pre REM: 0.313
+[2020-07-22 19:22:27,708] {result_logger:104} INFO - recall on Pre REM: 0.711
+[2020-07-22 19:22:27,754] {result_logger:107} INFO - F1-score on Pre REM: 0.435
+[2020-07-22 19:22:27,754] {result_logger:108} INFO - 
+[2020-07-22 19:22:27,828] {result_logger:103} INFO - precision on Artifact: 0.412
+[2020-07-22 19:22:27,875] {result_logger:104} INFO - recall on Artifact: 0.967
+[2020-07-22 19:22:27,921] {result_logger:107} INFO - F1-score on Artifact: 0.578
+[2020-07-22 19:22:27,921] {result_logger:108} INFO - 
+[2020-07-22 19:22:27,931] {result_logger:111} INFO - average precision on sleep stages: 0.711
+[2020-07-22 19:22:27,944] {result_logger:113} INFO - average recall on sleep stages: 0.891
+[2020-07-22 19:22:27,954] {result_logger:115} INFO - average F1-score on sleep stages: 0.763
+[2020-07-22 19:22:27,954] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:22:27,986] {result_logger:134} INFO - 
+[[27463    94   429     3   393]
+ [   22  2308    22   176    17]
+ [  546    92 18030   995   288]
+ [    5   116    90   535     6]
+ [    7     6     4     0   493]]
+[2020-07-22 19:22:28,018] {result_logger:141} INFO - 
+[[ 96.76%   0.33%   1.51%   0.01%   1.38%]
+ [  0.86%  90.69%   0.86%   6.92%   0.67%]
+ [  2.74%   0.46%  90.37%   4.99%   1.44%]
+ [  0.66%  15.43%  11.97%  71.14%   0.80%]
+ [  1.37%   1.18%   0.78%   0.00%  96.67%]]
+[2020-07-22 19:22:28,050] {result_logger:145} INFO - 
+[[ 97.93%   3.59%   2.31%   0.18%  32.83%]
+ [  0.08%  88.23%   0.12%  10.30%   1.42%]
+ [  1.95%   3.52%  97.07%  58.22%  24.06%]
+ [  0.02%   4.43%   0.48%  31.30%   0.50%]
+ [  0.02%   0.23%   0.02%   0.00%  41.19%]]
+[2020-07-22 19:22:28,123] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:22:28,123] {result_logger:77} INFO - actual:
+[2020-07-22 19:22:28,123] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:22:28,123] {result_logger:79} INFO - predicted:
+[2020-07-22 19:22:28,124] {result_logger:80} INFO - 
+[[94.96%  0.07%  4.25%  0.02%  0.69%]
+ [15.63% 76.07%  6.08%  0.76%  1.45%]
+ [ 4.22%  0.05% 89.60%  4.58%  1.54%]
+ [ 2.40% 32.12% 15.45% 47.81%  2.22%]
+ [15.04%  3.84% 26.32%  1.25% 53.55%]]
+[2020-07-22 19:22:28,124] {run_experiment:107} INFO - [epoch  20] execution time: 412.06s	 avg f1-score: 0.7632
+
+[2020-07-22 19:22:28,124] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:22:28,146] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:23:07,606] {train_model:70} INFO - Train Epoch: 21 [36352/366720 (10%)]	lr:1.49e-04	Loss: 0.224681
+[2020-07-22 19:23:47,208] {train_model:70} INFO - Train Epoch: 21 [72960/366720 (20%)]	lr:1.49e-04	Loss: 0.185995
+[2020-07-22 19:24:26,643] {train_model:70} INFO - Train Epoch: 21 [109568/366720 (30%)]	lr:1.49e-04	Loss: 0.216779
+[2020-07-22 19:25:06,145] {train_model:70} INFO - Train Epoch: 21 [146176/366720 (40%)]	lr:1.49e-04	Loss: 0.186443
+[2020-07-22 19:25:45,848] {train_model:70} INFO - Train Epoch: 21 [182784/366720 (50%)]	lr:1.49e-04	Loss: 0.227352
+[2020-07-22 19:26:25,436] {train_model:70} INFO - Train Epoch: 21 [219392/366720 (60%)]	lr:1.49e-04	Loss: 0.151304
+[2020-07-22 19:27:04,925] {train_model:70} INFO - Train Epoch: 21 [256000/366720 (70%)]	lr:1.49e-04	Loss: 0.182541
+[2020-07-22 19:27:44,510] {train_model:70} INFO - Train Epoch: 21 [292608/366720 (80%)]	lr:1.49e-04	Loss: 0.207057
+[2020-07-22 19:28:24,076] {train_model:70} INFO - Train Epoch: 21 [329216/366720 (90%)]	lr:1.49e-04	Loss: 0.180220
+[2020-07-22 19:29:03,651] {train_model:70} INFO - Train Epoch: 21 [365824/366720 (100%)]	lr:1.49e-04	Loss: 0.216090
+[2020-07-22 19:29:13,080] {run_experiment:79} INFO - 
+[2020-07-22 19:29:13,081] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:29:13,173] {result_logger:103} INFO - precision on Wake: 0.984
+[2020-07-22 19:29:13,221] {result_logger:104} INFO - recall on Wake: 0.967
+[2020-07-22 19:29:13,269] {result_logger:107} INFO - F1-score on Wake: 0.975
+[2020-07-22 19:29:13,269] {result_logger:108} INFO - 
+[2020-07-22 19:29:13,344] {result_logger:103} INFO - precision on REM: 0.875
+[2020-07-22 19:29:13,392] {result_logger:104} INFO - recall on REM: 0.890
+[2020-07-22 19:29:13,439] {result_logger:107} INFO - F1-score on REM: 0.882
+[2020-07-22 19:29:13,439] {result_logger:108} INFO - 
+[2020-07-22 19:29:13,518] {result_logger:103} INFO - precision on Non REM: 0.968
+[2020-07-22 19:29:13,567] {result_logger:104} INFO - recall on Non REM: 0.927
+[2020-07-22 19:29:13,616] {result_logger:107} INFO - F1-score on Non REM: 0.947
+[2020-07-22 19:29:13,616] {result_logger:108} INFO - 
+[2020-07-22 19:29:13,691] {result_logger:103} INFO - precision on Pre REM: 0.357
+[2020-07-22 19:29:13,738] {result_logger:104} INFO - recall on Pre REM: 0.722
+[2020-07-22 19:29:13,786] {result_logger:107} INFO - F1-score on Pre REM: 0.478
+[2020-07-22 19:29:13,786] {result_logger:108} INFO - 
+[2020-07-22 19:29:13,860] {result_logger:103} INFO - precision on Artifact: 0.468
+[2020-07-22 19:29:13,908] {result_logger:104} INFO - recall on Artifact: 0.951
+[2020-07-22 19:29:13,957] {result_logger:107} INFO - F1-score on Artifact: 0.627
+[2020-07-22 19:29:13,957] {result_logger:108} INFO - 
+[2020-07-22 19:29:13,967] {result_logger:111} INFO - average precision on sleep stages: 0.730
+[2020-07-22 19:29:13,978] {result_logger:113} INFO - average recall on sleep stages: 0.891
+[2020-07-22 19:29:13,988] {result_logger:115} INFO - average F1-score on sleep stages: 0.782
+[2020-07-22 19:29:13,989] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:29:14,022] {result_logger:134} INFO - 
+[[27449   157   456    13   307]
+ [    7  2264    30   224    20]
+ [  435    76 18485   741   214]
+ [    4    83   112   543    10]
+ [   10     6     9     0   485]]
+[2020-07-22 19:29:14,160] {result_logger:141} INFO - 
+[[ 96.71%   0.55%   1.61%   0.05%   1.08%]
+ [  0.28%  88.96%   1.18%   8.80%   0.79%]
+ [  2.18%   0.38%  92.65%   3.71%   1.07%]
+ [  0.53%  11.04%  14.89%  72.21%   1.33%]
+ [  1.96%   1.18%   1.76%   0.00%  95.10%]]
+[2020-07-22 19:29:14,290] {result_logger:145} INFO - 
+[[ 98.37%   6.07%   2.39%   0.85%  29.63%]
+ [  0.03%  87.55%   0.16%  14.73%   1.93%]
+ [  1.56%   2.94%  96.82%  48.72%  20.66%]
+ [  0.01%   3.21%   0.59%  35.70%   0.97%]
+ [  0.04%   0.23%   0.05%   0.00%  46.81%]]
+[2020-07-22 19:29:14,559] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:29:14,559] {result_logger:77} INFO - actual:
+[2020-07-22 19:29:14,559] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:29:14,559] {result_logger:79} INFO - predicted:
+[2020-07-22 19:29:14,559] {result_logger:80} INFO - 
+[[95.28%  0.22%  3.97%  0.03%  0.51%]
+ [17.36% 75.06%  5.49%  0.89%  1.20%]
+ [ 3.70%  0.09% 90.91%  3.89%  1.41%]
+ [ 1.91% 33.73% 14.00% 48.45%  1.91%]
+ [12.84%  5.12% 26.35%  1.06% 54.63%]]
+[2020-07-22 19:29:14,575] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 19:29:14,576] {run_experiment:107} INFO - [epoch  21] execution time: 406.45s	 avg f1-score: 0.7820
+
+[2020-07-22 19:29:14,576] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:29:14,595] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:29:57,289] {train_model:70} INFO - Train Epoch: 22 [36352/366720 (10%)]	lr:1.40e-04	Loss: 0.224692
+[2020-07-22 19:30:35,691] {train_model:70} INFO - Train Epoch: 22 [72960/366720 (20%)]	lr:1.40e-04	Loss: 0.168790
+[2020-07-22 19:31:15,444] {train_model:70} INFO - Train Epoch: 22 [109568/366720 (30%)]	lr:1.40e-04	Loss: 0.172202
+[2020-07-22 19:31:55,501] {train_model:70} INFO - Train Epoch: 22 [146176/366720 (40%)]	lr:1.40e-04	Loss: 0.203463
+[2020-07-22 19:32:35,449] {train_model:70} INFO - Train Epoch: 22 [182784/366720 (50%)]	lr:1.40e-04	Loss: 0.186059
+[2020-07-22 19:33:15,349] {train_model:70} INFO - Train Epoch: 22 [219392/366720 (60%)]	lr:1.40e-04	Loss: 0.134145
+[2020-07-22 19:33:55,584] {train_model:70} INFO - Train Epoch: 22 [256000/366720 (70%)]	lr:1.40e-04	Loss: 0.166269
+[2020-07-22 19:34:35,700] {train_model:70} INFO - Train Epoch: 22 [292608/366720 (80%)]	lr:1.40e-04	Loss: 0.210384
+[2020-07-22 19:35:15,657] {train_model:70} INFO - Train Epoch: 22 [329216/366720 (90%)]	lr:1.40e-04	Loss: 0.196945
+[2020-07-22 19:35:55,134] {train_model:70} INFO - Train Epoch: 22 [365824/366720 (100%)]	lr:1.40e-04	Loss: 0.227017
+[2020-07-22 19:36:04,517] {run_experiment:79} INFO - 
+[2020-07-22 19:36:04,518] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:36:04,638] {result_logger:103} INFO - precision on Wake: 0.987
+[2020-07-22 19:36:04,707] {result_logger:104} INFO - recall on Wake: 0.960
+[2020-07-22 19:36:04,780] {result_logger:107} INFO - F1-score on Wake: 0.973
+[2020-07-22 19:36:04,780] {result_logger:108} INFO - 
+[2020-07-22 19:36:04,889] {result_logger:103} INFO - precision on REM: 0.885
+[2020-07-22 19:36:04,958] {result_logger:104} INFO - recall on REM: 0.896
+[2020-07-22 19:36:05,027] {result_logger:107} INFO - F1-score on REM: 0.891
+[2020-07-22 19:36:05,027] {result_logger:108} INFO - 
+[2020-07-22 19:36:05,140] {result_logger:103} INFO - precision on Non REM: 0.965
+[2020-07-22 19:36:05,217] {result_logger:104} INFO - recall on Non REM: 0.921
+[2020-07-22 19:36:05,296] {result_logger:107} INFO - F1-score on Non REM: 0.942
+[2020-07-22 19:36:05,296] {result_logger:108} INFO - 
+[2020-07-22 19:36:05,413] {result_logger:103} INFO - precision on Pre REM: 0.340
+[2020-07-22 19:36:05,490] {result_logger:104} INFO - recall on Pre REM: 0.738
+[2020-07-22 19:36:05,568] {result_logger:107} INFO - F1-score on Pre REM: 0.466
+[2020-07-22 19:36:05,568] {result_logger:108} INFO - 
+[2020-07-22 19:36:05,680] {result_logger:103} INFO - precision on Artifact: 0.388
+[2020-07-22 19:36:05,749] {result_logger:104} INFO - recall on Artifact: 0.976
+[2020-07-22 19:36:05,818] {result_logger:107} INFO - F1-score on Artifact: 0.555
+[2020-07-22 19:36:05,818] {result_logger:108} INFO - 
+[2020-07-22 19:36:05,831] {result_logger:111} INFO - average precision on sleep stages: 0.713
+[2020-07-22 19:36:05,844] {result_logger:113} INFO - average recall on sleep stages: 0.898
+[2020-07-22 19:36:05,856] {result_logger:115} INFO - average F1-score on sleep stages: 0.766
+[2020-07-22 19:36:05,857] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:36:05,902] {result_logger:134} INFO - 
+[[27252   139   539    11   441]
+ [    5  2281    23   213    23]
+ [  349    68 18369   852   313]
+ [    2    84   102   555     9]
+ [    6     4     2     0   498]]
+[2020-07-22 19:36:05,947] {result_logger:141} INFO - 
+[[ 96.02%   0.49%   1.90%   0.04%   1.55%]
+ [  0.20%  89.63%   0.90%   8.37%   0.90%]
+ [  1.75%   0.34%  92.07%   4.27%   1.57%]
+ [  0.27%  11.17%  13.56%  73.80%   1.20%]
+ [  1.18%   0.78%   0.39%   0.00%  97.65%]]
+[2020-07-22 19:36:05,994] {result_logger:145} INFO - 
+[[ 98.69%   5.40%   2.83%   0.67%  34.35%]
+ [  0.02%  88.55%   0.12%  13.06%   1.79%]
+ [  1.26%   2.64%  96.50%  52.24%  24.38%]
+ [  0.01%   3.26%   0.54%  34.03%   0.70%]
+ [  0.02%   0.16%   0.01%   0.00%  38.79%]]
+[2020-07-22 19:36:06,120] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:36:06,120] {result_logger:77} INFO - actual:
+[2020-07-22 19:36:06,120] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:36:06,120] {result_logger:79} INFO - predicted:
+[2020-07-22 19:36:06,121] {result_logger:80} INFO - 
+[[94.82%  0.13%  4.31%  0.03%  0.71%]
+ [15.72% 75.89%  6.17%  0.78%  1.44%]
+ [ 4.13%  0.05% 90.08%  4.21%  1.53%]
+ [ 2.58% 32.25% 14.59% 48.19%  2.39%]
+ [15.34%  3.89% 23.36%  1.25% 56.15%]]
+[2020-07-22 19:36:06,121] {run_experiment:107} INFO - [epoch  22] execution time: 411.55s	 avg f1-score: 0.7655
+
+[2020-07-22 19:36:06,121] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:36:06,147] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:36:46,442] {train_model:70} INFO - Train Epoch: 23 [36352/366720 (10%)]	lr:1.32e-04	Loss: 0.184510
+[2020-07-22 19:37:28,371] {train_model:70} INFO - Train Epoch: 23 [72960/366720 (20%)]	lr:1.32e-04	Loss: 0.170378
+[2020-07-22 19:38:07,868] {train_model:70} INFO - Train Epoch: 23 [109568/366720 (30%)]	lr:1.32e-04	Loss: 0.293768
+[2020-07-22 19:38:49,072] {train_model:70} INFO - Train Epoch: 23 [146176/366720 (40%)]	lr:1.32e-04	Loss: 0.205963
+[2020-07-22 19:39:29,040] {train_model:70} INFO - Train Epoch: 23 [182784/366720 (50%)]	lr:1.32e-04	Loss: 0.133791
+[2020-07-22 19:40:09,445] {train_model:70} INFO - Train Epoch: 23 [219392/366720 (60%)]	lr:1.32e-04	Loss: 0.136815
+[2020-07-22 19:40:49,009] {train_model:70} INFO - Train Epoch: 23 [256000/366720 (70%)]	lr:1.32e-04	Loss: 0.211457
+[2020-07-22 19:41:28,497] {train_model:70} INFO - Train Epoch: 23 [292608/366720 (80%)]	lr:1.32e-04	Loss: 0.164721
+[2020-07-22 19:42:07,983] {train_model:70} INFO - Train Epoch: 23 [329216/366720 (90%)]	lr:1.32e-04	Loss: 0.199864
+[2020-07-22 19:42:47,481] {train_model:70} INFO - Train Epoch: 23 [365824/366720 (100%)]	lr:1.32e-04	Loss: 0.215469
+[2020-07-22 19:42:56,827] {run_experiment:79} INFO - 
+[2020-07-22 19:42:56,828] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:42:56,920] {result_logger:103} INFO - precision on Wake: 0.976
+[2020-07-22 19:42:56,970] {result_logger:104} INFO - recall on Wake: 0.975
+[2020-07-22 19:42:57,018] {result_logger:107} INFO - F1-score on Wake: 0.976
+[2020-07-22 19:42:57,018] {result_logger:108} INFO - 
+[2020-07-22 19:42:57,091] {result_logger:103} INFO - precision on REM: 0.896
+[2020-07-22 19:42:57,138] {result_logger:104} INFO - recall on REM: 0.888
+[2020-07-22 19:42:57,185] {result_logger:107} INFO - F1-score on REM: 0.892
+[2020-07-22 19:42:57,186] {result_logger:108} INFO - 
+[2020-07-22 19:42:57,264] {result_logger:103} INFO - precision on Non REM: 0.975
+[2020-07-22 19:42:57,313] {result_logger:104} INFO - recall on Non REM: 0.915
+[2020-07-22 19:42:57,363] {result_logger:107} INFO - F1-score on Non REM: 0.944
+[2020-07-22 19:42:57,363] {result_logger:108} INFO - 
+[2020-07-22 19:42:57,436] {result_logger:103} INFO - precision on Pre REM: 0.343
+[2020-07-22 19:42:57,485] {result_logger:104} INFO - recall on Pre REM: 0.699
+[2020-07-22 19:42:57,532] {result_logger:107} INFO - F1-score on Pre REM: 0.460
+[2020-07-22 19:42:57,532] {result_logger:108} INFO - 
+[2020-07-22 19:42:57,608] {result_logger:103} INFO - precision on Artifact: 0.478
+[2020-07-22 19:42:57,655] {result_logger:104} INFO - recall on Artifact: 0.953
+[2020-07-22 19:42:57,704] {result_logger:107} INFO - F1-score on Artifact: 0.637
+[2020-07-22 19:42:57,704] {result_logger:108} INFO - 
+[2020-07-22 19:42:57,715] {result_logger:111} INFO - average precision on sleep stages: 0.734
+[2020-07-22 19:42:57,725] {result_logger:113} INFO - average recall on sleep stages: 0.886
+[2020-07-22 19:42:57,735] {result_logger:115} INFO - average F1-score on sleep stages: 0.782
+[2020-07-22 19:42:57,736] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:42:57,768] {result_logger:134} INFO - 
+[[27685    68   329     3   297]
+ [   35  2260    20   206    24]
+ [  620    80 18250   800   201]
+ [    4   109   105   526     8]
+ [   10     5     9     0   486]]
+[2020-07-22 19:42:57,801] {result_logger:141} INFO - 
+[[ 97.54%   0.24%   1.16%   0.01%   1.05%]
+ [  1.38%  88.80%   0.79%   8.09%   0.94%]
+ [  3.11%   0.40%  91.47%   4.01%   1.01%]
+ [  0.53%  14.49%  13.96%  69.95%   1.06%]
+ [  1.96%   0.98%   1.76%   0.00%  95.29%]]
+[2020-07-22 19:42:57,835] {result_logger:145} INFO - 
+[[ 97.64%   2.70%   1.76%   0.20%  29.23%]
+ [  0.12%  89.61%   0.11%  13.42%   2.36%]
+ [  2.19%   3.17%  97.53%  52.12%  19.78%]
+ [  0.01%   4.32%   0.56%  34.27%   0.79%]
+ [  0.04%   0.20%   0.05%   0.00%  47.83%]]
+[2020-07-22 19:42:57,908] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:42:57,908] {result_logger:77} INFO - actual:
+[2020-07-22 19:42:57,908] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:42:57,908] {result_logger:79} INFO - predicted:
+[2020-07-22 19:42:57,909] {result_logger:80} INFO - 
+[[94.78%  0.09%  4.59%  0.03%  0.51%]
+ [17.64% 75.61%  4.84%  0.79%  1.11%]
+ [ 4.64%  0.07% 89.69%  4.18%  1.42%]
+ [ 2.28% 35.24% 14.33% 46.06%  2.08%]
+ [12.99%  3.44% 28.05%  1.77% 53.74%]]
+[2020-07-22 19:42:57,909] {run_experiment:107} INFO - [epoch  23] execution time: 411.79s	 avg f1-score: 0.7818
+
+[2020-07-22 19:42:57,909] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:42:57,927] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:43:37,729] {train_model:70} INFO - Train Epoch: 24 [36352/366720 (10%)]	lr:1.25e-04	Loss: 0.194884
+[2020-07-22 19:44:20,147] {train_model:70} INFO - Train Epoch: 24 [72960/366720 (20%)]	lr:1.25e-04	Loss: 0.188404
+[2020-07-22 19:44:59,080] {train_model:70} INFO - Train Epoch: 24 [109568/366720 (30%)]	lr:1.25e-04	Loss: 0.191516
+[2020-07-22 19:45:38,578] {train_model:70} INFO - Train Epoch: 24 [146176/366720 (40%)]	lr:1.25e-04	Loss: 0.159287
+[2020-07-22 19:46:18,219] {train_model:70} INFO - Train Epoch: 24 [182784/366720 (50%)]	lr:1.25e-04	Loss: 0.159402
+[2020-07-22 19:46:57,728] {train_model:70} INFO - Train Epoch: 24 [219392/366720 (60%)]	lr:1.25e-04	Loss: 0.164482
+[2020-07-22 19:47:37,219] {train_model:70} INFO - Train Epoch: 24 [256000/366720 (70%)]	lr:1.25e-04	Loss: 0.191248
+[2020-07-22 19:48:16,721] {train_model:70} INFO - Train Epoch: 24 [292608/366720 (80%)]	lr:1.25e-04	Loss: 0.172268
+[2020-07-22 19:48:56,229] {train_model:70} INFO - Train Epoch: 24 [329216/366720 (90%)]	lr:1.25e-04	Loss: 0.121694
+[2020-07-22 19:49:35,875] {train_model:70} INFO - Train Epoch: 24 [365824/366720 (100%)]	lr:1.25e-04	Loss: 0.172169
+[2020-07-22 19:49:45,218] {run_experiment:79} INFO - 
+[2020-07-22 19:49:45,219] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:49:45,307] {result_logger:103} INFO - precision on Wake: 0.982
+[2020-07-22 19:49:45,355] {result_logger:104} INFO - recall on Wake: 0.970
+[2020-07-22 19:49:45,403] {result_logger:107} INFO - F1-score on Wake: 0.976
+[2020-07-22 19:49:45,403] {result_logger:108} INFO - 
+[2020-07-22 19:49:45,475] {result_logger:103} INFO - precision on REM: 0.870
+[2020-07-22 19:49:45,523] {result_logger:104} INFO - recall on REM: 0.919
+[2020-07-22 19:49:45,570] {result_logger:107} INFO - F1-score on REM: 0.894
+[2020-07-22 19:49:45,570] {result_logger:108} INFO - 
+[2020-07-22 19:49:45,644] {result_logger:103} INFO - precision on Non REM: 0.971
+[2020-07-22 19:49:45,694] {result_logger:104} INFO - recall on Non REM: 0.912
+[2020-07-22 19:49:45,743] {result_logger:107} INFO - F1-score on Non REM: 0.940
+[2020-07-22 19:49:45,743] {result_logger:108} INFO - 
+[2020-07-22 19:49:45,822] {result_logger:103} INFO - precision on Pre REM: 0.308
+[2020-07-22 19:49:45,869] {result_logger:104} INFO - recall on Pre REM: 0.677
+[2020-07-22 19:49:45,918] {result_logger:107} INFO - F1-score on Pre REM: 0.423
+[2020-07-22 19:49:45,918] {result_logger:108} INFO - 
+[2020-07-22 19:49:45,990] {result_logger:103} INFO - precision on Artifact: 0.475
+[2020-07-22 19:49:46,037] {result_logger:104} INFO - recall on Artifact: 0.957
+[2020-07-22 19:49:46,084] {result_logger:107} INFO - F1-score on Artifact: 0.635
+[2020-07-22 19:49:46,085] {result_logger:108} INFO - 
+[2020-07-22 19:49:46,095] {result_logger:111} INFO - average precision on sleep stages: 0.721
+[2020-07-22 19:49:46,105] {result_logger:113} INFO - average recall on sleep stages: 0.887
+[2020-07-22 19:49:46,116] {result_logger:115} INFO - average F1-score on sleep stages: 0.774
+[2020-07-22 19:49:46,116] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:49:46,150] {result_logger:134} INFO - 
+[[27524   115   422     7   314]
+ [    7  2340    19   156    23]
+ [  494    94 18187   981   195]
+ [    3   138    94   509     8]
+ [    9     4     9     0   488]]
+[2020-07-22 19:49:46,183] {result_logger:141} INFO - 
+[[ 96.98%   0.41%   1.49%   0.02%   1.11%]
+ [  0.28%  91.94%   0.75%   6.13%   0.90%]
+ [  2.48%   0.47%  91.16%   4.92%   0.98%]
+ [  0.40%  18.35%  12.50%  67.69%   1.06%]
+ [  1.76%   0.78%   1.76%   0.00%  95.69%]]
+[2020-07-22 19:49:46,215] {result_logger:145} INFO - 
+[[ 98.17%   4.27%   2.25%   0.42%  30.54%]
+ [  0.02%  86.96%   0.10%   9.44%   2.24%]
+ [  1.76%   3.49%  97.10%  59.35%  18.97%]
+ [  0.01%   5.13%   0.50%  30.79%   0.78%]
+ [  0.03%   0.15%   0.05%   0.00%  47.47%]]
+[2020-07-22 19:49:46,287] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:49:46,288] {result_logger:77} INFO - actual:
+[2020-07-22 19:49:46,288] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:49:46,288] {result_logger:79} INFO - predicted:
+[2020-07-22 19:49:46,288] {result_logger:80} INFO - 
+[[95.12%  0.09%  4.22%  0.03%  0.54%]
+ [15.01% 76.77%  6.28%  0.78%  1.15%]
+ [ 4.15%  0.05% 89.78%  4.62%  1.39%]
+ [ 2.12% 33.21% 18.03% 45.07%  1.57%]
+ [14.59%  3.89% 25.78%  1.17% 54.57%]]
+[2020-07-22 19:49:46,288] {run_experiment:107} INFO - [epoch  24] execution time: 408.38s	 avg f1-score: 0.7735
+
+[2020-07-22 19:49:46,288] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:49:46,309] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:50:26,280] {train_model:70} INFO - Train Epoch: 25 [36352/366720 (10%)]	lr:1.17e-04	Loss: 0.241109
+[2020-07-22 19:51:05,837] {train_model:70} INFO - Train Epoch: 25 [72960/366720 (20%)]	lr:1.17e-04	Loss: 0.119098
+[2020-07-22 19:51:46,494] {train_model:70} INFO - Train Epoch: 25 [109568/366720 (30%)]	lr:1.17e-04	Loss: 0.203988
+[2020-07-22 19:52:26,919] {train_model:70} INFO - Train Epoch: 25 [146176/366720 (40%)]	lr:1.17e-04	Loss: 0.212680
+[2020-07-22 19:53:06,402] {train_model:70} INFO - Train Epoch: 25 [182784/366720 (50%)]	lr:1.17e-04	Loss: 0.155202
+[2020-07-22 19:53:46,266] {train_model:70} INFO - Train Epoch: 25 [219392/366720 (60%)]	lr:1.17e-04	Loss: 0.148516
+[2020-07-22 19:54:25,960] {train_model:70} INFO - Train Epoch: 25 [256000/366720 (70%)]	lr:1.17e-04	Loss: 0.222624
+[2020-07-22 19:55:05,532] {train_model:70} INFO - Train Epoch: 25 [292608/366720 (80%)]	lr:1.17e-04	Loss: 0.160706
+[2020-07-22 19:55:45,023] {train_model:70} INFO - Train Epoch: 25 [329216/366720 (90%)]	lr:1.17e-04	Loss: 0.102573
+[2020-07-22 19:56:24,539] {train_model:70} INFO - Train Epoch: 25 [365824/366720 (100%)]	lr:1.17e-04	Loss: 0.148032
+[2020-07-22 19:56:33,923] {run_experiment:79} INFO - 
+[2020-07-22 19:56:33,924] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 19:56:34,012] {result_logger:103} INFO - precision on Wake: 0.985
+[2020-07-22 19:56:34,060] {result_logger:104} INFO - recall on Wake: 0.970
+[2020-07-22 19:56:34,108] {result_logger:107} INFO - F1-score on Wake: 0.978
+[2020-07-22 19:56:34,108] {result_logger:108} INFO - 
+[2020-07-22 19:56:34,180] {result_logger:103} INFO - precision on REM: 0.898
+[2020-07-22 19:56:34,227] {result_logger:104} INFO - recall on REM: 0.901
+[2020-07-22 19:56:34,275] {result_logger:107} INFO - F1-score on REM: 0.900
+[2020-07-22 19:56:34,275] {result_logger:108} INFO - 
+[2020-07-22 19:56:34,351] {result_logger:103} INFO - precision on Non REM: 0.967
+[2020-07-22 19:56:34,399] {result_logger:104} INFO - recall on Non REM: 0.931
+[2020-07-22 19:56:34,448] {result_logger:107} INFO - F1-score on Non REM: 0.949
+[2020-07-22 19:56:34,448] {result_logger:108} INFO - 
+[2020-07-22 19:56:34,520] {result_logger:103} INFO - precision on Pre REM: 0.360
+[2020-07-22 19:56:34,567] {result_logger:104} INFO - recall on Pre REM: 0.703
+[2020-07-22 19:56:34,617] {result_logger:107} INFO - F1-score on Pre REM: 0.476
+[2020-07-22 19:56:34,617] {result_logger:108} INFO - 
+[2020-07-22 19:56:34,689] {result_logger:103} INFO - precision on Artifact: 0.505
+[2020-07-22 19:56:34,736] {result_logger:104} INFO - recall on Artifact: 0.951
+[2020-07-22 19:56:34,783] {result_logger:107} INFO - F1-score on Artifact: 0.659
+[2020-07-22 19:56:34,783] {result_logger:108} INFO - 
+[2020-07-22 19:56:34,793] {result_logger:111} INFO - average precision on sleep stages: 0.743
+[2020-07-22 19:56:34,804] {result_logger:113} INFO - average recall on sleep stages: 0.891
+[2020-07-22 19:56:34,814] {result_logger:115} INFO - average F1-score on sleep stages: 0.792
+[2020-07-22 19:56:34,814] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 19:56:34,847] {result_logger:134} INFO - 
+[[27531    70   491     4   286]
+ [   14  2292    26   198    15]
+ [  390    77 18576   739   169]
+ [    1   105   111   529     6]
+ [    9     7     9     0   485]]
+[2020-07-22 19:56:34,983] {result_logger:141} INFO - 
+[[ 97.00%   0.25%   1.73%   0.01%   1.01%]
+ [  0.55%  90.06%   1.02%   7.78%   0.59%]
+ [  1.95%   0.39%  93.11%   3.70%   0.85%]
+ [  0.13%  13.96%  14.76%  70.35%   0.80%]
+ [  1.76%   1.37%   1.76%   0.00%  95.10%]]
+[2020-07-22 19:56:35,115] {result_logger:145} INFO - 
+[[ 98.52%   2.74%   2.56%   0.27%  29.76%]
+ [  0.05%  89.85%   0.14%  13.47%   1.56%]
+ [  1.40%   3.02%  96.68%  50.27%  17.59%]
+ [  0.00%   4.12%   0.58%  35.99%   0.62%]
+ [  0.03%   0.27%   0.05%   0.00%  50.47%]]
+[2020-07-22 19:56:35,387] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 19:56:35,387] {result_logger:77} INFO - actual:
+[2020-07-22 19:56:35,387] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 19:56:35,387] {result_logger:79} INFO - predicted:
+[2020-07-22 19:56:35,387] {result_logger:80} INFO - 
+[[95.35%  0.05%  4.12%  0.01%  0.47%]
+ [15.44% 76.32%  6.12%  0.86%  1.25%]
+ [ 3.89%  0.05% 90.81%  3.90%  1.34%]
+ [ 1.36% 36.67% 13.47% 46.60%  1.90%]
+ [14.26%  4.37% 27.16%  1.04% 53.17%]]
+[2020-07-22 19:56:35,404] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 19:56:35,404] {run_experiment:107} INFO - [epoch  25] execution time: 409.12s	 avg f1-score: 0.7923
+
+[2020-07-22 19:56:35,404] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 19:56:35,423] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 19:57:15,231] {train_model:70} INFO - Train Epoch: 26 [36352/366720 (10%)]	lr:1.11e-04	Loss: 0.092036
+[2020-07-22 19:57:54,705] {train_model:70} INFO - Train Epoch: 26 [72960/366720 (20%)]	lr:1.11e-04	Loss: 0.275534
+[2020-07-22 19:58:34,245] {train_model:70} INFO - Train Epoch: 26 [109568/366720 (30%)]	lr:1.11e-04	Loss: 0.155666
+[2020-07-22 19:59:15,965] {train_model:70} INFO - Train Epoch: 26 [146176/366720 (40%)]	lr:1.11e-04	Loss: 0.138401
+[2020-07-22 19:59:54,898] {train_model:70} INFO - Train Epoch: 26 [182784/366720 (50%)]	lr:1.11e-04	Loss: 0.219413
+[2020-07-22 20:00:34,353] {train_model:70} INFO - Train Epoch: 26 [219392/366720 (60%)]	lr:1.11e-04	Loss: 0.179167
+[2020-07-22 20:01:13,813] {train_model:70} INFO - Train Epoch: 26 [256000/366720 (70%)]	lr:1.11e-04	Loss: 0.133812
+[2020-07-22 20:01:53,474] {train_model:70} INFO - Train Epoch: 26 [292608/366720 (80%)]	lr:1.11e-04	Loss: 0.160879
+[2020-07-22 20:02:33,024] {train_model:70} INFO - Train Epoch: 26 [329216/366720 (90%)]	lr:1.11e-04	Loss: 0.131767
+[2020-07-22 20:03:12,592] {train_model:70} INFO - Train Epoch: 26 [365824/366720 (100%)]	lr:1.11e-04	Loss: 0.180946
+[2020-07-22 20:03:22,059] {run_experiment:79} INFO - 
+[2020-07-22 20:03:22,060] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:03:22,149] {result_logger:103} INFO - precision on Wake: 0.984
+[2020-07-22 20:03:22,199] {result_logger:104} INFO - recall on Wake: 0.960
+[2020-07-22 20:03:22,247] {result_logger:107} INFO - F1-score on Wake: 0.972
+[2020-07-22 20:03:22,247] {result_logger:108} INFO - 
+[2020-07-22 20:03:22,320] {result_logger:103} INFO - precision on REM: 0.878
+[2020-07-22 20:03:22,367] {result_logger:104} INFO - recall on REM: 0.909
+[2020-07-22 20:03:22,415] {result_logger:107} INFO - F1-score on REM: 0.893
+[2020-07-22 20:03:22,415] {result_logger:108} INFO - 
+[2020-07-22 20:03:22,489] {result_logger:103} INFO - precision on Non REM: 0.967
+[2020-07-22 20:03:22,538] {result_logger:104} INFO - recall on Non REM: 0.918
+[2020-07-22 20:03:22,587] {result_logger:107} INFO - F1-score on Non REM: 0.942
+[2020-07-22 20:03:22,587] {result_logger:108} INFO - 
+[2020-07-22 20:03:22,659] {result_logger:103} INFO - precision on Pre REM: 0.343
+[2020-07-22 20:03:22,708] {result_logger:104} INFO - recall on Pre REM: 0.703
+[2020-07-22 20:03:22,756] {result_logger:107} INFO - F1-score on Pre REM: 0.461
+[2020-07-22 20:03:22,756] {result_logger:108} INFO - 
+[2020-07-22 20:03:22,831] {result_logger:103} INFO - precision on Artifact: 0.373
+[2020-07-22 20:03:22,878] {result_logger:104} INFO - recall on Artifact: 0.975
+[2020-07-22 20:03:22,925] {result_logger:107} INFO - F1-score on Artifact: 0.539
+[2020-07-22 20:03:22,925] {result_logger:108} INFO - 
+[2020-07-22 20:03:22,936] {result_logger:111} INFO - average precision on sleep stages: 0.709
+[2020-07-22 20:03:22,946] {result_logger:113} INFO - average recall on sleep stages: 0.893
+[2020-07-22 20:03:22,957] {result_logger:115} INFO - average F1-score on sleep stages: 0.762
+[2020-07-22 20:03:22,957] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:03:22,990] {result_logger:134} INFO - 
+[[27257   119   496    12   498]
+ [    2  2314    26   175    28]
+ [  421    90 18310   827   303]
+ [    1   109   106   529     7]
+ [    6     3     4     0   497]]
+[2020-07-22 20:03:23,022] {result_logger:141} INFO - 
+[[ 96.04%   0.42%   1.75%   0.04%   1.75%]
+ [  0.08%  90.92%   1.02%   6.88%   1.10%]
+ [  2.11%   0.45%  91.77%   4.15%   1.52%]
+ [  0.13%  14.49%  14.10%  70.35%   0.93%]
+ [  1.18%   0.59%   0.78%   0.00%  97.45%]]
+[2020-07-22 20:03:23,054] {result_logger:145} INFO - 
+[[ 98.45%   4.52%   2.62%   0.78%  37.36%]
+ [  0.01%  87.82%   0.14%  11.34%   2.10%]
+ [  1.52%   3.42%  96.66%  53.60%  22.73%]
+ [  0.00%   4.14%   0.56%  34.28%   0.53%]
+ [  0.02%   0.11%   0.02%   0.00%  37.28%]]
+[2020-07-22 20:03:23,135] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:03:23,135] {result_logger:77} INFO - actual:
+[2020-07-22 20:03:23,135] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:03:23,135] {result_logger:79} INFO - predicted:
+[2020-07-22 20:03:23,135] {result_logger:80} INFO - 
+[[94.98%  0.08%  4.14%  0.04%  0.77%]
+ [14.08% 76.47%  7.21%  0.68%  1.56%]
+ [ 4.08%  0.06% 90.14%  4.23%  1.49%]
+ [ 1.94% 34.93% 15.81% 45.17%  2.14%]
+ [16.35%  3.68% 21.68%  1.13% 57.16%]]
+[2020-07-22 20:03:23,135] {run_experiment:107} INFO - [epoch  26] execution time: 407.73s	 avg f1-score: 0.7615
+
+[2020-07-22 20:03:23,135] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 20:03:23,152] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 20:04:03,024] {train_model:70} INFO - Train Epoch: 27 [36352/366720 (10%)]	lr:1.04e-04	Loss: 0.111550
+[2020-07-22 20:04:42,598] {train_model:70} INFO - Train Epoch: 27 [72960/366720 (20%)]	lr:1.04e-04	Loss: 0.152230
+[2020-07-22 20:05:22,199] {train_model:70} INFO - Train Epoch: 27 [109568/366720 (30%)]	lr:1.04e-04	Loss: 0.137811
+[2020-07-22 20:06:01,649] {train_model:70} INFO - Train Epoch: 27 [146176/366720 (40%)]	lr:1.04e-04	Loss: 0.147327
+[2020-07-22 20:06:42,100] {train_model:70} INFO - Train Epoch: 27 [182784/366720 (50%)]	lr:1.04e-04	Loss: 0.188731
+[2020-07-22 20:07:23,413] {train_model:70} INFO - Train Epoch: 27 [219392/366720 (60%)]	lr:1.04e-04	Loss: 0.156657
+[2020-07-22 20:08:02,941] {train_model:70} INFO - Train Epoch: 27 [256000/366720 (70%)]	lr:1.04e-04	Loss: 0.203880
+[2020-07-22 20:08:42,940] {train_model:70} INFO - Train Epoch: 27 [292608/366720 (80%)]	lr:1.04e-04	Loss: 0.145265
+[2020-07-22 20:09:22,781] {train_model:70} INFO - Train Epoch: 27 [329216/366720 (90%)]	lr:1.04e-04	Loss: 0.175825
+[2020-07-22 20:10:02,561] {train_model:70} INFO - Train Epoch: 27 [365824/366720 (100%)]	lr:1.04e-04	Loss: 0.145547
+[2020-07-22 20:10:12,024] {run_experiment:79} INFO - 
+[2020-07-22 20:10:12,025] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:10:12,116] {result_logger:103} INFO - precision on Wake: 0.988
+[2020-07-22 20:10:12,165] {result_logger:104} INFO - recall on Wake: 0.960
+[2020-07-22 20:10:12,212] {result_logger:107} INFO - F1-score on Wake: 0.974
+[2020-07-22 20:10:12,212] {result_logger:108} INFO - 
+[2020-07-22 20:10:12,288] {result_logger:103} INFO - precision on REM: 0.874
+[2020-07-22 20:10:12,335] {result_logger:104} INFO - recall on REM: 0.912
+[2020-07-22 20:10:12,382] {result_logger:107} INFO - F1-score on REM: 0.893
+[2020-07-22 20:10:12,382] {result_logger:108} INFO - 
+[2020-07-22 20:10:12,458] {result_logger:103} INFO - precision on Non REM: 0.960
+[2020-07-22 20:10:12,507] {result_logger:104} INFO - recall on Non REM: 0.924
+[2020-07-22 20:10:12,556] {result_logger:107} INFO - F1-score on Non REM: 0.942
+[2020-07-22 20:10:12,556] {result_logger:108} INFO - 
+[2020-07-22 20:10:12,630] {result_logger:103} INFO - precision on Pre REM: 0.330
+[2020-07-22 20:10:12,677] {result_logger:104} INFO - recall on Pre REM: 0.694
+[2020-07-22 20:10:12,724] {result_logger:107} INFO - F1-score on Pre REM: 0.447
+[2020-07-22 20:10:12,724] {result_logger:108} INFO - 
+[2020-07-22 20:10:12,799] {result_logger:103} INFO - precision on Artifact: 0.434
+[2020-07-22 20:10:12,846] {result_logger:104} INFO - recall on Artifact: 0.965
+[2020-07-22 20:10:12,893] {result_logger:107} INFO - F1-score on Artifact: 0.599
+[2020-07-22 20:10:12,893] {result_logger:108} INFO - 
+[2020-07-22 20:10:12,903] {result_logger:111} INFO - average precision on sleep stages: 0.717
+[2020-07-22 20:10:12,913] {result_logger:113} INFO - average recall on sleep stages: 0.891
+[2020-07-22 20:10:12,924] {result_logger:115} INFO - average F1-score on sleep stages: 0.771
+[2020-07-22 20:10:12,924] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:10:12,958] {result_logger:134} INFO - 
+[[27237   125   632     9   379]
+ [    3  2322    25   172    23]
+ [  316    85 18438   879   233]
+ [    2   118   103   522     7]
+ [    7     6     5     0   492]]
+[2020-07-22 20:10:12,993] {result_logger:141} INFO - 
+[[ 95.97%   0.44%   2.23%   0.03%   1.34%]
+ [  0.12%  91.24%   0.98%   6.76%   0.90%]
+ [  1.58%   0.43%  92.42%   4.41%   1.17%]
+ [  0.27%  15.69%  13.70%  69.41%   0.93%]
+ [  1.37%   1.18%   0.98%   0.00%  96.47%]]
+[2020-07-22 20:10:13,026] {result_logger:145} INFO - 
+[[ 98.81%   4.71%   3.29%   0.57%  33.42%]
+ [  0.01%  87.42%   0.13%  10.87%   2.03%]
+ [  1.15%   3.20%  96.02%  55.56%  20.55%]
+ [  0.01%   4.44%   0.54%  33.00%   0.62%]
+ [  0.03%   0.23%   0.03%   0.00%  43.39%]]
+[2020-07-22 20:10:13,101] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:10:13,101] {result_logger:77} INFO - actual:
+[2020-07-22 20:10:13,102] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:10:13,102] {result_logger:79} INFO - predicted:
+[2020-07-22 20:10:13,102] {result_logger:80} INFO - 
+[[94.97%  0.11%  4.29%  0.03%  0.61%]
+ [14.46% 77.11%  6.74%  0.45%  1.24%]
+ [ 4.16%  0.06% 90.01%  4.36%  1.41%]
+ [ 2.65% 33.06% 16.94% 44.88%  2.47%]
+ [14.37%  3.88% 25.49%  1.23% 55.03%]]
+[2020-07-22 20:10:13,102] {run_experiment:107} INFO - [epoch  27] execution time: 409.97s	 avg f1-score: 0.7708
+
+[2020-07-22 20:10:13,102] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 20:10:13,123] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 20:10:52,922] {train_model:70} INFO - Train Epoch: 28 [36352/366720 (10%)]	lr:9.80e-05	Loss: 0.187727
+[2020-07-22 20:11:32,390] {train_model:70} INFO - Train Epoch: 28 [72960/366720 (20%)]	lr:9.80e-05	Loss: 0.172355
+[2020-07-22 20:12:11,934] {train_model:70} INFO - Train Epoch: 28 [109568/366720 (30%)]	lr:9.80e-05	Loss: 0.170476
+[2020-07-22 20:12:51,435] {train_model:70} INFO - Train Epoch: 28 [146176/366720 (40%)]	lr:9.80e-05	Loss: 0.238651
+[2020-07-22 20:13:30,922] {train_model:70} INFO - Train Epoch: 28 [182784/366720 (50%)]	lr:9.80e-05	Loss: 0.140841
+[2020-07-22 20:14:11,618] {train_model:70} INFO - Train Epoch: 28 [219392/366720 (60%)]	lr:9.80e-05	Loss: 0.187599
+[2020-07-22 20:14:52,247] {train_model:70} INFO - Train Epoch: 28 [256000/366720 (70%)]	lr:9.80e-05	Loss: 0.160556
+[2020-07-22 20:15:32,170] {train_model:70} INFO - Train Epoch: 28 [292608/366720 (80%)]	lr:9.80e-05	Loss: 0.151684
+[2020-07-22 20:16:11,690] {train_model:70} INFO - Train Epoch: 28 [329216/366720 (90%)]	lr:9.80e-05	Loss: 0.148837
+[2020-07-22 20:16:51,331] {train_model:70} INFO - Train Epoch: 28 [365824/366720 (100%)]	lr:9.80e-05	Loss: 0.145013
+[2020-07-22 20:17:00,815] {run_experiment:79} INFO - 
+[2020-07-22 20:17:00,816] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:17:00,904] {result_logger:103} INFO - precision on Wake: 0.984
+[2020-07-22 20:17:00,954] {result_logger:104} INFO - recall on Wake: 0.971
+[2020-07-22 20:17:01,002] {result_logger:107} INFO - F1-score on Wake: 0.978
+[2020-07-22 20:17:01,002] {result_logger:108} INFO - 
+[2020-07-22 20:17:01,077] {result_logger:103} INFO - precision on REM: 0.894
+[2020-07-22 20:17:01,125] {result_logger:104} INFO - recall on REM: 0.901
+[2020-07-22 20:17:01,172] {result_logger:107} INFO - F1-score on REM: 0.897
+[2020-07-22 20:17:01,172] {result_logger:108} INFO - 
+[2020-07-22 20:17:01,247] {result_logger:103} INFO - precision on Non REM: 0.968
+[2020-07-22 20:17:01,296] {result_logger:104} INFO - recall on Non REM: 0.936
+[2020-07-22 20:17:01,344] {result_logger:107} INFO - F1-score on Non REM: 0.952
+[2020-07-22 20:17:01,345] {result_logger:108} INFO - 
+[2020-07-22 20:17:01,419] {result_logger:103} INFO - precision on Pre REM: 0.379
+[2020-07-22 20:17:01,467] {result_logger:104} INFO - recall on Pre REM: 0.665
+[2020-07-22 20:17:01,514] {result_logger:107} INFO - F1-score on Pre REM: 0.483
+[2020-07-22 20:17:01,514] {result_logger:108} INFO - 
+[2020-07-22 20:17:01,589] {result_logger:103} INFO - precision on Artifact: 0.503
+[2020-07-22 20:17:01,636] {result_logger:104} INFO - recall on Artifact: 0.955
+[2020-07-22 20:17:01,684] {result_logger:107} INFO - F1-score on Artifact: 0.659
+[2020-07-22 20:17:01,684] {result_logger:108} INFO - 
+[2020-07-22 20:17:01,694] {result_logger:111} INFO - average precision on sleep stages: 0.746
+[2020-07-22 20:17:01,705] {result_logger:113} INFO - average recall on sleep stages: 0.886
+[2020-07-22 20:17:01,715] {result_logger:115} INFO - average F1-score on sleep stages: 0.794
+[2020-07-22 20:17:01,715] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:17:01,748] {result_logger:134} INFO - 
+[[27564    97   441     5   275]
+ [    3  2294    29   199    20]
+ [  421    57 18677   616   180]
+ [    1   114   130   500     7]
+ [   10     5     8     0   487]]
+[2020-07-22 20:17:01,965] {result_logger:141} INFO - 
+[[ 97.12%   0.34%   1.55%   0.02%   0.97%]
+ [  0.12%  90.14%   1.14%   7.82%   0.79%]
+ [  2.11%   0.29%  93.61%   3.09%   0.90%]
+ [  0.13%  15.16%  17.29%  66.49%   0.93%]
+ [  1.96%   0.98%   1.57%   0.00%  95.49%]]
+[2020-07-22 20:17:02,097] {result_logger:145} INFO - 
+[[ 98.45%   3.78%   2.29%   0.38%  28.38%]
+ [  0.01%  89.37%   0.15%  15.08%   2.06%]
+ [  1.50%   2.22%  96.85%  46.67%  18.58%]
+ [  0.00%   4.44%   0.67%  37.88%   0.72%]
+ [  0.04%   0.19%   0.04%   0.00%  50.26%]]
+[2020-07-22 20:17:02,369] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:17:02,369] {result_logger:77} INFO - actual:
+[2020-07-22 20:17:02,369] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:17:02,370] {result_logger:79} INFO - predicted:
+[2020-07-22 20:17:02,370] {result_logger:80} INFO - 
+[[95.47%  0.04%  3.98%  0.02%  0.49%]
+ [14.26% 77.83%  5.96%  0.70%  1.25%]
+ [ 3.80%  0.05% 91.08%  3.71%  1.37%]
+ [ 2.80% 38.33% 13.18% 43.11%  2.58%]
+ [13.62%  4.33% 28.90%  1.34% 51.81%]]
+[2020-07-22 20:17:02,386] {train_model:82} INFO - snapshot saved to /home/users/grieger/seminar/mice_tuebingen/results/exp003d/model_8conv_2fc-best.pth
+[2020-07-22 20:17:02,386] {run_experiment:107} INFO - [epoch  28] execution time: 409.28s	 avg f1-score: 0.7937
+
+[2020-07-22 20:17:02,386] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 20:17:02,408] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 20:17:42,157] {train_model:70} INFO - Train Epoch: 29 [36352/366720 (10%)]	lr:9.23e-05	Loss: 0.200124
+[2020-07-22 20:18:21,621] {train_model:70} INFO - Train Epoch: 29 [72960/366720 (20%)]	lr:9.23e-05	Loss: 0.121678
+[2020-07-22 20:19:01,116] {train_model:70} INFO - Train Epoch: 29 [109568/366720 (30%)]	lr:9.23e-05	Loss: 0.102260
+[2020-07-22 20:19:41,162] {train_model:70} INFO - Train Epoch: 29 [146176/366720 (40%)]	lr:9.23e-05	Loss: 0.146872
+[2020-07-22 20:20:20,697] {train_model:70} INFO - Train Epoch: 29 [182784/366720 (50%)]	lr:9.23e-05	Loss: 0.131832
+[2020-07-22 20:21:01,339] {train_model:70} INFO - Train Epoch: 29 [219392/366720 (60%)]	lr:9.23e-05	Loss: 0.181318
+[2020-07-22 20:21:42,885] {train_model:70} INFO - Train Epoch: 29 [256000/366720 (70%)]	lr:9.23e-05	Loss: 0.156967
+[2020-07-22 20:22:21,484] {train_model:70} INFO - Train Epoch: 29 [292608/366720 (80%)]	lr:9.23e-05	Loss: 0.112837
+[2020-07-22 20:23:00,992] {train_model:70} INFO - Train Epoch: 29 [329216/366720 (90%)]	lr:9.23e-05	Loss: 0.147884
+[2020-07-22 20:23:40,919] {train_model:70} INFO - Train Epoch: 29 [365824/366720 (100%)]	lr:9.23e-05	Loss: 0.141365
+[2020-07-22 20:23:50,479] {run_experiment:79} INFO - 
+[2020-07-22 20:23:50,481] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:23:50,573] {result_logger:103} INFO - precision on Wake: 0.984
+[2020-07-22 20:23:50,623] {result_logger:104} INFO - recall on Wake: 0.971
+[2020-07-22 20:23:50,671] {result_logger:107} INFO - F1-score on Wake: 0.978
+[2020-07-22 20:23:50,672] {result_logger:108} INFO - 
+[2020-07-22 20:23:50,751] {result_logger:103} INFO - precision on REM: 0.878
+[2020-07-22 20:23:50,800] {result_logger:104} INFO - recall on REM: 0.919
+[2020-07-22 20:23:50,849] {result_logger:107} INFO - F1-score on REM: 0.898
+[2020-07-22 20:23:50,849] {result_logger:108} INFO - 
+[2020-07-22 20:23:50,925] {result_logger:103} INFO - precision on Non REM: 0.968
+[2020-07-22 20:23:50,978] {result_logger:104} INFO - recall on Non REM: 0.924
+[2020-07-22 20:23:51,028] {result_logger:107} INFO - F1-score on Non REM: 0.945
+[2020-07-22 20:23:51,028] {result_logger:108} INFO - 
+[2020-07-22 20:23:51,108] {result_logger:103} INFO - precision on Pre REM: 0.341
+[2020-07-22 20:23:51,156] {result_logger:104} INFO - recall on Pre REM: 0.668
+[2020-07-22 20:23:51,208] {result_logger:107} INFO - F1-score on Pre REM: 0.451
+[2020-07-22 20:23:51,208] {result_logger:108} INFO - 
+[2020-07-22 20:23:51,283] {result_logger:103} INFO - precision on Artifact: 0.508
+[2020-07-22 20:23:51,331] {result_logger:104} INFO - recall on Artifact: 0.947
+[2020-07-22 20:23:51,380] {result_logger:107} INFO - F1-score on Artifact: 0.662
+[2020-07-22 20:23:51,380] {result_logger:108} INFO - 
+[2020-07-22 20:23:51,391] {result_logger:111} INFO - average precision on sleep stages: 0.736
+[2020-07-22 20:23:51,401] {result_logger:113} INFO - average recall on sleep stages: 0.886
+[2020-07-22 20:23:51,412] {result_logger:115} INFO - average F1-score on sleep stages: 0.787
+[2020-07-22 20:23:51,412] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:23:51,451] {result_logger:134} INFO - 
+[[27564    96   468    10   244]
+ [    1  2340    24   161    19]
+ [  426    90 18439   799   197]
+ [    0   131   112   502     7]
+ [   10     7    10     0   483]]
+[2020-07-22 20:23:51,486] {result_logger:141} INFO - 
+[[ 97.12%   0.34%   1.65%   0.04%   0.86%]
+ [  0.04%  91.94%   0.94%   6.33%   0.75%]
+ [  2.14%   0.45%  92.42%   4.00%   0.99%]
+ [  0.00%  17.42%  14.89%  66.76%   0.93%]
+ [  1.96%   1.37%   1.96%   0.00%  94.71%]]
+[2020-07-22 20:23:51,522] {result_logger:145} INFO - 
+[[ 98.44%   3.60%   2.46%   0.68%  25.68%]
+ [  0.00%  87.84%   0.13%  10.94%   2.00%]
+ [  1.52%   3.38%  96.78%  54.28%  20.74%]
+ [  0.00%   4.92%   0.59%  34.10%   0.74%]
+ [  0.04%   0.26%   0.05%   0.00%  50.84%]]
+[2020-07-22 20:23:51,600] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:23:51,600] {result_logger:77} INFO - actual:
+[2020-07-22 20:23:51,600] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:23:51,601] {result_logger:79} INFO - predicted:
+[2020-07-22 20:23:51,601] {result_logger:80} INFO - 
+[[94.93%  0.06%  4.49%  0.04%  0.48%]
+ [14.98% 76.61%  6.49%  0.68%  1.24%]
+ [ 4.56%  0.08% 89.80%  4.14%  1.42%]
+ [ 1.63% 37.09% 15.35% 43.68%  2.24%]
+ [13.37%  4.63% 30.11%  1.37% 50.53%]]
+[2020-07-22 20:23:51,601] {run_experiment:107} INFO - [epoch  29] execution time: 409.21s	 avg f1-score: 0.7870
+
+[2020-07-22 20:23:51,601] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 20:23:51,631] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 20:24:31,618] {train_model:70} INFO - Train Epoch: 30 [36352/366720 (10%)]	lr:8.69e-05	Loss: 0.224174
+[2020-07-22 20:25:11,254] {train_model:70} INFO - Train Epoch: 30 [72960/366720 (20%)]	lr:8.69e-05	Loss: 0.183124
+[2020-07-22 20:25:50,860] {train_model:70} INFO - Train Epoch: 30 [109568/366720 (30%)]	lr:8.69e-05	Loss: 0.132335
+[2020-07-22 20:26:30,399] {train_model:70} INFO - Train Epoch: 30 [146176/366720 (40%)]	lr:8.69e-05	Loss: 0.180382
+[2020-07-22 20:27:10,100] {train_model:70} INFO - Train Epoch: 30 [182784/366720 (50%)]	lr:8.69e-05	Loss: 0.206118
+[2020-07-22 20:27:49,842] {train_model:70} INFO - Train Epoch: 30 [219392/366720 (60%)]	lr:8.69e-05	Loss: 0.129319
+[2020-07-22 20:28:29,442] {train_model:70} INFO - Train Epoch: 30 [256000/366720 (70%)]	lr:8.69e-05	Loss: 0.235685
+[2020-07-22 20:29:09,868] {train_model:70} INFO - Train Epoch: 30 [292608/366720 (80%)]	lr:8.69e-05	Loss: 0.199907
+[2020-07-22 20:29:47,985] {train_model:70} INFO - Train Epoch: 30 [329216/366720 (90%)]	lr:8.69e-05	Loss: 0.152409
+[2020-07-22 20:30:22,260] {train_model:70} INFO - Train Epoch: 30 [365824/366720 (100%)]	lr:8.69e-05	Loss: 0.139939
+[2020-07-22 20:30:32,206] {run_experiment:79} INFO - 
+[2020-07-22 20:30:32,206] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:30:32,296] {result_logger:103} INFO - precision on Wake: 0.984
+[2020-07-22 20:30:32,341] {result_logger:104} INFO - recall on Wake: 0.970
+[2020-07-22 20:30:32,387] {result_logger:107} INFO - F1-score on Wake: 0.977
+[2020-07-22 20:30:32,387] {result_logger:108} INFO - 
+[2020-07-22 20:30:32,462] {result_logger:103} INFO - precision on REM: 0.876
+[2020-07-22 20:30:32,506] {result_logger:104} INFO - recall on REM: 0.923
+[2020-07-22 20:30:32,552] {result_logger:107} INFO - F1-score on REM: 0.899
+[2020-07-22 20:30:32,552] {result_logger:108} INFO - 
+[2020-07-22 20:30:32,628] {result_logger:103} INFO - precision on Non REM: 0.970
+[2020-07-22 20:30:32,675] {result_logger:104} INFO - recall on Non REM: 0.909
+[2020-07-22 20:30:32,721] {result_logger:107} INFO - F1-score on Non REM: 0.938
+[2020-07-22 20:30:32,721] {result_logger:108} INFO - 
+[2020-07-22 20:30:32,794] {result_logger:103} INFO - precision on Pre REM: 0.283
+[2020-07-22 20:30:32,840] {result_logger:104} INFO - recall on Pre REM: 0.669
+[2020-07-22 20:30:32,884] {result_logger:107} INFO - F1-score on Pre REM: 0.397
+[2020-07-22 20:30:32,884] {result_logger:108} INFO - 
+[2020-07-22 20:30:32,959] {result_logger:103} INFO - precision on Artifact: 0.482
+[2020-07-22 20:30:33,003] {result_logger:104} INFO - recall on Artifact: 0.945
+[2020-07-22 20:30:33,049] {result_logger:107} INFO - F1-score on Artifact: 0.638
+[2020-07-22 20:30:33,049] {result_logger:108} INFO - 
+[2020-07-22 20:30:33,059] {result_logger:111} INFO - average precision on sleep stages: 0.719
+[2020-07-22 20:30:33,071] {result_logger:113} INFO - average recall on sleep stages: 0.883
+[2020-07-22 20:30:33,080] {result_logger:115} INFO - average F1-score on sleep stages: 0.770
+[2020-07-22 20:30:33,081] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:30:33,113] {result_logger:134} INFO - 
+[[27544   101   426     6   305]
+ [    2  2349    23   153    18]
+ [  425    84 18136  1116   190]
+ [    1   138   104   503     6]
+ [    9     8     9     2   482]]
+[2020-07-22 20:30:33,147] {result_logger:141} INFO - 
+[[ 97.05%   0.36%   1.50%   0.02%   1.07%]
+ [  0.08%  92.30%   0.90%   6.01%   0.71%]
+ [  2.13%   0.42%  90.90%   5.59%   0.95%]
+ [  0.13%  18.35%  13.83%  66.89%   0.80%]
+ [  1.76%   1.57%   1.76%   0.39%  94.51%]]
+[2020-07-22 20:30:33,182] {result_logger:145} INFO - 
+[[ 98.44%   3.77%   2.28%   0.34%  30.47%]
+ [  0.01%  87.65%   0.12%   8.60%   1.80%]
+ [  1.52%   3.13%  96.99%  62.70%  18.98%]
+ [  0.00%   5.15%   0.56%  28.26%   0.60%]
+ [  0.03%   0.30%   0.05%   0.11%  48.15%]]
+[2020-07-22 20:30:33,257] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:30:33,257] {result_logger:77} INFO - actual:
+[2020-07-22 20:30:33,257] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:30:33,257] {result_logger:79} INFO - predicted:
+[2020-07-22 20:30:33,257] {result_logger:80} INFO - 
+[[95.49%  0.04%  3.97%  0.02%  0.48%]
+ [14.55% 77.72%  5.82%  0.60%  1.31%]
+ [ 3.77%  0.07% 89.55%  5.39%  1.22%]
+ [ 1.97% 29.27% 23.93% 41.63%  3.20%]
+ [13.19%  5.19% 26.07%  0.90% 54.65%]]
+[2020-07-22 20:30:33,257] {run_experiment:107} INFO - [epoch  30] execution time: 401.66s	 avg f1-score: 0.7701
+
+[2020-07-22 20:30:33,258] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 20:30:33,281] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 20:31:14,380] {train_model:70} INFO - Train Epoch: 31 [36352/366720 (10%)]	lr:8.19e-05	Loss: 0.131830
+[2020-07-22 20:31:55,239] {train_model:70} INFO - Train Epoch: 31 [72960/366720 (20%)]	lr:8.19e-05	Loss: 0.110489
+[2020-07-22 20:32:35,756] {train_model:70} INFO - Train Epoch: 31 [109568/366720 (30%)]	lr:8.19e-05	Loss: 0.084043
+[2020-07-22 20:33:16,809] {train_model:70} INFO - Train Epoch: 31 [146176/366720 (40%)]	lr:8.19e-05	Loss: 0.156389
+[2020-07-22 20:33:59,219] {train_model:70} INFO - Train Epoch: 31 [182784/366720 (50%)]	lr:8.19e-05	Loss: 0.161354
+[2020-07-22 20:34:41,411] {train_model:70} INFO - Train Epoch: 31 [219392/366720 (60%)]	lr:8.19e-05	Loss: 0.113925
+[2020-07-22 20:35:13,574] {train_model:70} INFO - Train Epoch: 31 [256000/366720 (70%)]	lr:8.19e-05	Loss: 0.199296
+[2020-07-22 20:35:55,168] {train_model:70} INFO - Train Epoch: 31 [292608/366720 (80%)]	lr:8.19e-05	Loss: 0.156419
+[2020-07-22 20:36:34,686] {train_model:70} INFO - Train Epoch: 31 [329216/366720 (90%)]	lr:8.19e-05	Loss: 0.191878
+[2020-07-22 20:37:14,374] {train_model:70} INFO - Train Epoch: 31 [365824/366720 (100%)]	lr:8.19e-05	Loss: 0.120804
+[2020-07-22 20:37:23,718] {run_experiment:79} INFO - 
+[2020-07-22 20:37:23,718] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:37:23,797] {result_logger:103} INFO - precision on Wake: 0.983
+[2020-07-22 20:37:23,876] {result_logger:104} INFO - recall on Wake: 0.971
+[2020-07-22 20:37:23,933] {result_logger:107} INFO - F1-score on Wake: 0.977
+[2020-07-22 20:37:23,933] {result_logger:108} INFO - 
+[2020-07-22 20:37:24,009] {result_logger:103} INFO - precision on REM: 0.875
+[2020-07-22 20:37:24,055] {result_logger:104} INFO - recall on REM: 0.915
+[2020-07-22 20:37:24,102] {result_logger:107} INFO - F1-score on REM: 0.895
+[2020-07-22 20:37:24,102] {result_logger:108} INFO - 
+[2020-07-22 20:37:24,177] {result_logger:103} INFO - precision on Non REM: 0.969
+[2020-07-22 20:37:24,227] {result_logger:104} INFO - recall on Non REM: 0.934
+[2020-07-22 20:37:24,275] {result_logger:107} INFO - F1-score on Non REM: 0.951
+[2020-07-22 20:37:24,275] {result_logger:108} INFO - 
+[2020-07-22 20:37:24,350] {result_logger:103} INFO - precision on Pre REM: 0.385
+[2020-07-22 20:37:24,397] {result_logger:104} INFO - recall on Pre REM: 0.642
+[2020-07-22 20:37:24,444] {result_logger:107} INFO - F1-score on Pre REM: 0.482
+[2020-07-22 20:37:24,444] {result_logger:108} INFO - 
+[2020-07-22 20:37:24,518] {result_logger:103} INFO - precision on Artifact: 0.488
+[2020-07-22 20:37:24,566] {result_logger:104} INFO - recall on Artifact: 0.945
+[2020-07-22 20:37:24,613] {result_logger:107} INFO - F1-score on Artifact: 0.644
+[2020-07-22 20:37:24,613] {result_logger:108} INFO - 
+[2020-07-22 20:37:24,623] {result_logger:111} INFO - average precision on sleep stages: 0.740
+[2020-07-22 20:37:24,633] {result_logger:113} INFO - average recall on sleep stages: 0.881
+[2020-07-22 20:37:24,643] {result_logger:115} INFO - average F1-score on sleep stages: 0.790
+[2020-07-22 20:37:24,644] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:37:24,677] {result_logger:134} INFO - 
+[[27550   110   424     5   293]
+ [    7  2328    32   156    22]
+ [  447    77 18634   610   183]
+ [    1   139   121   483     8]
+ [    8     6    14     0   482]]
+[2020-07-22 20:37:24,710] {result_logger:141} INFO - 
+[[ 97.07%   0.39%   1.49%   0.02%   1.03%]
+ [  0.28%  91.47%   1.26%   6.13%   0.86%]
+ [  2.24%   0.39%  93.40%   3.06%   0.92%]
+ [  0.13%  18.48%  16.09%  64.23%   1.06%]
+ [  1.57%   1.18%   2.75%   0.00%  94.51%]]
+[2020-07-22 20:37:24,742] {result_logger:145} INFO - 
+[[ 98.35%   4.14%   2.21%   0.40%  29.66%]
+ [  0.02%  87.52%   0.17%  12.44%   2.23%]
+ [  1.60%   2.89%  96.93%  48.64%  18.52%]
+ [  0.00%   5.23%   0.63%  38.52%   0.81%]
+ [  0.03%   0.23%   0.07%   0.00%  48.79%]]
+[2020-07-22 20:37:24,820] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:37:24,820] {result_logger:77} INFO - actual:
+[2020-07-22 20:37:24,820] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:37:24,820] {result_logger:79} INFO - predicted:
+[2020-07-22 20:37:24,820] {result_logger:80} INFO - 
+[[95.26%  0.05%  4.18%  0.02%  0.50%]
+ [14.40% 78.08%  5.83%  0.49%  1.20%]
+ [ 4.06%  0.07% 90.72%  3.75%  1.40%]
+ [ 2.47% 40.75% 14.59% 40.11%  2.07%]
+ [13.56%  4.55% 27.83%  1.21% 52.83%]]
+[2020-07-22 20:37:24,820] {run_experiment:107} INFO - [epoch  31] execution time: 411.56s	 avg f1-score: 0.7896
+
+[2020-07-22 20:37:24,820] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 20:37:24,842] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 20:38:04,604] {train_model:70} INFO - Train Epoch: 32 [36352/366720 (10%)]	lr:7.71e-05	Loss: 0.151213
+[2020-07-22 20:38:44,141] {train_model:70} INFO - Train Epoch: 32 [72960/366720 (20%)]	lr:7.71e-05	Loss: 0.142771
+[2020-07-22 20:39:23,700] {train_model:70} INFO - Train Epoch: 32 [109568/366720 (30%)]	lr:7.71e-05	Loss: 0.107678
+[2020-07-22 20:40:03,435] {train_model:70} INFO - Train Epoch: 32 [146176/366720 (40%)]	lr:7.71e-05	Loss: 0.128853
+[2020-07-22 20:40:43,661] {train_model:70} INFO - Train Epoch: 32 [182784/366720 (50%)]	lr:7.71e-05	Loss: 0.186316
+[2020-07-22 20:41:23,698] {train_model:70} INFO - Train Epoch: 32 [219392/366720 (60%)]	lr:7.71e-05	Loss: 0.183603
+[2020-07-22 20:42:04,208] {train_model:70} INFO - Train Epoch: 32 [256000/366720 (70%)]	lr:7.71e-05	Loss: 0.140712
+[2020-07-22 20:42:44,747] {train_model:70} INFO - Train Epoch: 32 [292608/366720 (80%)]	lr:7.71e-05	Loss: 0.156127
+[2020-07-22 20:43:24,813] {train_model:70} INFO - Train Epoch: 32 [329216/366720 (90%)]	lr:7.71e-05	Loss: 0.138542
+[2020-07-22 20:44:04,297] {train_model:70} INFO - Train Epoch: 32 [365824/366720 (100%)]	lr:7.71e-05	Loss: 0.135116
+[2020-07-22 20:44:13,688] {run_experiment:79} INFO - 
+[2020-07-22 20:44:13,689] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:44:13,782] {result_logger:103} INFO - precision on Wake: 0.983
+[2020-07-22 20:44:13,830] {result_logger:104} INFO - recall on Wake: 0.973
+[2020-07-22 20:44:13,878] {result_logger:107} INFO - F1-score on Wake: 0.978
+[2020-07-22 20:44:13,879] {result_logger:108} INFO - 
+[2020-07-22 20:44:13,953] {result_logger:103} INFO - precision on REM: 0.882
+[2020-07-22 20:44:14,000] {result_logger:104} INFO - recall on REM: 0.908
+[2020-07-22 20:44:14,047] {result_logger:107} INFO - F1-score on REM: 0.894
+[2020-07-22 20:44:14,047] {result_logger:108} INFO - 
+[2020-07-22 20:44:14,125] {result_logger:103} INFO - precision on Non REM: 0.968
+[2020-07-22 20:44:14,173] {result_logger:104} INFO - recall on Non REM: 0.915
+[2020-07-22 20:44:14,222] {result_logger:107} INFO - F1-score on Non REM: 0.941
+[2020-07-22 20:44:14,222] {result_logger:108} INFO - 
+[2020-07-22 20:44:14,294] {result_logger:103} INFO - precision on Pre REM: 0.309
+[2020-07-22 20:44:14,341] {result_logger:104} INFO - recall on Pre REM: 0.658
+[2020-07-22 20:44:14,388] {result_logger:107} INFO - F1-score on Pre REM: 0.420
+[2020-07-22 20:44:14,388] {result_logger:108} INFO - 
+[2020-07-22 20:44:14,464] {result_logger:103} INFO - precision on Artifact: 0.498
+[2020-07-22 20:44:14,511] {result_logger:104} INFO - recall on Artifact: 0.951
+[2020-07-22 20:44:14,557] {result_logger:107} INFO - F1-score on Artifact: 0.654
+[2020-07-22 20:44:14,557] {result_logger:108} INFO - 
+[2020-07-22 20:44:14,568] {result_logger:111} INFO - average precision on sleep stages: 0.728
+[2020-07-22 20:44:14,578] {result_logger:113} INFO - average recall on sleep stages: 0.881
+[2020-07-22 20:44:14,588] {result_logger:115} INFO - average F1-score on sleep stages: 0.777
+[2020-07-22 20:44:14,589] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:44:14,623] {result_logger:134} INFO - 
+[[27611    86   454     3   228]
+ [   20  2310    29   166    20]
+ [  443    81 18252   940   235]
+ [    3   136   112   495     6]
+ [   10     7     8     0   485]]
+[2020-07-22 20:44:14,656] {result_logger:141} INFO - 
+[[ 97.28%   0.30%   1.60%   0.01%   0.80%]
+ [  0.79%  90.77%   1.14%   6.52%   0.79%]
+ [  2.22%   0.41%  91.48%   4.71%   1.18%]
+ [  0.40%  18.09%  14.89%  65.82%   0.80%]
+ [  1.96%   1.37%   1.57%   0.00%  95.10%]]
+[2020-07-22 20:44:14,690] {result_logger:145} INFO - 
+[[ 98.31%   3.28%   2.41%   0.19%  23.41%]
+ [  0.07%  88.17%   0.15%  10.35%   2.05%]
+ [  1.58%   3.09%  96.80%  58.60%  24.13%]
+ [  0.01%   5.19%   0.59%  30.86%   0.62%]
+ [  0.04%   0.27%   0.04%   0.00%  49.79%]]
+[2020-07-22 20:44:14,768] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:44:14,768] {result_logger:77} INFO - actual:
+[2020-07-22 20:44:14,768] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:44:14,768] {result_logger:79} INFO - predicted:
+[2020-07-22 20:44:14,768] {result_logger:80} INFO - 
+[[95.23%  0.06%  4.28%  0.02%  0.41%]
+ [14.96% 77.02%  5.95%  0.84%  1.22%]
+ [ 4.23%  0.06% 89.50%  4.78%  1.42%]
+ [ 2.18% 33.23% 21.01% 41.40%  2.18%]
+ [11.91%  4.11% 29.06%  1.23% 53.70%]]
+[2020-07-22 20:44:14,768] {run_experiment:107} INFO - [epoch  32] execution time: 409.95s	 avg f1-score: 0.7774
+
+[2020-07-22 20:44:14,769] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 20:44:14,791] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 110017
+	REM                 : 66010
+	Non REM             : 88013
+	Pre REM             : 51341
+	Artifact            : 51341
+[2020-07-22 20:44:54,782] {train_model:70} INFO - Train Epoch: 33 [36352/366720 (10%)]	lr:7.26e-05	Loss: 0.163218
+[2020-07-22 20:45:34,402] {train_model:70} INFO - Train Epoch: 33 [72960/366720 (20%)]	lr:7.26e-05	Loss: 0.133789
+[2020-07-22 20:46:14,079] {train_model:70} INFO - Train Epoch: 33 [109568/366720 (30%)]	lr:7.26e-05	Loss: 0.152735
+[2020-07-22 20:46:53,895] {train_model:70} INFO - Train Epoch: 33 [146176/366720 (40%)]	lr:7.26e-05	Loss: 0.104601
+[2020-07-22 20:47:33,507] {train_model:70} INFO - Train Epoch: 33 [182784/366720 (50%)]	lr:7.26e-05	Loss: 0.162962
+[2020-07-22 20:48:13,100] {train_model:70} INFO - Train Epoch: 33 [219392/366720 (60%)]	lr:7.26e-05	Loss: 0.140199
+[2020-07-22 20:48:52,750] {train_model:70} INFO - Train Epoch: 33 [256000/366720 (70%)]	lr:7.26e-05	Loss: 0.136163
+[2020-07-22 20:49:32,690] {train_model:70} INFO - Train Epoch: 33 [292608/366720 (80%)]	lr:7.26e-05	Loss: 0.109044
+[2020-07-22 20:50:13,307] {train_model:70} INFO - Train Epoch: 33 [329216/366720 (90%)]	lr:7.26e-05	Loss: 0.149925
+[2020-07-22 20:50:53,462] {train_model:70} INFO - Train Epoch: 33 [365824/366720 (100%)]	lr:7.26e-05	Loss: 0.120951
+[2020-07-22 20:51:02,863] {run_experiment:79} INFO - 
+[2020-07-22 20:51:02,864] {result_logger:97} INFO - scores for sleep stages on dataset: valid
+[2020-07-22 20:51:02,957] {result_logger:103} INFO - precision on Wake: 0.981
+[2020-07-22 20:51:03,004] {result_logger:104} INFO - recall on Wake: 0.974
+[2020-07-22 20:51:03,051] {result_logger:107} INFO - F1-score on Wake: 0.977
+[2020-07-22 20:51:03,051] {result_logger:108} INFO - 
+[2020-07-22 20:51:03,125] {result_logger:103} INFO - precision on REM: 0.878
+[2020-07-22 20:51:03,172] {result_logger:104} INFO - recall on REM: 0.916
+[2020-07-22 20:51:03,218] {result_logger:107} INFO - F1-score on REM: 0.897
+[2020-07-22 20:51:03,218] {result_logger:108} INFO - 
+[2020-07-22 20:51:03,296] {result_logger:103} INFO - precision on Non REM: 0.971
+[2020-07-22 20:51:03,344] {result_logger:104} INFO - recall on Non REM: 0.934
+[2020-07-22 20:51:03,392] {result_logger:107} INFO - F1-score on Non REM: 0.952
+[2020-07-22 20:51:03,392] {result_logger:108} INFO - 
+[2020-07-22 20:51:03,464] {result_logger:103} INFO - precision on Pre REM: 0.387
+[2020-07-22 20:51:03,511] {result_logger:104} INFO - recall on Pre REM: 0.621
+[2020-07-22 20:51:03,557] {result_logger:107} INFO - F1-score on Pre REM: 0.477
+[2020-07-22 20:51:03,557] {result_logger:108} INFO - 
+[2020-07-22 20:51:03,632] {result_logger:103} INFO - precision on Artifact: 0.515
+[2020-07-22 20:51:03,678] {result_logger:104} INFO - recall on Artifact: 0.939
+[2020-07-22 20:51:03,724] {result_logger:107} INFO - F1-score on Artifact: 0.665
+[2020-07-22 20:51:03,724] {result_logger:108} INFO - 
+[2020-07-22 20:51:03,734] {result_logger:111} INFO - average precision on sleep stages: 0.746
+[2020-07-22 20:51:03,744] {result_logger:113} INFO - average recall on sleep stages: 0.877
+[2020-07-22 20:51:03,755] {result_logger:115} INFO - average F1-score on sleep stages: 0.794
+[2020-07-22 20:51:03,755] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: valid
+[2020-07-22 20:51:03,788] {result_logger:134} INFO - 
+[[27630    98   372     3   279]
+ [    7  2332    29   158    19]
+ [  520    79 18625   577   150]
+ [    3   143   136   467     3]
+ [    9     5    16     1   479]]
+[2020-07-22 20:51:03,820] {result_logger:141} INFO - 
+[[ 97.35%   0.35%   1.31%   0.01%   0.98%]
+ [  0.28%  91.63%   1.14%   6.21%   0.75%]
+ [  2.61%   0.40%  93.35%   2.89%   0.75%]
+ [  0.40%  19.02%  18.09%  62.10%   0.40%]
+ [  1.76%   0.98%   3.14%   0.20%  93.92%]]
+[2020-07-22 20:51:03,853] {result_logger:145} INFO - 
+[[ 98.09%   3.69%   1.94%   0.25%  30.00%]
+ [  0.02%  87.77%   0.15%  13.10%   2.04%]
+ [  1.85%   2.97%  97.12%  47.84%  16.13%]
+ [  0.01%   5.38%   0.71%  38.72%   0.32%]
+ [  0.03%   0.19%   0.08%   0.08%  51.51%]]
+[2020-07-22 20:51:03,930] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: valid
+[2020-07-22 20:51:03,930] {result_logger:77} INFO - actual:
+[2020-07-22 20:51:03,931] {result_logger:78} INFO - 
+[[95.59%  0.00%  4.31%  0.01%  0.08%]
+ [15.28% 79.88%  4.13%  0.04%  0.67%]
+ [ 4.10%  0.03% 91.89%  2.99%  1.00%]
+ [ 2.66% 63.43% 13.96% 18.75%  1.20%]
+ [ 5.10%  5.69% 36.27%  1.76% 51.18%]]
+[2020-07-22 20:51:03,931] {result_logger:79} INFO - predicted:
+[2020-07-22 20:51:03,931] {result_logger:80} INFO - 
+[[95.23%  0.06%  4.16%  0.02%  0.53%]
+ [14.60% 78.17%  5.46%  0.56%  1.20%]
+ [ 4.07%  0.05% 91.01%  3.64%  1.23%]
+ [ 2.74% 42.29% 12.77% 39.80%  2.40%]
+ [15.27%  4.62% 27.20%  0.75% 52.15%]]
+[2020-07-22 20:51:03,931] {run_experiment:107} INFO - [epoch  33] execution time: 409.16s	 avg f1-score: 0.7936
+
+[2020-07-22 20:51:04,124] {result_logger:56} INFO - final F1-scores on train:
+	avg                 : [0.3538976935329031, 0.48974852087910004, 0.5751655577745507, 0.630558922538755, 0.692195215820876, 0.7449181510317981, 0.7708253291158769, 0.8052385041602272, 0.8345916585617909, 0.8561597798067015, 0.8711627578292725, 0.8821171018832432, 0.8903697618427359, 0.8955597330699288, 0.9022313293265644, 0.9044369285795509, 0.9081598618872112, 0.9099213066508476, 0.9131176456954279, 0.9145024555445209, 0.9167822440537352, 0.918936694676395, 0.9214267785229412, 0.9225427178008541, 0.9243083311066835, 0.9266917004637456, 0.9290818537942375, 0.9314223965944427, 0.9332827475717964, 0.9362385275996686, 0.9374220081011622, 0.9398727147950863, 0.9416300415562603]
+[2020-07-22 20:51:04,124] {result_logger:56} INFO - final F1-scores on valid:
+	Wake                : [0.6738144751644904, 0.708324393906887, 0.7008437606123142, 0.7174878267984816, 0.8369498963793732, 0.8730997165678949, 0.9409632675820728, 0.9411006941959494, 0.9546258936787712, 0.9542252274577832, 0.9624585610608368, 0.9604846925097851, 0.9709484477356878, 0.968928457418508, 0.9700374531835206, 0.9668650329911364, 0.9734783302879242, 0.9726039637578854, 0.9720143297981769, 0.9734337616304829, 0.9753228987155116, 0.9733552396599757, 0.9759235758601241, 0.9756996756411846, 0.9775418538178848, 0.9722663147193636, 0.973671510536758, 0.9777762012025327, 0.9777415178333895, 0.977378776857158, 0.9770369713627095, 0.9779170872514124, 0.9771710491414829]
+	REM                 : [0.3463320899740025, 0.48102618920363444, 0.2791005291005291, 0.11695906432748537, 0.7465007776049767, 0.7055001160362033, 0.826158940397351, 0.8766961651917404, 0.8804910799923268, 0.8774733637747337, 0.8667705492793144, 0.8716464003088207, 0.8839009287925697, 0.8965785381026438, 0.8883826879271071, 0.8928640871086915, 0.8868868868868869, 0.8852204311516799, 0.8597718071402282, 0.8944003100174386, 0.8824790489183394, 0.8908416324936536, 0.8920465758831656, 0.8938120702826585, 0.8995290423861853, 0.8934362934362935, 0.8929052105364352, 0.8974960876369327, 0.8984449990401229, 0.8991387559808612, 0.8945244956772334, 0.8944820909970957, 0.8965782391387926]
+	Non REM             : [0.5348762866824373, 0.1605967125558267, 0.09397509898392406, 0.2616099743689995, 0.6774681214670697, 0.7986751409900635, 0.9180197600190713, 0.9104962951116797, 0.9281843173190207, 0.9145543417292128, 0.9339793750323884, 0.9305075876504447, 0.9347662435428186, 0.934469371270747, 0.9314075657637458, 0.9400092057484786, 0.9457781881604597, 0.9403638038222426, 0.9407748409455334, 0.9359912786170378, 0.946904694823656, 0.9423382752783049, 0.9440306228015725, 0.9403340054805853, 0.9486262894494946, 0.9415576067672846, 0.9418194820452571, 0.9520338464675299, 0.9454927699723106, 0.9384977619084582, 0.9512967122728201, 0.9406792764005567, 0.9519793503539575]
+	Pre REM             : [0.04955264969029594, 0.021454112038140644, 0.002617801047120419, 0.09200438116100766, 0.4078567302137493, 0.43376463339494764, 0.46943231441048033, 0.42792976725193954, 0.5068147400302877, 0.4163362410785091, 0.46237915090374104, 0.48156182212581344, 0.43484906381352695, 0.445859872611465, 0.40276647681041494, 0.46814044213263983, 0.4952207555757852, 0.4395959595959596, 0.45210084033613446, 0.4347826086956522, 0.47778266608007036, 0.46579941250524554, 0.45999125491910803, 0.4232848232848233, 0.47614761476147616, 0.4610021786492375, 0.4473007712082262, 0.48262548262548266, 0.4514388489208633, 0.3973143759873618, 0.48155533399800593, 0.42020373514431236, 0.47701736465781414]
+	Artifact            : [0.24702380952380953, 0.2878965922444183, 0.31681833501853723, 0.3049298073783872, 0.4348697394789579, 0.3585250091274188, 0.40161616161616165, 0.2997601918465228, 0.41879983214435584, 0.3900350330868042, 0.42398648648648646, 0.38305990080122093, 0.5478841870824054, 0.4970238095238094, 0.47014574518100616, 0.47360912981455056, 0.5696129404968227, 0.6054590570719603, 0.669024045261669, 0.5776215582893965, 0.6274256144890038, 0.5551839464882943, 0.636959370904325, 0.6345903771131339, 0.6594153636981646, 0.5393380358111773, 0.5985401459854014, 0.658553076402975, 0.6616438356164384, 0.6379880873593646, 0.643524699599466, 0.6536388140161725, 0.6652777777777777]
+	avg                 : [0.37031986220700713, 0.33185959998978143, 0.27867110495248504, 0.29859821080687227, 0.6207290530288254, 0.6339129232233056, 0.7112380888050274, 0.6911966227195664, 0.7377831726329525, 0.7105248414254086, 0.7299148245525534, 0.725452080679217, 0.7544697741934016, 0.7485720097854346, 0.7325479857731589, 0.7482975795590993, 0.7741954202815757, 0.7686486430799456, 0.7787371726963485, 0.7632459034500017, 0.7819829846053163, 0.7655037012850949, 0.7817902800736591, 0.7735441903604772, 0.792252032822641, 0.7615200858766713, 0.7708474240624156, 0.7936969388670907, 0.786952394276625, 0.7700635516186408, 0.789587642582047, 0.7773842007619101, 0.7936047562139651]
+[2020-07-22 20:51:04,205] {logger:50} INFO - 
+[2020-07-22 20:51:04,205] {logger:51} INFO - ================================================================================
+[2020-07-22 20:51:04,205] {logger:52} INFO - finished training
+[2020-07-22 20:51:04,205] {logger:53} INFO - ================================================================================
+[2020-07-22 20:51:04,205] {logger:54} INFO - 
+[2020-07-22 20:51:04,205] {logger:50} INFO - 
+[2020-07-22 20:51:04,205] {logger:51} INFO - ================================================================================
+[2020-07-22 20:51:04,205] {logger:52} INFO - best model on epoch: 28 	f1-score: 0.7937
+[2020-07-22 20:51:04,205] {logger:53} INFO - ================================================================================
+[2020-07-22 20:51:04,206] {logger:54} INFO - 
