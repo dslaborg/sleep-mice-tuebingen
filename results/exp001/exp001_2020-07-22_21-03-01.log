@@ -1,0 +1,179 @@
+[2020-07-22 21:03:01,207] {logger:43} INFO - evaluate_experiment.py, args: Namespace(dataset='train', experiment='exp001')
+================================================================================
+[2020-07-22 21:03:01,207] {logger:44} INFO - config:
+[2020-07-22 21:03:01,207] {logger:45} INFO - parameter name      | parameter value
+[2020-07-22 21:03:01,207] {logger:46} INFO - experiment          : exp001
+[2020-07-22 21:03:01,207] {logger:46} INFO - RUN_NAME            : exp001_2020-07-22_21-03-01
+[2020-07-22 21:03:01,208] {logger:46} INFO - DEVICE              : cuda
+[2020-07-22 21:03:01,208] {logger:46} INFO - EXPERIMENT_DIR      : /home/users/grieger/seminar/mice_tuebingen/results/exp001
+[2020-07-22 21:03:01,208] {logger:46} INFO - MODELS_DIR          : /home/users/grieger/seminar/mice_tuebingen/results/exp001/models
+[2020-07-22 21:03:01,208] {logger:46} INFO - VISUALS_DIR         : /home/users/grieger/seminar/mice_tuebingen/results/exp001/visuals/exp001_2020-07-22_21-03-01
+[2020-07-22 21:03:01,208] {logger:46} INFO - DATA_DIR            : /home/users/grieger/data_tuebingen_h5/data
+[2020-07-22 21:03:01,208] {logger:46} INFO - SAMPLE_DURATION     : 10
+[2020-07-22 21:03:01,208] {logger:46} INFO - SAMPLING_RATE       : 64
+[2020-07-22 21:03:01,208] {logger:46} INFO - SCORING_MAP         : {'Wake': [1, 17], 'REM': [3, 19], 'Non REM': [2, 18], 'Pre REM': [4, 20], 'Artifact': [8, 24, 255]}
+[2020-07-22 21:03:01,208] {logger:46} INFO - STAGE_MAP           : {'Wake': 'Wake', 'REM': 'REM', 'Non REM': 'Non REM', 'Pre REM': 'Pre REM', 'Artifact': 'Artifact'}
+[2020-07-22 21:03:01,208] {logger:46} INFO - DATA_SPLIT          : {'train': ['M19', 'M20', 'M21', 'M22', 'M23', 'M24', 'M25', 'M26', 'M27', 'M28', 'M29', 'M31', 'M32', 'M33'], 'valid': ['M34', 'M35'], 'test': ['M36', 'M37']}
+[2020-07-22 21:03:01,208] {logger:46} INFO - DATA_FILE           : ./cache/dataset/data_tuebingen.h5
+[2020-07-22 21:03:01,208] {logger:46} INFO - STAGES              : ['Wake', 'REM', 'Non REM', 'Pre REM', 'Artifact']
+[2020-07-22 21:03:01,208] {logger:46} INFO - BALANCED_TRAINING   : True
+[2020-07-22 21:03:01,208] {logger:46} INFO - BALANCING_WEIGHTS   : [0.3, 0.18, 0.24, 0.14, 0.14]
+[2020-07-22 21:03:01,208] {logger:46} INFO - CHANNELS            : ['EEG_PR']
+[2020-07-22 21:03:01,208] {logger:46} INFO - SAMPLES_LEFT        : 1
+[2020-07-22 21:03:01,208] {logger:46} INFO - SAMPLES_RIGHT       : 1
+[2020-07-22 21:03:01,208] {logger:46} INFO - LOG_INTERVAL        : 10
+[2020-07-22 21:03:01,208] {logger:46} INFO - EXTRA_SAFE_MODELS   : False
+[2020-07-22 21:03:01,208] {logger:46} INFO - BATCH_SIZE          : 256
+[2020-07-22 21:03:01,209] {logger:46} INFO - DATA_FRACTION       : 1.0
+[2020-07-22 21:03:01,209] {logger:46} INFO - DATA_FRACTION_STRAT : None
+[2020-07-22 21:03:01,209] {logger:46} INFO - EPOCHS              : 50
+[2020-07-22 21:03:01,209] {logger:46} INFO - WARMUP_EPOCHS       : 12
+[2020-07-22 21:03:01,209] {logger:46} INFO - S_OPTIM_MODE        : exp
+[2020-07-22 21:03:01,209] {logger:46} INFO - S_OPTIM_PARAS       : [0.06]
+[2020-07-22 21:03:01,209] {logger:46} INFO - LEARNING_RATE       : 0.000256
+[2020-07-22 21:03:01,209] {logger:46} INFO - OPTIMIZER           : <class 'torch.optim.adam.Adam'>
+[2020-07-22 21:03:01,209] {logger:46} INFO - OPTIM_PARAS         : {}
+[2020-07-22 21:03:01,209] {logger:46} INFO - L1_WEIGHT_DECAY     : 0
+[2020-07-22 21:03:01,209] {logger:46} INFO - L2_WEIGHT_DECAY     : 0.0001
+[2020-07-22 21:03:01,209] {logger:46} INFO - BATCH_SIZE_EVAL     : 512
+[2020-07-22 21:03:01,209] {logger:46} INFO - FILTERS             : 96
+[2020-07-22 21:03:01,209] {logger:46} INFO - CLASSIFIER_DROPOUT  : [0.2, 0.2]
+[2020-07-22 21:03:01,209] {logger:46} INFO - FEATURE_EXTR_DROPOUT: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]
+[2020-07-22 21:03:01,209] {logger:46} INFO - MODEL_NAME          : model_8conv_2fc
+[2020-07-22 21:03:01,209] {logger:46} INFO - GAIN                : 0.0
+[2020-07-22 21:03:01,209] {logger:46} INFO - FLIP                : 0.0
+[2020-07-22 21:03:01,209] {logger:46} INFO - FLIP_ALL            : 0.0
+[2020-07-22 21:03:01,209] {logger:46} INFO - WINDOW_WARP_SIZE    : 0.0
+[2020-07-22 21:03:01,209] {logger:46} INFO - FLIP_HORI           : 0.0
+[2020-07-22 21:03:01,210] {logger:46} INFO - TIME_SHIFT          : 0.0
+[2020-07-22 21:03:01,210] {logger:50} INFO - 
+[2020-07-22 21:03:01,210] {logger:51} INFO - ================================================================================
+[2020-07-22 21:03:01,210] {logger:52} INFO - evaluate best model of experiment exp001 on dataset train
+[2020-07-22 21:03:01,210] {logger:53} INFO - ================================================================================
+[2020-07-22 21:03:01,210] {logger:54} INFO - 
+[2020-07-22 21:03:01,210] {logger:50} INFO - 
+[2020-07-22 21:03:01,210] {logger:51} INFO - ================================================================================
+[2020-07-22 21:03:01,210] {logger:52} INFO - start evaluation
+[2020-07-22 21:03:01,210] {logger:53} INFO - ================================================================================
+[2020-07-22 21:03:01,210] {logger:54} INFO - 
+[2020-07-22 21:03:08,009] {dataloader:107} INFO - data distribution in database for dataset train:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 21:03:08,047] {dataloader:134} INFO - data distribution after processing:
+	Wake                : 203747
+	REM                 : 18606
+	Non REM             : 136586
+	Pre REM             : 7181
+	Artifact            : 600
+[2020-07-22 21:03:09,959] {evaluate_experiment:46} INFO - loaded model:
+Model(
+  (feature_extractor): Sequential(
+    (0): BatchNorm1d(1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (1): Conv1d(1, 96, kernel_size=(5,), stride=(1,))
+    (2): ReLU(inplace=True)
+    (3): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (4): Dropout(p=0.0, inplace=False)
+    (5): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (6): ReLU(inplace=True)
+    (7): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (8): Dropout(p=0.2, inplace=False)
+    (9): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (10): ReLU(inplace=True)
+    (11): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): Dropout(p=0.0, inplace=False)
+    (13): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (14): ReLU(inplace=True)
+    (15): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): Dropout(p=0.2, inplace=False)
+    (17): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (18): ReLU(inplace=True)
+    (19): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (20): Dropout(p=0.0, inplace=False)
+    (21): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (22): ReLU(inplace=True)
+    (23): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (24): Dropout(p=0.2, inplace=False)
+    (25): Conv1d(96, 96, kernel_size=(5,), stride=(1,))
+    (26): ReLU(inplace=True)
+    (27): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (28): Dropout(p=0.0, inplace=False)
+    (29): Conv1d(96, 96, kernel_size=(5,), stride=(2,))
+    (30): ReLU(inplace=True)
+    (31): BatchNorm1d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): Dropout(p=0.2, inplace=False)
+  )
+  (classifier): Sequential(
+    (0): Dropout(p=0.2, inplace=False)
+    (1): Linear(in_features=10848, out_features=80, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.2, inplace=False)
+    (4): Linear(in_features=80, out_features=5, bias=True)
+  )
+)
+[2020-07-22 21:04:08,318] {result_logger:97} INFO - scores for sleep stages on dataset: train
+[2020-07-22 21:04:08,852] {result_logger:103} INFO - precision on Wake: 0.990
+[2020-07-22 21:04:09,203] {result_logger:104} INFO - recall on Wake: 0.994
+[2020-07-22 21:04:09,554] {result_logger:107} INFO - F1-score on Wake: 0.992
+[2020-07-22 21:04:09,555] {result_logger:108} INFO - 
+[2020-07-22 21:04:10,164] {result_logger:103} INFO - precision on REM: 0.991
+[2020-07-22 21:04:10,508] {result_logger:104} INFO - recall on REM: 1.000
+[2020-07-22 21:04:10,853] {result_logger:107} INFO - F1-score on REM: 0.995
+[2020-07-22 21:04:10,853] {result_logger:108} INFO - 
+[2020-07-22 21:04:11,374] {result_logger:103} INFO - precision on Non REM: 0.991
+[2020-07-22 21:04:11,722] {result_logger:104} INFO - recall on Non REM: 0.983
+[2020-07-22 21:04:12,075] {result_logger:107} INFO - F1-score on Non REM: 0.987
+[2020-07-22 21:04:12,075] {result_logger:108} INFO - 
+[2020-07-22 21:04:12,594] {result_logger:103} INFO - precision on Pre REM: 0.974
+[2020-07-22 21:04:12,938] {result_logger:104} INFO - recall on Pre REM: 1.000
+[2020-07-22 21:04:13,281] {result_logger:107} INFO - F1-score on Pre REM: 0.987
+[2020-07-22 21:04:13,281] {result_logger:108} INFO - 
+[2020-07-22 21:04:13,799] {result_logger:103} INFO - precision on Artifact: 0.948
+[2020-07-22 21:04:14,140] {result_logger:104} INFO - recall on Artifact: 1.000
+[2020-07-22 21:04:14,482] {result_logger:107} INFO - F1-score on Artifact: 0.973
+[2020-07-22 21:04:14,482] {result_logger:108} INFO - 
+[2020-07-22 21:04:14,557] {result_logger:111} INFO - average precision on sleep stages: 0.979
+[2020-07-22 21:04:14,633] {result_logger:113} INFO - average recall on sleep stages: 0.995
+[2020-07-22 21:04:14,707] {result_logger:115} INFO - average F1-score on sleep stages: 0.987
+[2020-07-22 21:04:14,709] {evaluate_experiment:53} INFO - 
+[2020-07-22 21:04:14,709] {result_logger:130} INFO - confusion matrix for sleep stages on dataset: train
+[2020-07-22 21:04:14,941] {result_logger:134} INFO - 
+[[202491     80   1159      8      9]
+ [     0  18606      0      0      0]
+ [  1977     95 134305    184     24]
+ [     0      0      0   7181      0]
+ [     0      0      0      0    601]]
+[2020-07-22 21:04:15,298] {result_logger:141} INFO - 
+[[ 99.38%   0.04%   0.57%   0.00%   0.00%]
+ [  0.00% 100.00%   0.00%   0.00%   0.00%]
+ [  1.45%   0.07%  98.33%   0.13%   0.02%]
+ [  0.00%   0.00%   0.00% 100.00%   0.00%]
+ [  0.00%   0.00%   0.00%   0.00% 100.00%]]
+[2020-07-22 21:04:15,626] {result_logger:145} INFO - 
+[[ 99.03%   0.43%   0.86%   0.11%   1.42%]
+ [  0.00%  99.07%   0.00%   0.00%   0.00%]
+ [  0.97%   0.51%  99.14%   2.50%   3.79%]
+ [  0.00%   0.00%   0.00%  97.40%   0.00%]
+ [  0.00%   0.00%   0.00%   0.00%  94.79%]]
+[2020-07-22 21:04:16,354] {result_logger:74} INFO - transformation matrix for sleep stages on dataset: train
+[2020-07-22 21:04:16,354] {result_logger:77} INFO - actual:
+[2020-07-22 21:04:16,354] {result_logger:78} INFO - 
+[[95.78%  0.00%  4.19%  0.01%  0.01%]
+ [15.37% 80.09%  4.15%  0.31%  0.08%]
+ [ 4.06%  0.06% 92.15%  3.63%  0.09%]
+ [ 2.37% 50.02% 17.87% 29.61%  0.14%]
+ [ 3.83%  3.83% 20.13%  0.50% 71.71%]]
+[2020-07-22 21:04:16,354] {result_logger:79} INFO - predicted:
+[2020-07-22 21:04:16,354] {result_logger:80} INFO - 
+[[95.77%  0.01%  4.19%  0.02%  0.01%]
+ [15.82% 79.93%  3.84%  0.32%  0.08%]
+ [ 4.04%  0.07% 92.11%  3.69%  0.10%]
+ [ 2.36% 49.36% 17.51% 30.64%  0.14%]
+ [ 5.05%  3.94% 19.56%  0.47% 70.98%]]
+[2020-07-22 21:04:16,354] {logger:50} INFO - 
+[2020-07-22 21:04:16,355] {logger:51} INFO - ================================================================================
+[2020-07-22 21:04:16,355] {logger:52} INFO - finished evaluation
+[2020-07-22 21:04:16,355] {logger:53} INFO - ================================================================================
+[2020-07-22 21:04:16,355] {logger:54} INFO - 
