@@ -68,7 +68,7 @@ class MatrixPlotter:
                 ax.text(j, i, format(cm[i, j], fmt), ha='center', va='center',
                         color='white' if cm[i, j] > thresh else 'black')
         fig.tight_layout()
-        # save plot in VISULAS_DIR
+        # save plot in VISUALS_DIR
         plt.savefig(self.config.VISUALS_DIR + '/' + title.replace(' ', '_') + '.png')
         plt.close()
         return cm
