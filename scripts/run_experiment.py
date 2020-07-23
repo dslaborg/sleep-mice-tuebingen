@@ -68,15 +68,19 @@ def training():
 
         # train epoch and save metrics
         labels_train, loss_train = train(config, epoch, model, optimizer, trainloader)
-        f1_scores['train']['avg'].append(f1_score(labels_train['actual'], labels_train['predicted'], average='macro'))
         losses['train'].append(loss_train)
 
         # evaluate epoch and save metrics
         labels_valid, loss_valid = evaluate(config, model, validationloader)
         losses['valid'].append(loss_valid)
 
-        # calculate f1-scores for given validation labels and log them
+        # calculate f1-scores for given validation and training labels and log them
         logger.logger.info('')
+        f1_scores_train = result_logger.log_sleep_stage_f1_scores(labels_train['actual'], labels_train['predicted'],
+                                                                  'train')
+        for stage in f1_scores_train:
+            f1_scores['train'][stage].append(f1_scores_train[stage])
+
         f1_scores_valid = result_logger.log_sleep_stage_f1_scores(labels_valid['actual'], labels_valid['predicted'],
                                                                   'valid')
         for stage in f1_scores_valid:
