@@ -56,7 +56,7 @@ def training():
     best_epoch = 0
     best_avg_f1_score = 0
     # save metrics after each epoch for plots
-    f1_scores = {'train': {'avg': []},
+    f1_scores = {'train': {stage: [] for stage in config.STAGES + ['avg']},
                  'valid': {stage: [] for stage in config.STAGES + ['avg']}}
     losses = {'train': [], 'valid': []}
 
