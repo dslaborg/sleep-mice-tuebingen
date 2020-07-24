@@ -77,6 +77,35 @@ be a file *\<experiment\>.py* in the config folder
 * -d, --dataset: dataset to load data from, there must exist a corresponding table
 in your transformed data 
 
+### Torch to tensorflow.js
+
+#### tfjs/torch\_to\_keras.py
+
+Transform torch model to keras model.
+
+**Parameters**
+
+* -e, --experiment: name of experiment to evaluate best model from, there must
+  be a file *\<experiment\>.py* in the config folder
+
+#### tfjs/torch\_vs\_keras.py
+
+Compare torch model with transformed keras model.
+
+**Parameters**
+
+* -e, --experiment: name of experiment to evaluate best model from, there must
+  be a file *\<experiment\>.py* in the config folder
+
+#### tfjs/keras\_to\_tfjs.py
+
+Transform keras model to tensorflow.js.
+
+**Parameters**
+
+* -e, --experiment: name of experiment to evaluate best model from, there must
+  be a file *\<experiment\>.py* in the config folder
+
 <br>
 
 ## configuration parameters
@@ -196,3 +225,13 @@ format: \<parameter name in .yml\> (`<mapped name in ConfigLoader>: <dtype>`)
         new window size in window warping
         * time_shift (`TIME_SHIFT: float`): factor to determine the random amount 
         of time a signal is shifted
+
+## Conversion of torch model to tensorflow.js
+
+We add scripts to convert the torch model to tensorflow.js and check its
+outputs.  First, the model is converted to keras, and then to tfjs.  This has
+been checked with python=3.6.  Another requirements file is add in
+"scripts/tfjs/requirements.txt" for the required and different packages to run
+the scripts in "scripts/tfjs".  First run "scripts/tfjs/torch\_to\_keras.py",
+and then run "scripts/tfjs/keras\_to\_tfjs.py".  To check the tfjs model, use
+node to run "scripts/tfjs/check\_tfjs.js".
