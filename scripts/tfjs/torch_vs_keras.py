@@ -59,7 +59,7 @@ batch_size, num_input_channels, segment_length = torch_input_shape(config)
 keras_model = build_keras_model(config) 
 torch_model = build_torch_model(config) 
 
-numpy_tensor = np.zeros((1, segment_length, 1)).astype(np.float32)
+numpy_tensor = np.zeros((1, segment_length, len(config.CHANNELS))).astype(np.float32)
 torch_tensor = torch.from_numpy(numpy_tensor).transpose(2, 1)
 
 torch_output = torch_model(torch_tensor).detach().numpy() 
