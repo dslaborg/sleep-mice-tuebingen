@@ -34,12 +34,12 @@ class TuebingenDataloader(tud.Dataset):
         self.data_fraction = data_fraction
         self.data = None
         self.data_augmentor = DataAugmentor(config)
+        self.max_idx = 0
 
         # file has to be opened here, so the indices for each stage can be loaded
         self.file = tables.open_file(self.config.DATA_FILE)
         self.stages = self.get_stage_data()
         # max index is needed to calculate limits for the additional samples loaded by SAMPLES_LEFT and SAMPLES_RIGHT
-        self.max_idx = max([0 if len(stage) == 0 else max(stage) for stage in self.stages])
         self.nitems = sum([len(s) for s in self.stages])
         self.indices = self.get_indices()
         self.file.close()
@@ -152,6 +152,7 @@ class TuebingenDataloader(tud.Dataset):
 
         for stage in self.config.STAGES:
             stages.append(table.get_where_list('({}=="{}")'.format(COLUMN_LABEL, stage)))
+        self.max_idx = np.max(stages)
 
         if self.config.DATA_FRACTION_STRAT is None or self.dataset != 'train':
             for i, stage_data in enumerate(stages):
