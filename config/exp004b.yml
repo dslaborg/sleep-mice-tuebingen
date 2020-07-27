@@ -1,0 +1,21 @@
+data:
+  stage_map:
+    Wake: 'Wake'
+    REM: 'REM'
+    Non REM: 'Non REM'
+    Pre REM: 'Non REM'
+    Artifact: null
+
+experiment:
+  data:
+    file: 'data_tuebingen_main_stages.h5'  # stored in cache dir
+    stages: ['Wake', 'REM', 'Non REM']
+    balancing_weights: [0.41, 0.25, 0.34]
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 1.e-4
+
+  model:
+    name: 'model_3conv_pool'
