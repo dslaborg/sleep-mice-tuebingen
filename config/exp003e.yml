@@ -1,0 +1,19 @@
+experiment:
+  data:
+    channels: ['EEG_PR']
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 1.e-4
+
+  model:
+    filters: 96
+    classifier_dropout: [0.2, 0.2]
+    feature_extr_dropout: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]
+
+  data_augmentation:
+    gain: 0.5
+    flip_all: 0.5
+    window_warp_size: 0.05
+    time_shift: 0.06
