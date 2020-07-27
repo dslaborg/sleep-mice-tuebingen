@@ -1,0 +1,25 @@
+data:
+  stage_map:
+    Wake: 'Wake'
+    REM: 'REM'
+    Non REM: 'Non REM'
+    Pre REM: 'Non REM'
+    Artifact: null
+
+experiment:
+  data:
+    file: 'data_tuebingen_main_stages.h5'  # stored in cache dir
+    stages: ['Wake', 'REM', 'Non REM']
+    channels: ['EEG_PR']
+    balanced_training: False
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 1.e-4
+
+  model:
+    filters: 96
+    classifier_dropout: [0.2, 0.2]
+    feature_extr_dropout: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]
+    name: 'model_8conv_2fc'
