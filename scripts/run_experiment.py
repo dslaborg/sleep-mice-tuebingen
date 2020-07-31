@@ -89,6 +89,7 @@ def training():
         # model from the current epoch better than best model?
         new_best_model = f1_scores_valid['avg'] > best_avg_f1_score
         # log/plot confusion and transformation matrices
+        result_logger.log_confusion_matrix(labels_train['actual'], labels_train['predicted'], 'train', wo_plot=True)
         result_logger.log_confusion_matrix(labels_valid['actual'], labels_valid['predicted'], 'valid',
                                            wo_plot=not new_best_model)
         result_logger.log_transformation_matrix(labels_valid['actual'], labels_valid['predicted'], 'valid',
@@ -116,8 +117,8 @@ def training():
         # early stopping
         # stop training if the validation f1 score has not increased over the last 5 epochs
         # but only do so after WARMUP_EPOCHS was reached
-        if epoch >= config.WARMUP_EPOCHS and epoch - best_epoch > 4:
-            break
+#        if epoch >= config.WARMUP_EPOCHS and epoch - best_epoch > 4:
+ #           break
 
     # log/plot f1-score course and metrics over all epochs for both datasets
     result_logger.plot_f1_score_course(f1_scores)
