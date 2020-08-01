@@ -117,8 +117,8 @@ def training():
         # early stopping
         # stop training if the validation f1 score has not increased over the last 5 epochs
         # but only do so after WARMUP_EPOCHS was reached
-#        if epoch >= config.WARMUP_EPOCHS and epoch - best_epoch > 4:
- #           break
+        if epoch >= config.WARMUP_EPOCHS and epoch - best_epoch > 7:
+            break
 
     # log/plot f1-score course and metrics over all epochs for both datasets
     result_logger.plot_f1_score_course(f1_scores)
