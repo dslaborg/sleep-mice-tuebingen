@@ -57,7 +57,7 @@ def read_h5(h5_f_name: str):
         # load scores from h5 file and map them to stages using SCORING_MAP
         scores = h5_f['Scoring/scores'][:]
         t_scoring_map = {v: k for k in config.SCORING_MAP for v in config.SCORING_MAP[k]}
-        labels = [t_scoring_map[s] for s in scores]
+        labels = [t_scoring_map[s] if s in t_scoring_map else 'ignore' for s in scores]
         # load start times of samples and transform them to indexes in the feature map
         sample_start_times = h5_f['Scoring/times'][:]
         sample_start_times = (sample_start_times / sr * config.SAMPLING_RATE).astype('int')
@@ -81,7 +81,7 @@ def write_data_to_table(table: tables.Table, features: dict, labels: list, start
                 sample[c] = features[c][sample_start:sample_end]
             # map stage from h5 file to stage used for classification
             # if the mapping in STAGE_MAP is None, the sample is ignored
-            if config.STAGE_MAP[label] is None:
+            if label not in config.STAGE_MAP or config.STAGE_MAP[label] is None:
                 continue
             sample[COLUMN_LABEL] = config.STAGE_MAP[label]
             sample.append()
