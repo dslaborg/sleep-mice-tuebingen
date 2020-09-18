@@ -28,9 +28,13 @@ cmT_001b = np.array([[95.69, 5.72, 1.96, 0.98, 30.18, ],
                      [0.02, 4.95, 1.03, 38.34, 1.18, ],
                      [0.03, 0.05, 0.11, 0.00, 42.01, ]])
 
-filename = 'cm_all'
+cm_005b = np.array([[98.86, 0.18, 0.92, 0.00, 0.03, ],
+                    [0.78, 95.09, 1.51, 2.61, 0.00, ],
+                    [5.14, 0.31, 93.14, 1.36, 0.05, ],
+                    [0.66, 19.90, 24.38, 55.06, 0.00, ],
+                    [40.86, 2.15, 32.26, 0.00, 24.73, ]])
 
-stages = ['Wake', 'REM', 'Non REM', 'Pre REM', 'Artefakt']
+stages = ['Wake', 'REM', 'Non REM', 'pre-REM', 'Artifact']
 
 
 def plot_confusion_matrix(cm, axis, labels_x=True, labels_y=True):
@@ -41,8 +45,8 @@ def plot_confusion_matrix(cm, axis, labels_x=True, labels_y=True):
              # ... and label them with the respective stages
              xticklabels=stages, yticklabels=stages,
              # title=title,
-             ylabel='wahre Klassen' if labels_y else '',
-             xlabel='vorhergesagte Klassen' if labels_x else '')
+             ylabel='true sleep stages' if labels_y else '',
+             xlabel='predicted sleep stages' if labels_x else '')
     axis.set_ylim([cm.shape[0] - 0.5, -0.5])
 
     # rotate the tick labels and set their alignment.
@@ -58,12 +62,13 @@ def plot_confusion_matrix(cm, axis, labels_x=True, labels_y=True):
 
 
 plt.rcParams.update({'font.size': 12})
-fig, axes = plt.subplots(2, 2, sharex='all', sharey='all', figsize=(9, 8))
+fig, axes = plt.subplots(1, 2, sharex='all', sharey='all', figsize=(8, 5))
 axes = axes.flatten()
-for i, (ax, data) in enumerate(zip(axes, [cmT_001, cm_001, cmT_001b, cm_001b])):
+# for i, (ax, data) in enumerate(zip(axes, [cmT_001, cm_001, cmT_001b, cm_001b])):
+for i, (ax, data) in enumerate(zip(axes, [cm_005b, cm_001])):
     data /= 100.
-    plot_confusion_matrix(data, ax, i >= 2, i % 2 == 0)
+    plot_confusion_matrix(data, ax, i <= 2, i % 2 == 0)
 # save plots
 fig.tight_layout()
-plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'master', filename + '.png'))
+plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'paper', 'cm_balancing.svg'))
 plt.show()

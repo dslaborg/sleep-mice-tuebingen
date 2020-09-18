@@ -1,3 +1,4 @@
+import locale
 import sys
 from os.path import dirname, join, realpath
 
@@ -37,6 +38,9 @@ signal_augmented = alternate_signal_ww(signal, mapLoader[sample - 1][0].flatten(
                                        mapLoader[sample + 1][0].flatten()[-640:])
 
 plt.rcParams.update({'font.size': 12})
+locale.setlocale(locale.LC_NUMERIC, "de_DE")
+plt.rcParams['axes.formatter.use_locale'] = True
+
 fig, (ax1, ax2) = plt.subplots(2, sharex='all', figsize=(8, 4))
 
 ax1.plot(np.arange(signal.shape[0]), signal, label='originales Signal', c='k')
@@ -52,5 +56,5 @@ ax2.set_ylim(ax1.get_ylim())
 
 plt.xlabel('Fenstergröße in Datenpunkten')
 plt.tight_layout()
-plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'master', 'ww_example.png'))
+plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'master', 'ww_example.svg'))
 plt.show()

@@ -30,7 +30,7 @@ experiment:
       # for local testing purposes
 #      train: ['M19']
 #      valid: ['M19']
-#      test: ['M19']
+#      test: ['M36']
     file: 'data_tuebingen.h5'  # stored in cache dir
     stages: ['Wake', 'REM', 'Non REM', 'Pre REM', 'Artifact']
     balanced_training: True
