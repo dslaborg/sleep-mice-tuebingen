@@ -1,3 +1,7 @@
+# base experiment + data augmentation
+# model with 8 conv layers
+# L2 + Dropout regularization
+# data augmentation: flip_all
 experiment:
   data:
     channels: ['EEG_PR']

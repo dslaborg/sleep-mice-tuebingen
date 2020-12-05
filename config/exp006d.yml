@@ -1,3 +1,7 @@
+# base experiment w/o rebalancing + data augmentation
+# model with 8 conv layers
+# L2 + Dropout regularization
+# data augmentation: time shift
 experiment:
   data:
     channels: ['EEG_PR']

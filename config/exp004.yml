@@ -1,3 +1,7 @@
+# base experiment, 3 main sleep stages, all input channels
+# model with 8 conv layers
+# L2 + Dropout regularization
+# no data augmentation
 data:
   stage_map:
     Wake: 'Wake'

@@ -1,3 +1,7 @@
+# base experiment, 3 main sleep stages, uniform rebalancing (all stages have the same amount of samples)
+# model with 8 conv layers
+# L2 + Dropout regularization
+# no data augmentation
 data:
   stage_map:
     Wake: 'Wake'

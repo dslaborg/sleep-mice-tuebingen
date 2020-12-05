@@ -1,3 +1,7 @@
+# experiment with alternate model
+# model with 3 conv layers + pooling
+# L2 + Dropout regularization
+# no data augmentation
 experiment:
   data:
     channels: ['EEG_PR']
@@ -9,3 +13,4 @@ experiment:
 
   model:
     name: 'model_3conv_pool'
+    # classifier dropout defined in code

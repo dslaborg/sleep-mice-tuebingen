@@ -1,3 +1,7 @@
+# experiment using model from base exp but with Leaky ReLU and a BN layer in the classifier
+# model with 8 conv layers, LReLU, BN in classifier
+# L2 + Dropout regularization
+# no data augmentation
 experiment:
   data:
     channels: ['EEG_PR']

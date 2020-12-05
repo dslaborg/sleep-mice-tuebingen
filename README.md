@@ -10,7 +10,7 @@ from tuebingen.
 The experiments where run in an anaconda environment on python 3.7 that can be
 recreated using *requirements_win.txt* for windows or *requirements_linux.txt*
 for linux.  Since it does not seem like conda can install pytorch from a
-requirements file it must be installed manually. See
+requirements file, it must be installed manually. See
 https://pytorch.org/get-started/locally/ for detailed instructions.
 
 ### Linux
@@ -53,7 +53,7 @@ counts samples per stage and dataset in the transformed `DATA_FILE`
 
 #### run_experiment.py
 trains the model specified in the *experiment* using the configured parameters and 
-evaluates it; only the model from the epoch with best validation f1-score is saved
+evaluates it; only the model from the epoch with the best validation f1-score is saved
 
 **Parameters:**
 * -e, --experiment: name of experiment to run, there must be a file
@@ -68,8 +68,8 @@ performs preprocessing steps like downsampling
 *\<experiment\>.py* in the config folder
 
 ### evaluate_experiment.py
-evaluates best model in given *experiment* on data from passed dataset; results are 
-loggedin a log file in `EXPERIMENT_DIR` and plots are created in `VISUALS_DIR`
+evaluates best model in given *experiment* on data from passed the dataset; results are 
+logged in a log file in `EXPERIMENT_DIR` and plots are created in `VISUALS_DIR`
 
 **Parameters:**
 * -e, --experiment: name of experiment to evaluate best model from, there must 
@@ -108,13 +108,47 @@ Transform keras model to tensorflow.js.
 
 <br>
 
+## experiments
+
+* exp001 (base experiments)
+    * exp001:  base experiment, 8 conv layers, L2 + Dropout regularization
+    * exp001b: alternate model, 3 conv layers + pooling, L2 + Dropout regularization
+    * exp001c: base experiment with LReLU + BN in classifier
+* exp002 (main sleep stages)
+    * exp002:  base experiment classifying 3 the main sleep stages
+    * exp002b: alternate model classifying 3 the main sleep stages
+* exp003 (data augmentation)
+    * exp003:  base experiment with data augmentation gain
+    * exp003b: base experiment with data augmentation flip_all
+    * exp003c: base experiment with data augmentation window warping
+    * exp003d: base experiment with data augmentation time shift
+    * exp003e: base experiment with all data augmentations combined
+* exp004 (main sleep stages, all input channels)
+    * exp004:  base experiment classifying the 3 main sleep stages with all channels as input
+    * exp004b: alternate model classifying the 3 main sleep stages with all channels as input
+* exp005 (rebalancing)
+    * exp005:  base experiment, 3 main sleep stages, no rebalancing
+    * exp005b: base experiment, no rebalancing
+    * exp005c: base experiment, 3 main sleep stages, uniform rebalancing
+    * exp005d: base experiment, uniform rebalancing
+    * exp005e: alternate model, no rebalancing
+    * exp005f: alternate model, 3 main sleep stages, no rebalancing
+* exp006 (data augmentation without rebalancing)
+    * exp006:  base experiment, no rebalancing, data augmentation gain
+    * exp006b: base experiment, no rebalancing, data augmentation flip_all
+    * exp006c: base experiment, no rebalancing, data augmentation window warping
+    * exp006d: base experiment, no rebalancing, data augmentation time shift
+    * exp006e: base experiment, no rebalancing, all data augmentations combined
+
+<br>
+
 ## configuration parameters
 There are many parameters in the code that can be configured in an external yaml
 file. The configuration files must be in the folder **/config**.  
-Currently there already are two files in the directory, the *standard_config.yml*
+Currently, there already are two files in the directory, the *standard_config.yml*
 describing the standard configuration for the data, training, model, etc and an 
 example config file *exp001.py* describing the example leading to the best results 
-I found. As you can see the configuration done in *exp001* is very little compared
+I found. As you can see, the configuration done in *exp001* is very little compared
 to the *standard_config*. This is because all additional config files complement
 the *standard_config*, i.e. parameters missing in *exp001* are instead loaded
 from *standard_config*.
