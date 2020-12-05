@@ -34,7 +34,8 @@ cm_005b = np.array([[98.86, 0.18, 0.92, 0.00, 0.03, ],
                     [0.66, 19.90, 24.38, 55.06, 0.00, ],
                     [40.86, 2.15, 32.26, 0.00, 24.73, ]])
 
-stages = ['Wake', 'REM', 'Non REM', 'pre-REM', 'Artifact']
+stages = ['Wake', 'REM', 'NREM', 'pre-REM', 'artifact']
+letters = ['a', 'b', 'c', 'd', 'e', 'f']
 
 
 def plot_confusion_matrix(cm, axis, labels_x=True, labels_y=True):
@@ -65,10 +66,14 @@ plt.rcParams.update({'font.size': 12})
 fig, axes = plt.subplots(1, 2, sharex='all', sharey='all', figsize=(8, 5))
 axes = axes.flatten()
 # for i, (ax, data) in enumerate(zip(axes, [cmT_001, cm_001, cmT_001b, cm_001b])):
-for i, (ax, data) in enumerate(zip(axes, [cm_005b, cm_001])):
+for i, (ax, data, letter) in enumerate(zip(axes, [cmT_001, cm_001], letters)):
     data /= 100.
     plot_confusion_matrix(data, ax, i <= 2, i % 2 == 0)
+    ax.text(0.5, 1.05, f'{letter})',
+            horizontalalignment='center',
+            verticalalignment='center',
+            transform=ax.transAxes)
 # save plots
 fig.tight_layout()
-plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'paper', 'cm_balancing.svg'))
+plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'paper', 'cm_8_conv.svg'))
 plt.show()

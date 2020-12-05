@@ -17,7 +17,8 @@ tm_001_test = np.array([[94.29, 0.16, 5.37, 0.04, 0.14, ],
 
 filename = 'tm_001_test'
 
-stages = ['Wake', 'REM', 'Non REM', 'Pre REM']  # , 'Artefakt']
+stages = ['Wake', 'REM', 'NREM', 'pre-REM']  # , 'Artefakt']
+letters = ['a', 'b', 'c', 'd', 'e', 'f']
 
 
 def plot_transformation_matrix(tm, axis, labels_x=True, labels_y=True):
@@ -28,8 +29,8 @@ def plot_transformation_matrix(tm, axis, labels_x=True, labels_y=True):
              # ... and label them with the respective stages
              xticklabels=stages, yticklabels=stages,
              # title=title,
-             ylabel='Transition von Klasse' if labels_y else '',
-             xlabel='nach Klasse' if labels_x else '')
+             ylabel='transition from sleep stage' if labels_y else '',
+             xlabel='to sleep stage' if labels_x else '')
     axis.set_ylim([tm.shape[0] - 0.5, -0.5])
 
     # rotate the tick labels and set their alignment.
@@ -40,19 +41,22 @@ def plot_transformation_matrix(tm, axis, labels_x=True, labels_y=True):
     thresh = tm.max() / 2.
     for i in range(tm.shape[0]):
         for j in range(tm.shape[1]):
-            axis.text(j, i, format(tm[i, j], fmt).replace('.', ','), ha='center', va='center',
+            axis.text(j, i, format(tm[i, j], fmt), ha='center', va='center',
                       color='white' if tm[i, j] > thresh else 'black')
 
 
 plt.rcParams.update({'font.size': 12})
 fig, axes = plt.subplots(1, 2, sharex='all', sharey='all', figsize=(9, 5))
 axes = axes.flatten()
-for i, (ax, data) in enumerate(zip(axes, [tm_test, tm_001_test])):
+for i, (ax, data, letter) in enumerate(zip(axes, [tm_test, tm_001_test], letters)):
     tm_cut = data[:4, :4] / 100.
     tm_cut /= np.sum(tm_cut, axis=1)
     plot_transformation_matrix(tm_cut, ax, True, i % 2 == 0)
+    ax.text(0.5, 1.05, f'{letter})',
+            horizontalalignment='center',
+            verticalalignment='center',
+            transform=ax.transAxes)
 # save plots
 fig.tight_layout()
-plt.subplots_adjust(top=1)
-plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'master', filename + '.svg'))
+plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'paper', filename + '.svg'))
 plt.show()
