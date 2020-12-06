@@ -115,8 +115,8 @@ Transform keras model to tensorflow.js.
     * exp001b: alternate model, 3 conv layers + pooling, L2 + Dropout regularization
     * exp001c: base experiment with LReLU + BN in classifier
 * exp002 (main sleep stages)
-    * exp002:  base experiment classifying 3 the main sleep stages
-    * exp002b: alternate model classifying 3 the main sleep stages
+    * exp002:  base experiment classifying the 3 main sleep stages
+    * exp002b: alternate model classifying the 3 main sleep stages
 * exp003 (data augmentation)
     * exp003:  base experiment with data augmentation gain
     * exp003b: base experiment with data augmentation flip_all
