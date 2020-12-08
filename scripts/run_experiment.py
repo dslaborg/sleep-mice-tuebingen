@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 import argparse
 import sys
 import time
@@ -54,7 +56,7 @@ def training():
     best_epoch = 0
     best_avg_f1_score = 0
     # save metrics after each epoch for plots
-    f1_scores = {'train': {'avg': []},
+    f1_scores = {'train': {stage: [] for stage in config.STAGES + ['avg']},
                  'valid': {stage: [] for stage in config.STAGES + ['avg']}}
     losses = {'train': [], 'valid': []}
 
@@ -66,15 +68,19 @@ def training():
 
         # train epoch and save metrics
         labels_train, loss_train = train(config, epoch, model, optimizer, trainloader)
-        f1_scores['train']['avg'].append(f1_score(labels_train['actual'], labels_train['predicted'], average='macro'))
         losses['train'].append(loss_train)
 
         # evaluate epoch and save metrics
         labels_valid, loss_valid = evaluate(config, model, validationloader)
         losses['valid'].append(loss_valid)
 
-        # calculate f1-scores for given validation labels and log them
+        # calculate f1-scores for given validation and training labels and log them
         logger.logger.info('')
+        f1_scores_train = result_logger.log_sleep_stage_f1_scores(labels_train['actual'], labels_train['predicted'],
+                                                                  'train')
+        for stage in f1_scores_train:
+            f1_scores['train'][stage].append(f1_scores_train[stage])
+
         f1_scores_valid = result_logger.log_sleep_stage_f1_scores(labels_valid['actual'], labels_valid['predicted'],
                                                                   'valid')
         for stage in f1_scores_valid:
@@ -83,6 +89,7 @@ def training():
         # model from the current epoch better than best model?
         new_best_model = f1_scores_valid['avg'] > best_avg_f1_score
         # log/plot confusion and transformation matrices
+        result_logger.log_confusion_matrix(labels_train['actual'], labels_train['predicted'], 'train', wo_plot=True)
         result_logger.log_confusion_matrix(labels_valid['actual'], labels_valid['predicted'], 'valid',
                                            wo_plot=not new_best_model)
         result_logger.log_transformation_matrix(labels_valid['actual'], labels_valid['predicted'], 'valid',
@@ -110,7 +117,7 @@ def training():
         # early stopping
         # stop training if the validation f1 score has not increased over the last 5 epochs
         # but only do so after WARMUP_EPOCHS was reached
-        if epoch >= config.WARMUP_EPOCHS and epoch - best_epoch > 4:
+        if epoch >= config.WARMUP_EPOCHS and epoch - best_epoch > 5:
             break
 
     # log/plot f1-score course and metrics over all epochs for both datasets

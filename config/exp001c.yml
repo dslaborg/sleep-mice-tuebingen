@@ -1,0 +1,18 @@
+# experiment using model from base exp but with Leaky ReLU and a BN layer in the classifier
+# model with 8 conv layers, LReLU, BN in classifier
+# L2 + Dropout regularization
+# no data augmentation
+experiment:
+  data:
+    channels: ['EEG_PR']
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 1.e-4
+
+  model:
+    name: 'model_8conv_2fc_bn_lrelu'
+    filters: 96
+    classifier_dropout: [0.2, 0.2]
+    feature_extr_dropout: [0.0, 0.2, 0.0, 0.2, 0.0, 0.2, 0.0, 0.2]

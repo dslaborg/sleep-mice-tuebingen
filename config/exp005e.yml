@@ -1,0 +1,16 @@
+# alternate model, no rebalancing
+# model with 3 conv layers + pooling
+# L2 + Dropout regularization
+# no data augmentation
+experiment:
+  data:
+    channels: ['EEG_PR']
+    balanced_training: False
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 1.e-4
+
+  model:
+    name: 'model_3conv_pool'

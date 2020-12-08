@@ -13,7 +13,7 @@ data:
     REM: [3, 19]
     Non REM: [2, 18]
     Pre REM: [4, 20]
-    Artifact: [8, 24, 255]
+    Artifact: [8, 24]
   stage_map:
     Wake: 'Wake'
     REM: 'REM'
@@ -30,7 +30,7 @@ experiment:
       # for local testing purposes
 #      train: ['M19']
 #      valid: ['M19']
-#      test: ['M19']
+#      test: ['M36']
     file: 'data_tuebingen.h5'  # stored in cache dir
     stages: ['Wake', 'REM', 'Non REM', 'Pre REM', 'Artifact']
     balanced_training: True

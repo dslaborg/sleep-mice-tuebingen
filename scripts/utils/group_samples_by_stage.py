@@ -42,8 +42,8 @@ def main():
             print('mice:', set(map(get_mouse_from_id, table[:][COLUMN_MOUSE_ID])))
             print('{:12s}{}\t{}'.format('stage', 'relative', 'total'))
             # count number of samples per stage
-            for s, k in config.STAGE_MAP.items():
-                n = len([row[COLUMN_MOUSE_ID] for row in table.where('({}=="{}")'.format(COLUMN_LABEL, k))])
+            for s in config.STAGES:
+                n = len([row[COLUMN_MOUSE_ID] for row in table.where('({}=="{}")'.format(COLUMN_LABEL, s))])
                 print('{:12s}{:6.2%}\t{:6d}'.format(s, n / n_total, n))
             print()
 
