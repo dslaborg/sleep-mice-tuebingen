@@ -93,7 +93,9 @@ class MatrixPlotter:
                 title = 'transformation matrix without normalization'
 
         # compute transformation matrix from the ordered data
-        tm = np.zeros((len(self.config.STAGES), len(self.config.STAGES)), dtype='int')
+        # tm = np.zeros((len(self.config.STAGES), len(self.config.STAGES)), dtype='int')
+        d = max(data) + 1
+        tm = np.zeros((d, d), dtype='int')
         for i, stage in enumerate(data):
             if i == 0:
                 continue
@@ -134,5 +136,6 @@ class MatrixPlotter:
         fig.tight_layout()
         # save plot in VISUALS_DIR
         plt.savefig(self.config.VISUALS_DIR + '/' + title.replace(' ', '_') + '.png')
+        # plt.show()
         plt.close()
         return tm
