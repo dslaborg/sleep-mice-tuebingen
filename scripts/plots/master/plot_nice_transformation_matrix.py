@@ -15,9 +15,11 @@ tm_001_test = np.array([[94.29, 0.16, 5.37, 0.04, 0.14, ],
                         [3.27, 45.86, 19.25, 31.62, 0.00, ],
                         [24.43, 2.29, 38.93, 0.76, 33.59, ]])
 
-filename = 'tm_001_test'
+tm_orig = np.array([[95.72, 4.26, 0.01, 0.0], [4.04, 92.35, 3.54, 0.07], [2.46, 17.43, 27.84, 52.27], [15.48, 4.14, 0.27, 80.11]])
+tm_proc = np.array([[95.72, 4.27, 0.01, 0.0], [4.07, 93.35, 2.58, 0.0], [0.0, 0.0, 0.0, 100.0], [15.46, 4.22, 0.21, 80.11]])
 
-stages = ['Wake', 'REM', 'NREM', 'pre-REM']  # , 'Artefakt']
+# stages = ['Wake', 'REM', 'NREM', 'pre-REM']  # , 'Artefakt']
+stages = ['Wake', 'NREM', 'pre-REM', 'REM']  # , 'Artefakt']
 letters = ['a', 'b', 'c', 'd', 'e', 'f']
 
 
@@ -48,7 +50,7 @@ def plot_transformation_matrix(tm, axis, labels_x=True, labels_y=True):
 plt.rcParams.update({'font.size': 12})
 fig, axes = plt.subplots(1, 2, sharex='all', sharey='all', figsize=(9, 5))
 axes = axes.flatten()
-for i, (ax, data, letter) in enumerate(zip(axes, [tm_test, tm_001_test], letters)):
+for i, (ax, data, letter) in enumerate(zip(axes, [tm_orig, tm_proc], letters)):
     tm_cut = data[:4, :4] / 100.
     tm_cut /= np.sum(tm_cut, axis=1)
     plot_transformation_matrix(tm_cut, ax, True, i % 2 == 0)
@@ -58,5 +60,5 @@ for i, (ax, data, letter) in enumerate(zip(axes, [tm_test, tm_001_test], letters
             transform=ax.transAxes)
 # save plots
 fig.tight_layout()
-plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'paper', filename + '.svg'))
+plt.savefig(join(dirname(__file__), '../../..', 'results', 'plots', 'paper', 'postprocessing.svg'))
 plt.show()
