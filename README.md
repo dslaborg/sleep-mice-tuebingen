@@ -139,6 +139,9 @@ Transform keras model to tensorflow.js.
     * exp006c: base experiment, no rebalancing, data augmentation window warping
     * exp006d: base experiment, no rebalancing, data augmentation time shift
     * exp006e: base experiment, no rebalancing, all data augmentations combined
+* exp007 (no regularization):
+    * exp007:  base experiment, 3 main sleep stages, no dropout or L2 decay
+    * exp007b: base experiment, no dropout or L2 decay
 
 <br>
 

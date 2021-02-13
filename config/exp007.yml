@@ -1,0 +1,29 @@
+# base experiment, 3 main sleep stages
+# model with 8 conv layers
+# L2 + Dropout regularization
+# no data augmentation
+data:
+  stage_map:
+    Wake: 'Wake'
+    REM: 'REM'
+    Non REM: 'Non REM'
+    Pre REM: 'Non REM'
+    Artifact: null
+
+experiment:
+  data:
+    file: 'data_tuebingen_main_stages.h5'  # stored in cache dir
+    stages: [ 'Wake', 'REM', 'Non REM' ]
+    channels: [ 'EEG_PR' ]
+    balancing_weights: [ 0.41, 0.25, 0.34 ]
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 0
+
+  model:
+    filters: 96
+    classifier_dropout: [ 0.0, 0.0 ]
+    feature_extr_dropout: [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+    name: 'model_8conv_2fc'

@@ -1,0 +1,17 @@
+# base experiment
+# model with 8 conv layers
+# L2 + Dropout regularization
+# no data augmentation
+experiment:
+  data:
+    channels: [ 'EEG_PR' ]
+
+  training:
+    optimizer:
+      class: 'Adam'
+      l2_weight_decay: 0
+
+  model:
+    filters: 96
+    classifier_dropout: [ 0.0, 0.0 ]
+    feature_extr_dropout: [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
