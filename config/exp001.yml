@@ -4,6 +4,11 @@
 # no data augmentation
 experiment:
   data:
+    split:
+      train: []
+      valid: []
+      test: ['M36'] # ['M36', 'M37']
+    file: 'data_tuebingen_test1.h5'
     channels: ['EEG_PR']
 
   training:
