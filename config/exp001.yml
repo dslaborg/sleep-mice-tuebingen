@@ -7,8 +7,8 @@ experiment:
     split:
       train: []
       valid: []
-      test: ['M36'] # ['M36', 'M37']
-    file: 'data_tuebingen_test1.h5'
+      test: ['M37'] # ['M36', 'M37']
+    file: 'data_tuebingen_test2.h5'
     channels: ['EEG_PR']
 
   training:
