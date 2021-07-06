@@ -152,7 +152,7 @@ class TuebingenDataloader(tud.Dataset):
 
         for stage in self.config.STAGES:
             stages.append(table.get_where_list('({}=="{}")'.format(COLUMN_LABEL, stage)))
-        self.max_idx = max([max(s) for s in stages])
+        self.max_idx = max([max(s) for s in stages if len(s)>0])
 
         if self.config.DATA_FRACTION_STRAT is None or self.dataset != 'train':
             for i, stage_data in enumerate(stages):
